@@ -43,7 +43,12 @@ dependencies:
   injectable: ^2.4.2
   get_it: ^7.7.0
   retrofit: ">=4.0.0 <5.0.0"
-
+  bloc: ^8.1.4
+  flutter_bloc: ^8.1.6
+  auto_route: 9.2.2
+  intl: any
+  flutter_localizations:
+    sdk: flutter
 dev_dependencies:
   integration_test:
     sdk: flutter
@@ -61,8 +66,10 @@ dev_dependencies:
   json_serializable: ^6.8.0
   injectable_generator: ^2.6.1
   retrofit_generator: ">=7.0.0 <8.0.0"
+  auto_route_generator: 9.0.0
   mocktail: ^1.0.4
   bdd_widget_test: ^1.7.4
+  bloc_test: ^9.1.7
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -105,3 +112,5 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_intl:
+  enabled: true
