@@ -13,6 +13,7 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
 import '../base/remote/network_task_manager.dart' as _i148;
+import '../route/app_router.dart' as _i1007;
 import 'app_module.dart' as _i460;
 
 const String _prod = 'prod';
@@ -31,6 +32,7 @@ _i174.GetIt $initGetIt(
   );
   final appModule = _$AppModule();
   gh.lazySingleton<_i148.NetworkTaskManager>(() => _i148.NetworkTaskManager());
+  gh.lazySingleton<_i1007.AppRouter>(() => _i1007.AppRouter());
   gh.lazySingleton<_i361.Dio>(
     () => appModule.dio,
     instanceName: 'dio_client',

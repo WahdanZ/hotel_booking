@@ -1,0 +1,25 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:injectable/injectable.dart';
+
+import 'app_router.gr.dart';
+
+@LazySingleton()
+@AutoRouterConfig(replaceInRouteName: 'Screen|Page,Route')
+class AppRouter extends RootStackRouter {
+  @override
+  List<AutoRoute> get routes => [
+        AutoRoute(
+          path: '/dashboard',
+          page: MainShellRoute.page,
+          initial: true,
+          children: [
+            AutoRoute(
+                path: 'overview', page: OverviewRoute.page, initial: true),
+            AutoRoute(path: 'hotels', page: HotelsRoute.page),
+            AutoRoute(path: 'favorites', page: FavoritesRoute.page),
+
+            AutoRoute(path: 'account', page: AccountRoute.page),
+          ],
+        ),
+      ];
+}
