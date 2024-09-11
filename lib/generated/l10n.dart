@@ -59,6 +59,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Hotel Booking`
+  String get appTitle {
+    return Intl.message(
+      'Hotel Booking',
+      name: 'appTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Overview`
+  String get tab_overview {
+    return Intl.message(
+      'Overview',
+      name: 'tab_overview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hotels`
+  String get tab_hotels {
+    return Intl.message(
+      'Hotels',
+      name: 'tab_hotels',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Favorites`
+  String get tab_favorites {
+    return Intl.message(
+      'Favorites',
+      name: 'tab_favorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account`
+  String get tab_account {
+    return Intl.message(
+      'Account',
+      name: 'tab_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hotels`
+  String get hotels_page_title {
+    return Intl.message(
+      'Hotels',
+      name: 'hotels_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Favorite`
+  String get favorite_page_title {
+    return Intl.message(
+      'Favorite',
+      name: 'favorite_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Overview`
+  String get overview_page_title {
+    return Intl.message(
+      'Overview',
+      name: 'overview_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account`
+  String get account_page_title {
+    return Intl.message(
+      'Account',
+      name: 'account_page_title',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
