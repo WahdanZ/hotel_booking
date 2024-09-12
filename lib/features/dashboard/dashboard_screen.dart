@@ -1,5 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hotel_booking/base/index.dart';
+import 'package:hotel_booking/di/injector.dart';
+import 'package:hotel_booking/features/hotel/presentation/manager/hotel_bloc.dart';
 import 'package:hotel_booking/generated/l10n.dart';
 import 'package:hotel_booking/route/app_router.gr.dart';
 
@@ -60,8 +64,12 @@ class HotelsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title:  Text(S.of(context).hotels_page_title)),
-      body: ListView.builder(
-        itemBuilder: (context, index) {
+      body: BlocBuilder<HotelBloc, HotelState>(
+        bloc: inject<HotelBloc>()..add(const FetchHotel()),
+        builder: (context, state) {
+          logger.i(state);
+          return ListView.builder(
+            itemBuilder: (context, index) {
           return HotelCard(
             imageUrl: hotels[0]["imageUrl"],
             title: hotels[0]["title"],
@@ -70,6 +78,8 @@ class HotelsScreen extends StatelessWidget {
             rating: hotels[0]["rating"],
             isFavorite: hotels[0]["isFavorite"],
             onFavoriteToggle: () {},
+          );
+        },
           );
         },
       ),

@@ -17,7 +17,9 @@ class HotelRepositoryImp extends HotelRepository {
   @override
   Future<CustomResult<List<HotelEntity>>> getHotels() {
     final task = DioNetworkTask(() => remoteDataSource.getHotels());
-    return networkTaskManager.executeTask(task,useIsolate: true).map((response) {
+    return networkTaskManager
+        .executeTask(task, useIsolate: false)
+        .map((response) {
       return response.hotels.map(hotelMapper.mapFromModel).toList();
     });
   }
