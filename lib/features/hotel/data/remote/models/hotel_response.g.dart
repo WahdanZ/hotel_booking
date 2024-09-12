@@ -26,13 +26,13 @@ _$HotelModelImpl _$$HotelModelImplFromJson(Map<String, dynamic> json) =>
       images: (json['images'] as List<dynamic>)
           .map((e) => HotelImageModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      ratingInfo: json['ratingInfo'] == null
+      ratingInfo: json['rating-info'] == null
           ? null
           : RatingInfoModel.fromJson(
-              json['ratingInfo'] as Map<String, dynamic>),
-      bestOffer: json['bestOffer'] == null
+              json['rating-info'] as Map<String, dynamic>),
+      bestOffer: json['best-offer'] == null
           ? null
-          : BestOfferModel.fromJson(json['bestOffer'] as Map<String, dynamic>),
+          : BestOfferModel.fromJson(json['best-offer'] as Map<String, dynamic>),
       latitude: (json['latitude'] as num).toDouble(),
       longitude: (json['longitude'] as num).toDouble(),
       analytics: json['analytics'] == null
@@ -48,8 +48,8 @@ Map<String, dynamic> _$$HotelModelImplToJson(_$HotelModelImpl instance) =>
       'name': instance.name,
       'destination': instance.destination,
       'images': instance.images,
-      'ratingInfo': instance.ratingInfo,
-      'bestOffer': instance.bestOffer,
+      'rating-info': instance.ratingInfo,
+      'best-offer': instance.bestOffer,
       'latitude': instance.latitude,
       'longitude': instance.longitude,
       'analytics': instance.analytics,
@@ -75,26 +75,26 @@ _$RatingInfoModelImpl _$$RatingInfoModelImplFromJson(
         Map<String, dynamic> json) =>
     _$RatingInfoModelImpl(
       score: (json['score'] as num).toDouble(),
-      reviewsCount: (json['reviewsCount'] as num).toInt(),
-      scoreDescription: json['scoreDescription'] as String,
+      reviewsCount: (json['reviews-count'] as num).toInt(),
+      scoreDescription: json['score-description'] as String,
     );
 
 Map<String, dynamic> _$$RatingInfoModelImplToJson(
         _$RatingInfoModelImpl instance) =>
     <String, dynamic>{
       'score': instance.score,
-      'reviewsCount': instance.reviewsCount,
-      'scoreDescription': instance.scoreDescription,
+      'reviews-count': instance.reviewsCount,
+      'score-description': instance.scoreDescription,
     };
 
 _$BestOfferModelImpl _$$BestOfferModelImplFromJson(Map<String, dynamic> json) =>
     _$BestOfferModelImpl(
       total: (json['total'] as num).toInt(),
-      originalTravelPrice: (json['originalTravelPrice'] as num).toInt(),
-      simplePricePerPerson: (json['simplePricePerPerson'] as num).toInt(),
-      flightIncluded: json['flightIncluded'] as bool,
+      originalTravelPrice: (json['original-travel-price'] as num).toInt(),
+      simplePricePerPerson: (json['simple-price-per-person'] as num).toInt(),
+      flightIncluded: json['flight-included'] as bool,
       travelDate:
-          TravelDateModel.fromJson(json['travelDate'] as Map<String, dynamic>),
+          TravelDateModel.fromJson(json['travel-date'] as Map<String, dynamic>),
       rooms: RoomsModel.fromJson(json['rooms'] as Map<String, dynamic>),
     );
 
@@ -102,18 +102,18 @@ Map<String, dynamic> _$$BestOfferModelImplToJson(
         _$BestOfferModelImpl instance) =>
     <String, dynamic>{
       'total': instance.total,
-      'originalTravelPrice': instance.originalTravelPrice,
-      'simplePricePerPerson': instance.simplePricePerPerson,
-      'flightIncluded': instance.flightIncluded,
-      'travelDate': instance.travelDate,
+      'original-travel-price': instance.originalTravelPrice,
+      'simple-price-per-person': instance.simplePricePerPerson,
+      'flight-included': instance.flightIncluded,
+      'travel-date': instance.travelDate,
       'rooms': instance.rooms,
     };
 
 _$TravelDateModelImpl _$$TravelDateModelImplFromJson(
         Map<String, dynamic> json) =>
     _$TravelDateModelImpl(
-      departureDate: json['departureDate'] as String,
-      returnDate: json['returnDate'] as String,
+      departureDate: json['departure-date'] as String,
+      returnDate: json['return-date'] as String,
       days: (json['days'] as num).toInt(),
       nights: (json['nights'] as num).toInt(),
     );
@@ -121,8 +121,8 @@ _$TravelDateModelImpl _$$TravelDateModelImplFromJson(
 Map<String, dynamic> _$$TravelDateModelImplToJson(
         _$TravelDateModelImpl instance) =>
     <String, dynamic>{
-      'departureDate': instance.departureDate,
-      'returnDate': instance.returnDate,
+      'departure-date': instance.departureDate,
+      'return-date': instance.returnDate,
       'days': instance.days,
       'nights': instance.nights,
     };
@@ -131,7 +131,7 @@ _$RoomsModelImpl _$$RoomsModelImplFromJson(Map<String, dynamic> json) =>
     _$RoomsModelImpl(
       overall:
           OverallRoomModel.fromJson(json['overall'] as Map<String, dynamic>),
-      roomGroups: (json['roomGroups'] as List<dynamic>)
+      roomGroups: (json['room-groups'] as List<dynamic>)
           .map((e) => RoomGroupModel.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
@@ -139,7 +139,7 @@ _$RoomsModelImpl _$$RoomsModelImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$RoomsModelImplToJson(_$RoomsModelImpl instance) =>
     <String, dynamic>{
       'overall': instance.overall,
-      'roomGroups': instance.roomGroups,
+      'room-groups': instance.roomGroups,
     };
 
 _$OverallRoomModelImpl _$$OverallRoomModelImplFromJson(
@@ -147,9 +147,9 @@ _$OverallRoomModelImpl _$$OverallRoomModelImplFromJson(
     _$OverallRoomModelImpl(
       boarding: json['boarding'] as String,
       name: json['name'] as String,
-      adultCount: (json['adultCount'] as num).toInt(),
-      childrenCount: (json['childrenCount'] as num).toInt(),
-      sameBoarding: json['sameBoarding'] as bool,
+      adultCount: (json['adult-count'] as num).toInt(),
+      childrenCount: (json['children-count'] as num).toInt(),
+      sameBoarding: json['same-boarding'] as bool,
     );
 
 Map<String, dynamic> _$$OverallRoomModelImplToJson(
@@ -157,9 +157,9 @@ Map<String, dynamic> _$$OverallRoomModelImplToJson(
     <String, dynamic>{
       'boarding': instance.boarding,
       'name': instance.name,
-      'adultCount': instance.adultCount,
-      'childrenCount': instance.childrenCount,
-      'sameBoarding': instance.sameBoarding,
+      'adult-count': instance.adultCount,
+      'children-count': instance.childrenCount,
+      'same-boarding': instance.sameBoarding,
     };
 
 _$RoomGroupModelImpl _$$RoomGroupModelImplFromJson(Map<String, dynamic> json) =>

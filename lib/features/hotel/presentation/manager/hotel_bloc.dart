@@ -11,18 +11,17 @@ class HotelBloc extends Bloc<HotelEvent, HotelState> {
   final HotelRepository _repository;
 
   HotelBloc(this._repository) : super(const HotelState.initial()) {
-    on<FetchHotel>((event, emit) {
+    on<FetchHotel>((event, emit) async {
       emit(const HotelState.loading());
-      _repository.getHotels().then((result) {
-        result.when(
-          success: (data) {
-            emit(HotelState.loaded(data));
-          },
-          failure: (error) {
-            emit(HotelState.error(error.message ?? ' unknown error'));
-          },
-        );
-      });
+      final result = await _repository.getHotels();
+      result.when(
+        success: (data) {
+          emit(HotelState.loaded(data));
+        },
+        failure: (error) {
+          emit(HotelState.error(error.message ?? ' unknown error'));
+        },
+      );
     });
   }
 }

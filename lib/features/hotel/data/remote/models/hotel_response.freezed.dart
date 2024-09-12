@@ -169,7 +169,11 @@ mixin _$HotelModel {
   String get name => throw _privateConstructorUsedError;
   String get destination => throw _privateConstructorUsedError;
   List<HotelImageModel> get images => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'rating-info')
   RatingInfoModel? get ratingInfo => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'best-offer')
   BestOfferModel? get bestOffer => throw _privateConstructorUsedError;
   double get latitude => throw _privateConstructorUsedError;
   double get longitude => throw _privateConstructorUsedError;
@@ -195,8 +199,8 @@ abstract class $HotelModelCopyWith<$Res> {
       String name,
       String destination,
       List<HotelImageModel> images,
-      RatingInfoModel? ratingInfo,
-      BestOfferModel? bestOffer,
+      @JsonKey(name: 'rating-info') RatingInfoModel? ratingInfo,
+      @JsonKey(name: 'best-offer') BestOfferModel? bestOffer,
       double latitude,
       double longitude,
       AnalyticsModel? analytics,
@@ -331,8 +335,8 @@ abstract class _$$HotelModelImplCopyWith<$Res>
       String name,
       String destination,
       List<HotelImageModel> images,
-      RatingInfoModel? ratingInfo,
-      BestOfferModel? bestOffer,
+      @JsonKey(name: 'rating-info') RatingInfoModel? ratingInfo,
+      @JsonKey(name: 'best-offer') BestOfferModel? bestOffer,
       double latitude,
       double longitude,
       AnalyticsModel? analytics,
@@ -427,8 +431,8 @@ class _$HotelModelImpl implements _HotelModel {
       required this.name,
       required this.destination,
       required final List<HotelImageModel> images,
-      this.ratingInfo,
-      this.bestOffer,
+      @JsonKey(name: 'rating-info') this.ratingInfo,
+      @JsonKey(name: 'best-offer') this.bestOffer,
       required this.latitude,
       required this.longitude,
       this.analytics,
@@ -455,8 +459,10 @@ class _$HotelModelImpl implements _HotelModel {
   }
 
   @override
+  @JsonKey(name: 'rating-info')
   final RatingInfoModel? ratingInfo;
   @override
+  @JsonKey(name: 'best-offer')
   final BestOfferModel? bestOffer;
   @override
   final double latitude;
@@ -537,8 +543,8 @@ abstract class _HotelModel implements HotelModel {
           required final String name,
           required final String destination,
           required final List<HotelImageModel> images,
-          final RatingInfoModel? ratingInfo,
-          final BestOfferModel? bestOffer,
+          @JsonKey(name: 'rating-info') final RatingInfoModel? ratingInfo,
+          @JsonKey(name: 'best-offer') final BestOfferModel? bestOffer,
           required final double latitude,
           required final double longitude,
           final AnalyticsModel? analytics,
@@ -559,8 +565,10 @@ abstract class _HotelModel implements HotelModel {
   @override
   List<HotelImageModel> get images;
   @override
+  @JsonKey(name: 'rating-info')
   RatingInfoModel? get ratingInfo;
   @override
+  @JsonKey(name: 'best-offer')
   BestOfferModel? get bestOffer;
   @override
   double get latitude;
@@ -741,7 +749,11 @@ RatingInfoModel _$RatingInfoModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$RatingInfoModel {
   double get score => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'reviews-count')
   int get reviewsCount => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'score-description')
   String get scoreDescription => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -756,7 +768,10 @@ abstract class $RatingInfoModelCopyWith<$Res> {
           RatingInfoModel value, $Res Function(RatingInfoModel) then) =
       _$RatingInfoModelCopyWithImpl<$Res, RatingInfoModel>;
   @useResult
-  $Res call({double score, int reviewsCount, String scoreDescription});
+  $Res call(
+      {double score,
+      @JsonKey(name: 'reviews-count') int reviewsCount,
+      @JsonKey(name: 'score-description') String scoreDescription});
 }
 
 /// @nodoc
@@ -801,7 +816,10 @@ abstract class _$$RatingInfoModelImplCopyWith<$Res>
       __$$RatingInfoModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double score, int reviewsCount, String scoreDescription});
+  $Res call(
+      {double score,
+      @JsonKey(name: 'reviews-count') int reviewsCount,
+      @JsonKey(name: 'score-description') String scoreDescription});
 }
 
 /// @nodoc
@@ -841,8 +859,8 @@ class __$$RatingInfoModelImplCopyWithImpl<$Res>
 class _$RatingInfoModelImpl implements _RatingInfoModel {
   const _$RatingInfoModelImpl(
       {required this.score,
-      required this.reviewsCount,
-      required this.scoreDescription});
+      @JsonKey(name: 'reviews-count') required this.reviewsCount,
+      @JsonKey(name: 'score-description') required this.scoreDescription});
 
   factory _$RatingInfoModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$RatingInfoModelImplFromJson(json);
@@ -850,8 +868,10 @@ class _$RatingInfoModelImpl implements _RatingInfoModel {
   @override
   final double score;
   @override
+  @JsonKey(name: 'reviews-count')
   final int reviewsCount;
   @override
+  @JsonKey(name: 'score-description')
   final String scoreDescription;
 
   @override
@@ -894,7 +914,8 @@ class _$RatingInfoModelImpl implements _RatingInfoModel {
 abstract class _RatingInfoModel implements RatingInfoModel {
   const factory _RatingInfoModel(
       {required final double score,
-      required final int reviewsCount,
+      @JsonKey(name: 'reviews-count') required final int reviewsCount,
+      @JsonKey(name: 'score-description')
       required final String scoreDescription}) = _$RatingInfoModelImpl;
 
   factory _RatingInfoModel.fromJson(Map<String, dynamic> json) =
@@ -903,8 +924,10 @@ abstract class _RatingInfoModel implements RatingInfoModel {
   @override
   double get score;
   @override
+  @JsonKey(name: 'reviews-count')
   int get reviewsCount;
   @override
+  @JsonKey(name: 'score-description')
   String get scoreDescription;
   @override
   @JsonKey(ignore: true)
@@ -919,9 +942,17 @@ BestOfferModel _$BestOfferModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$BestOfferModel {
   int get total => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'original-travel-price')
   int get originalTravelPrice => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'simple-price-per-person')
   int get simplePricePerPerson => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'flight-included')
   bool get flightIncluded => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'travel-date')
   TravelDateModel get travelDate => throw _privateConstructorUsedError;
   RoomsModel get rooms => throw _privateConstructorUsedError;
 
@@ -939,10 +970,10 @@ abstract class $BestOfferModelCopyWith<$Res> {
   @useResult
   $Res call(
       {int total,
-      int originalTravelPrice,
-      int simplePricePerPerson,
-      bool flightIncluded,
-      TravelDateModel travelDate,
+      @JsonKey(name: 'original-travel-price') int originalTravelPrice,
+      @JsonKey(name: 'simple-price-per-person') int simplePricePerPerson,
+      @JsonKey(name: 'flight-included') bool flightIncluded,
+      @JsonKey(name: 'travel-date') TravelDateModel travelDate,
       RoomsModel rooms});
 
   $TravelDateModelCopyWith<$Res> get travelDate;
@@ -1024,10 +1055,10 @@ abstract class _$$BestOfferModelImplCopyWith<$Res>
   @useResult
   $Res call(
       {int total,
-      int originalTravelPrice,
-      int simplePricePerPerson,
-      bool flightIncluded,
-      TravelDateModel travelDate,
+      @JsonKey(name: 'original-travel-price') int originalTravelPrice,
+      @JsonKey(name: 'simple-price-per-person') int simplePricePerPerson,
+      @JsonKey(name: 'flight-included') bool flightIncluded,
+      @JsonKey(name: 'travel-date') TravelDateModel travelDate,
       RoomsModel rooms});
 
   @override
@@ -1088,10 +1119,11 @@ class __$$BestOfferModelImplCopyWithImpl<$Res>
 class _$BestOfferModelImpl implements _BestOfferModel {
   const _$BestOfferModelImpl(
       {required this.total,
-      required this.originalTravelPrice,
+      @JsonKey(name: 'original-travel-price') required this.originalTravelPrice,
+      @JsonKey(name: 'simple-price-per-person')
       required this.simplePricePerPerson,
-      required this.flightIncluded,
-      required this.travelDate,
+      @JsonKey(name: 'flight-included') required this.flightIncluded,
+      @JsonKey(name: 'travel-date') required this.travelDate,
       required this.rooms});
 
   factory _$BestOfferModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -1100,12 +1132,16 @@ class _$BestOfferModelImpl implements _BestOfferModel {
   @override
   final int total;
   @override
+  @JsonKey(name: 'original-travel-price')
   final int originalTravelPrice;
   @override
+  @JsonKey(name: 'simple-price-per-person')
   final int simplePricePerPerson;
   @override
+  @JsonKey(name: 'flight-included')
   final bool flightIncluded;
   @override
+  @JsonKey(name: 'travel-date')
   final TravelDateModel travelDate;
   @override
   final RoomsModel rooms;
@@ -1155,10 +1191,12 @@ class _$BestOfferModelImpl implements _BestOfferModel {
 abstract class _BestOfferModel implements BestOfferModel {
   const factory _BestOfferModel(
       {required final int total,
+      @JsonKey(name: 'original-travel-price')
       required final int originalTravelPrice,
+      @JsonKey(name: 'simple-price-per-person')
       required final int simplePricePerPerson,
-      required final bool flightIncluded,
-      required final TravelDateModel travelDate,
+      @JsonKey(name: 'flight-included') required final bool flightIncluded,
+      @JsonKey(name: 'travel-date') required final TravelDateModel travelDate,
       required final RoomsModel rooms}) = _$BestOfferModelImpl;
 
   factory _BestOfferModel.fromJson(Map<String, dynamic> json) =
@@ -1167,12 +1205,16 @@ abstract class _BestOfferModel implements BestOfferModel {
   @override
   int get total;
   @override
+  @JsonKey(name: 'original-travel-price')
   int get originalTravelPrice;
   @override
+  @JsonKey(name: 'simple-price-per-person')
   int get simplePricePerPerson;
   @override
+  @JsonKey(name: 'flight-included')
   bool get flightIncluded;
   @override
+  @JsonKey(name: 'travel-date')
   TravelDateModel get travelDate;
   @override
   RoomsModel get rooms;
@@ -1188,7 +1230,10 @@ TravelDateModel _$TravelDateModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TravelDateModel {
+  @JsonKey(name: 'departure-date')
   String get departureDate => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'return-date')
   String get returnDate => throw _privateConstructorUsedError;
   int get days => throw _privateConstructorUsedError;
   int get nights => throw _privateConstructorUsedError;
@@ -1205,7 +1250,11 @@ abstract class $TravelDateModelCopyWith<$Res> {
           TravelDateModel value, $Res Function(TravelDateModel) then) =
       _$TravelDateModelCopyWithImpl<$Res, TravelDateModel>;
   @useResult
-  $Res call({String departureDate, String returnDate, int days, int nights});
+  $Res call(
+      {@JsonKey(name: 'departure-date') String departureDate,
+      @JsonKey(name: 'return-date') String returnDate,
+      int days,
+      int nights});
 }
 
 /// @nodoc
@@ -1255,7 +1304,11 @@ abstract class _$$TravelDateModelImplCopyWith<$Res>
       __$$TravelDateModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String departureDate, String returnDate, int days, int nights});
+  $Res call(
+      {@JsonKey(name: 'departure-date') String departureDate,
+      @JsonKey(name: 'return-date') String returnDate,
+      int days,
+      int nights});
 }
 
 /// @nodoc
@@ -1299,8 +1352,8 @@ class __$$TravelDateModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TravelDateModelImpl implements _TravelDateModel {
   const _$TravelDateModelImpl(
-      {required this.departureDate,
-      required this.returnDate,
+      {@JsonKey(name: 'departure-date') required this.departureDate,
+      @JsonKey(name: 'return-date') required this.returnDate,
       required this.days,
       required this.nights});
 
@@ -1308,8 +1361,10 @@ class _$TravelDateModelImpl implements _TravelDateModel {
       _$$TravelDateModelImplFromJson(json);
 
   @override
+  @JsonKey(name: 'departure-date')
   final String departureDate;
   @override
+  @JsonKey(name: 'return-date')
   final String returnDate;
   @override
   final int days;
@@ -1356,8 +1411,8 @@ class _$TravelDateModelImpl implements _TravelDateModel {
 
 abstract class _TravelDateModel implements TravelDateModel {
   const factory _TravelDateModel(
-      {required final String departureDate,
-      required final String returnDate,
+      {@JsonKey(name: 'departure-date') required final String departureDate,
+      @JsonKey(name: 'return-date') required final String returnDate,
       required final int days,
       required final int nights}) = _$TravelDateModelImpl;
 
@@ -1365,8 +1420,10 @@ abstract class _TravelDateModel implements TravelDateModel {
       _$TravelDateModelImpl.fromJson;
 
   @override
+  @JsonKey(name: 'departure-date')
   String get departureDate;
   @override
+  @JsonKey(name: 'return-date')
   String get returnDate;
   @override
   int get days;
@@ -1384,7 +1441,10 @@ RoomsModel _$RoomsModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RoomsModel {
+  @JsonKey(name: 'overall')
   OverallRoomModel get overall => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'room-groups')
   List<RoomGroupModel> get roomGroups => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1399,7 +1459,9 @@ abstract class $RoomsModelCopyWith<$Res> {
           RoomsModel value, $Res Function(RoomsModel) then) =
       _$RoomsModelCopyWithImpl<$Res, RoomsModel>;
   @useResult
-  $Res call({OverallRoomModel overall, List<RoomGroupModel> roomGroups});
+  $Res call(
+      {@JsonKey(name: 'overall') OverallRoomModel overall,
+      @JsonKey(name: 'room-groups') List<RoomGroupModel> roomGroups});
 
   $OverallRoomModelCopyWith<$Res> get overall;
 }
@@ -1449,7 +1511,9 @@ abstract class _$$RoomsModelImplCopyWith<$Res>
       __$$RoomsModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({OverallRoomModel overall, List<RoomGroupModel> roomGroups});
+  $Res call(
+      {@JsonKey(name: 'overall') OverallRoomModel overall,
+      @JsonKey(name: 'room-groups') List<RoomGroupModel> roomGroups});
 
   @override
   $OverallRoomModelCopyWith<$Res> get overall;
@@ -1485,17 +1549,20 @@ class __$$RoomsModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$RoomsModelImpl implements _RoomsModel {
-  const _$RoomsModelImpl(
-      {required this.overall, required final List<RoomGroupModel> roomGroups})
+  const _$RoomsModelImpl({@JsonKey(name: 'overall') required this.overall,
+    @JsonKey(name: 'room-groups') required final List<
+        RoomGroupModel> roomGroups})
       : _roomGroups = roomGroups;
 
   factory _$RoomsModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$RoomsModelImplFromJson(json);
 
   @override
+  @JsonKey(name: 'overall')
   final OverallRoomModel overall;
   final List<RoomGroupModel> _roomGroups;
   @override
+  @JsonKey(name: 'room-groups')
   List<RoomGroupModel> get roomGroups {
     if (_roomGroups is EqualUnmodifiableListView) return _roomGroups;
     // ignore: implicit_dynamic_type
@@ -1538,15 +1605,18 @@ class _$RoomsModelImpl implements _RoomsModel {
 
 abstract class _RoomsModel implements RoomsModel {
   const factory _RoomsModel(
-      {required final OverallRoomModel overall,
+      {@JsonKey(name: 'overall') required final OverallRoomModel overall,
+      @JsonKey(name: 'room-groups')
       required final List<RoomGroupModel> roomGroups}) = _$RoomsModelImpl;
 
   factory _RoomsModel.fromJson(Map<String, dynamic> json) =
       _$RoomsModelImpl.fromJson;
 
   @override
+  @JsonKey(name: 'overall')
   OverallRoomModel get overall;
   @override
+  @JsonKey(name: 'room-groups')
   List<RoomGroupModel> get roomGroups;
   @override
   @JsonKey(ignore: true)
@@ -1562,8 +1632,14 @@ OverallRoomModel _$OverallRoomModelFromJson(Map<String, dynamic> json) {
 mixin _$OverallRoomModel {
   String get boarding => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'adult-count')
   int get adultCount => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'children-count')
   int get childrenCount => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'same-boarding')
   bool get sameBoarding => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1581,9 +1657,9 @@ abstract class $OverallRoomModelCopyWith<$Res> {
   $Res call(
       {String boarding,
       String name,
-      int adultCount,
-      int childrenCount,
-      bool sameBoarding});
+      @JsonKey(name: 'adult-count') int adultCount,
+      @JsonKey(name: 'children-count') int childrenCount,
+      @JsonKey(name: 'same-boarding') bool sameBoarding});
 }
 
 /// @nodoc
@@ -1641,9 +1717,9 @@ abstract class _$$OverallRoomModelImplCopyWith<$Res>
   $Res call(
       {String boarding,
       String name,
-      int adultCount,
-      int childrenCount,
-      bool sameBoarding});
+      @JsonKey(name: 'adult-count') int adultCount,
+      @JsonKey(name: 'children-count') int childrenCount,
+      @JsonKey(name: 'same-boarding') bool sameBoarding});
 }
 
 /// @nodoc
@@ -1694,9 +1770,9 @@ class _$OverallRoomModelImpl implements _OverallRoomModel {
   const _$OverallRoomModelImpl(
       {required this.boarding,
       required this.name,
-      required this.adultCount,
-      required this.childrenCount,
-      required this.sameBoarding});
+      @JsonKey(name: 'adult-count') required this.adultCount,
+      @JsonKey(name: 'children-count') required this.childrenCount,
+      @JsonKey(name: 'same-boarding') required this.sameBoarding});
 
   factory _$OverallRoomModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$OverallRoomModelImplFromJson(json);
@@ -1706,10 +1782,13 @@ class _$OverallRoomModelImpl implements _OverallRoomModel {
   @override
   final String name;
   @override
+  @JsonKey(name: 'adult-count')
   final int adultCount;
   @override
+  @JsonKey(name: 'children-count')
   final int childrenCount;
   @override
+  @JsonKey(name: 'same-boarding')
   final bool sameBoarding;
 
   @override
@@ -1754,12 +1833,12 @@ class _$OverallRoomModelImpl implements _OverallRoomModel {
 }
 
 abstract class _OverallRoomModel implements OverallRoomModel {
-  const factory _OverallRoomModel(
-      {required final String boarding,
-      required final String name,
-      required final int adultCount,
-      required final int childrenCount,
-      required final bool sameBoarding}) = _$OverallRoomModelImpl;
+  const factory _OverallRoomModel({required final String boarding,
+    required final String name,
+    @JsonKey(name: 'adult-count') required final int adultCount,
+    @JsonKey(name: 'children-count') required final int childrenCount,
+    @JsonKey(name: 'same-boarding') required final bool sameBoarding}) =
+  _$OverallRoomModelImpl;
 
   factory _OverallRoomModel.fromJson(Map<String, dynamic> json) =
       _$OverallRoomModelImpl.fromJson;
@@ -1769,10 +1848,13 @@ abstract class _OverallRoomModel implements OverallRoomModel {
   @override
   String get name;
   @override
+  @JsonKey(name: 'adult-count')
   int get adultCount;
   @override
+  @JsonKey(name: 'children-count')
   int get childrenCount;
   @override
+  @JsonKey(name: 'same-boarding')
   bool get sameBoarding;
   @override
   @JsonKey(ignore: true)

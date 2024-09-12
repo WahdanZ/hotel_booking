@@ -21,7 +21,6 @@ mixin _$HotelEvent {
     required TResult Function() fetchHotel,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetchHotel,
@@ -33,13 +32,11 @@ mixin _$HotelEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FetchHotel value) fetchHotel,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FetchHotel value)? fetchHotel,
@@ -507,7 +504,7 @@ class _$LoadedImpl implements _Loaded {
   @override
   List<HotelEntity> get hotels {
     if (_hotels is EqualUnmodifiableListView) return _hotels;
-// ignore: implicit_dynamic_type
+    // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_hotels);
   }
 

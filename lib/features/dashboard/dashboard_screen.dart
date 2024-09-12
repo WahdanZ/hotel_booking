@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hotel_booking/base/index.dart';
 import 'package:hotel_booking/di/injector.dart';
 import 'package:hotel_booking/features/hotel/presentation/manager/hotel_bloc.dart';
 import 'package:hotel_booking/generated/l10n.dart';
@@ -27,14 +26,19 @@ class MainShellPage extends StatelessWidget {
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: tabsRouter.activeIndex,
             onTap: tabsRouter.setActiveIndex,
-            items:  [
+            items: [
               BottomNavigationBarItem(
-                  icon: const Icon(Icons.home), label: S.of(context).tab_overview),
-              BottomNavigationBarItem(icon: const Icon(Icons.hotel), label: S.of(context).tab_hotels),
+                  icon: const Icon(Icons.home),
+                  label: S.of(context).tab_overview),
               BottomNavigationBarItem(
-                  icon: const Icon(Icons.favorite), label: S.of(context).tab_favorites),
+                  icon: const Icon(Icons.hotel),
+                  label: S.of(context).tab_hotels),
               BottomNavigationBarItem(
-                  icon: const Icon(Icons.person), label: S.of(context).tab_account),
+                  icon: const Icon(Icons.favorite),
+                  label: S.of(context).tab_favorites),
+              BottomNavigationBarItem(
+                  icon: const Icon(Icons.person),
+                  label: S.of(context).tab_account),
             ],
           ),
         );
@@ -49,37 +53,34 @@ class HotelsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Example static data for now
-    List<Map<String, dynamic>> hotels = [
-      {
-        "imageUrl": "https://via.placeholder.com/400x200",
-        "title": "Hotel AluaVillage Blue Beach",
-        "location": "Playa de Esquinzo, Fuerteventura, Spanien",
-        "price": "1.279,00",
-        "rating": 4.5,
-        "isFavorite": false,
-      },
-      // Add more hotels here
-    ];
-
     return Scaffold(
-      appBar: AppBar(title:  Text(S.of(context).hotels_page_title)),
+      appBar: AppBar(title: Text(S.of(context).hotels_page_title)),
       body: BlocBuilder<HotelBloc, HotelState>(
         bloc: inject<HotelBloc>()..add(const FetchHotel()),
         builder: (context, state) {
-          logger.i(state);
-          return ListView.builder(
-            itemBuilder: (context, index) {
-          return HotelCard(
-            imageUrl: hotels[0]["imageUrl"],
-            title: hotels[0]["title"],
-            location: hotels[0]["location"],
-            price: hotels[0]["price"],
-            rating: hotels[0]["rating"],
-            isFavorite: hotels[0]["isFavorite"],
-            onFavoriteToggle: () {},
-          );
-        },
+          return state.when(
+            initial: () => const Center(child: CircularProgressIndicator()),
+            loading: () => const Center(child: CircularProgressIndicator()),
+            loaded: (hotels) {
+              return ListView.builder(
+                itemCount: hotels.length,
+                itemBuilder: (context, index) {
+                  return HotelCard(
+                    imageUrl: hotels[index].images.first.large,
+                    title: hotels[index].name,
+                    location: hotels[index].destination,
+                    price:
+                        hotels[index].bestOffer.simplePricePerPerson.toString(),
+                    rating: hotels[index].ratingInfo.score,
+                    isFavorite: false,
+                    onFavoriteToggle: () {
+                      // Handle favorite logic
+                    },
+                  );
+                },
+              );
+            },
+            error: (message) => Center(child: Text(message)),
           );
         },
       ),
@@ -106,7 +107,7 @@ class FavoritesScreen extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: AppBar(title:  Text(S.of(context).favorite_page_title)),
+      appBar: AppBar(title: Text(S.of(context).favorite_page_title)),
       body: ListView.builder(
         itemCount: favorites.length,
         itemBuilder: (context, index) {
@@ -134,7 +135,7 @@ class OverviewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:  Text(S.of(context).overview_page_title)),
+      appBar: AppBar(title: Text(S.of(context).overview_page_title)),
       body: const Center(
         child: Text('Overview of Hotels and Services'),
       ),
@@ -149,7 +150,7 @@ class AccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:  Text(S.of(context).account_page_title)),
+      appBar: AppBar(title: Text(S.of(context).account_page_title)),
       body: const Center(
         child: Text('Account Details'),
       ),
