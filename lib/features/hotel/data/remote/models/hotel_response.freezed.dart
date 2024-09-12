@@ -168,12 +168,12 @@ mixin _$HotelModel {
   String get hotelId => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get destination => throw _privateConstructorUsedError;
-  List<HotelImage> get images => throw _privateConstructorUsedError;
-  RatingInfo? get ratingInfo => throw _privateConstructorUsedError;
-  BestOffer? get bestOffer => throw _privateConstructorUsedError;
+  List<HotelImageModel> get images => throw _privateConstructorUsedError;
+  RatingInfoModel? get ratingInfo => throw _privateConstructorUsedError;
+  BestOfferModel? get bestOffer => throw _privateConstructorUsedError;
   double get latitude => throw _privateConstructorUsedError;
   double get longitude => throw _privateConstructorUsedError;
-  Analytics? get analytics => throw _privateConstructorUsedError;
+  AnalyticsModel? get analytics => throw _privateConstructorUsedError;
   int get category => throw _privateConstructorUsedError;
   @JsonKey(name: 'category-type')
   String? get categoryType => throw _privateConstructorUsedError;
@@ -194,18 +194,18 @@ abstract class $HotelModelCopyWith<$Res> {
       {@JsonKey(name: 'hotel-id') String hotelId,
       String name,
       String destination,
-      List<HotelImage> images,
-      RatingInfo? ratingInfo,
-      BestOffer? bestOffer,
+      List<HotelImageModel> images,
+      RatingInfoModel? ratingInfo,
+      BestOfferModel? bestOffer,
       double latitude,
       double longitude,
-      Analytics? analytics,
+      AnalyticsModel? analytics,
       int category,
       @JsonKey(name: 'category-type') String? categoryType});
 
-  $RatingInfoCopyWith<$Res>? get ratingInfo;
-  $BestOfferCopyWith<$Res>? get bestOffer;
-  $AnalyticsCopyWith<$Res>? get analytics;
+  $RatingInfoModelCopyWith<$Res>? get ratingInfo;
+  $BestOfferModelCopyWith<$Res>? get bestOffer;
+  $AnalyticsModelCopyWith<$Res>? get analytics;
 }
 
 /// @nodoc
@@ -249,15 +249,15 @@ class _$HotelModelCopyWithImpl<$Res, $Val extends HotelModel>
       images: null == images
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
-              as List<HotelImage>,
+              as List<HotelImageModel>,
       ratingInfo: freezed == ratingInfo
           ? _value.ratingInfo
           : ratingInfo // ignore: cast_nullable_to_non_nullable
-              as RatingInfo?,
+              as RatingInfoModel?,
       bestOffer: freezed == bestOffer
           ? _value.bestOffer
           : bestOffer // ignore: cast_nullable_to_non_nullable
-              as BestOffer?,
+              as BestOfferModel?,
       latitude: null == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
@@ -269,7 +269,7 @@ class _$HotelModelCopyWithImpl<$Res, $Val extends HotelModel>
       analytics: freezed == analytics
           ? _value.analytics
           : analytics // ignore: cast_nullable_to_non_nullable
-              as Analytics?,
+              as AnalyticsModel?,
       category: null == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -283,36 +283,36 @@ class _$HotelModelCopyWithImpl<$Res, $Val extends HotelModel>
 
   @override
   @pragma('vm:prefer-inline')
-  $RatingInfoCopyWith<$Res>? get ratingInfo {
+  $RatingInfoModelCopyWith<$Res>? get ratingInfo {
     if (_value.ratingInfo == null) {
       return null;
     }
 
-    return $RatingInfoCopyWith<$Res>(_value.ratingInfo!, (value) {
+    return $RatingInfoModelCopyWith<$Res>(_value.ratingInfo!, (value) {
       return _then(_value.copyWith(ratingInfo: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $BestOfferCopyWith<$Res>? get bestOffer {
+  $BestOfferModelCopyWith<$Res>? get bestOffer {
     if (_value.bestOffer == null) {
       return null;
     }
 
-    return $BestOfferCopyWith<$Res>(_value.bestOffer!, (value) {
+    return $BestOfferModelCopyWith<$Res>(_value.bestOffer!, (value) {
       return _then(_value.copyWith(bestOffer: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $AnalyticsCopyWith<$Res>? get analytics {
+  $AnalyticsModelCopyWith<$Res>? get analytics {
     if (_value.analytics == null) {
       return null;
     }
 
-    return $AnalyticsCopyWith<$Res>(_value.analytics!, (value) {
+    return $AnalyticsModelCopyWith<$Res>(_value.analytics!, (value) {
       return _then(_value.copyWith(analytics: value) as $Val);
     });
   }
@@ -330,21 +330,21 @@ abstract class _$$HotelModelImplCopyWith<$Res>
       {@JsonKey(name: 'hotel-id') String hotelId,
       String name,
       String destination,
-      List<HotelImage> images,
-      RatingInfo? ratingInfo,
-      BestOffer? bestOffer,
+      List<HotelImageModel> images,
+      RatingInfoModel? ratingInfo,
+      BestOfferModel? bestOffer,
       double latitude,
       double longitude,
-      Analytics? analytics,
+      AnalyticsModel? analytics,
       int category,
       @JsonKey(name: 'category-type') String? categoryType});
 
   @override
-  $RatingInfoCopyWith<$Res>? get ratingInfo;
+  $RatingInfoModelCopyWith<$Res>? get ratingInfo;
   @override
-  $BestOfferCopyWith<$Res>? get bestOffer;
+  $BestOfferModelCopyWith<$Res>? get bestOffer;
   @override
-  $AnalyticsCopyWith<$Res>? get analytics;
+  $AnalyticsModelCopyWith<$Res>? get analytics;
 }
 
 /// @nodoc
@@ -386,15 +386,15 @@ class __$$HotelModelImplCopyWithImpl<$Res>
       images: null == images
           ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
-              as List<HotelImage>,
+              as List<HotelImageModel>,
       ratingInfo: freezed == ratingInfo
           ? _value.ratingInfo
           : ratingInfo // ignore: cast_nullable_to_non_nullable
-              as RatingInfo?,
+              as RatingInfoModel?,
       bestOffer: freezed == bestOffer
           ? _value.bestOffer
           : bestOffer // ignore: cast_nullable_to_non_nullable
-              as BestOffer?,
+              as BestOfferModel?,
       latitude: null == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
@@ -406,7 +406,7 @@ class __$$HotelModelImplCopyWithImpl<$Res>
       analytics: freezed == analytics
           ? _value.analytics
           : analytics // ignore: cast_nullable_to_non_nullable
-              as Analytics?,
+              as AnalyticsModel?,
       category: null == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -426,7 +426,7 @@ class _$HotelModelImpl implements _HotelModel {
       {@JsonKey(name: 'hotel-id') required this.hotelId,
       required this.name,
       required this.destination,
-      required final List<HotelImage> images,
+      required final List<HotelImageModel> images,
       this.ratingInfo,
       this.bestOffer,
       required this.latitude,
@@ -446,24 +446,24 @@ class _$HotelModelImpl implements _HotelModel {
   final String name;
   @override
   final String destination;
-  final List<HotelImage> _images;
+  final List<HotelImageModel> _images;
   @override
-  List<HotelImage> get images {
+  List<HotelImageModel> get images {
     if (_images is EqualUnmodifiableListView) return _images;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_images);
   }
 
   @override
-  final RatingInfo? ratingInfo;
+  final RatingInfoModel? ratingInfo;
   @override
-  final BestOffer? bestOffer;
+  final BestOfferModel? bestOffer;
   @override
   final double latitude;
   @override
   final double longitude;
   @override
-  final Analytics? analytics;
+  final AnalyticsModel? analytics;
   @override
   final int category;
   @override
@@ -536,12 +536,12 @@ abstract class _HotelModel implements HotelModel {
           {@JsonKey(name: 'hotel-id') required final String hotelId,
           required final String name,
           required final String destination,
-          required final List<HotelImage> images,
-          final RatingInfo? ratingInfo,
-          final BestOffer? bestOffer,
+          required final List<HotelImageModel> images,
+          final RatingInfoModel? ratingInfo,
+          final BestOfferModel? bestOffer,
           required final double latitude,
           required final double longitude,
-          final Analytics? analytics,
+          final AnalyticsModel? analytics,
           required final int category,
           @JsonKey(name: 'category-type') final String? categoryType}) =
       _$HotelModelImpl;
@@ -557,17 +557,17 @@ abstract class _HotelModel implements HotelModel {
   @override
   String get destination;
   @override
-  List<HotelImage> get images;
+  List<HotelImageModel> get images;
   @override
-  RatingInfo? get ratingInfo;
+  RatingInfoModel? get ratingInfo;
   @override
-  BestOffer? get bestOffer;
+  BestOfferModel? get bestOffer;
   @override
   double get latitude;
   @override
   double get longitude;
   @override
-  Analytics? get analytics;
+  AnalyticsModel? get analytics;
   @override
   int get category;
   @override
@@ -579,34 +579,34 @@ abstract class _HotelModel implements HotelModel {
       throw _privateConstructorUsedError;
 }
 
-HotelImage _$HotelImageFromJson(Map<String, dynamic> json) {
-  return _HotelImage.fromJson(json);
+HotelImageModel _$HotelImageModelFromJson(Map<String, dynamic> json) {
+  return _HotelImageModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$HotelImage {
+mixin _$HotelImageModel {
   String get large => throw _privateConstructorUsedError;
   String get small => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $HotelImageCopyWith<HotelImage> get copyWith =>
+  $HotelImageModelCopyWith<HotelImageModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HotelImageCopyWith<$Res> {
-  factory $HotelImageCopyWith(
-          HotelImage value, $Res Function(HotelImage) then) =
-      _$HotelImageCopyWithImpl<$Res, HotelImage>;
+abstract class $HotelImageModelCopyWith<$Res> {
+  factory $HotelImageModelCopyWith(
+          HotelImageModel value, $Res Function(HotelImageModel) then) =
+      _$HotelImageModelCopyWithImpl<$Res, HotelImageModel>;
   @useResult
   $Res call({String large, String small});
 }
 
 /// @nodoc
-class _$HotelImageCopyWithImpl<$Res, $Val extends HotelImage>
-    implements $HotelImageCopyWith<$Res> {
-  _$HotelImageCopyWithImpl(this._value, this._then);
+class _$HotelImageModelCopyWithImpl<$Res, $Val extends HotelImageModel>
+    implements $HotelImageModelCopyWith<$Res> {
+  _$HotelImageModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -633,22 +633,22 @@ class _$HotelImageCopyWithImpl<$Res, $Val extends HotelImage>
 }
 
 /// @nodoc
-abstract class _$$HotelImageImplCopyWith<$Res>
-    implements $HotelImageCopyWith<$Res> {
-  factory _$$HotelImageImplCopyWith(
-          _$HotelImageImpl value, $Res Function(_$HotelImageImpl) then) =
-      __$$HotelImageImplCopyWithImpl<$Res>;
+abstract class _$$HotelImageModelImplCopyWith<$Res>
+    implements $HotelImageModelCopyWith<$Res> {
+  factory _$$HotelImageModelImplCopyWith(_$HotelImageModelImpl value,
+          $Res Function(_$HotelImageModelImpl) then) =
+      __$$HotelImageModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String large, String small});
 }
 
 /// @nodoc
-class __$$HotelImageImplCopyWithImpl<$Res>
-    extends _$HotelImageCopyWithImpl<$Res, _$HotelImageImpl>
-    implements _$$HotelImageImplCopyWith<$Res> {
-  __$$HotelImageImplCopyWithImpl(
-      _$HotelImageImpl _value, $Res Function(_$HotelImageImpl) _then)
+class __$$HotelImageModelImplCopyWithImpl<$Res>
+    extends _$HotelImageModelCopyWithImpl<$Res, _$HotelImageModelImpl>
+    implements _$$HotelImageModelImplCopyWith<$Res> {
+  __$$HotelImageModelImplCopyWithImpl(
+      _$HotelImageModelImpl _value, $Res Function(_$HotelImageModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -657,7 +657,7 @@ class __$$HotelImageImplCopyWithImpl<$Res>
     Object? large = null,
     Object? small = null,
   }) {
-    return _then(_$HotelImageImpl(
+    return _then(_$HotelImageModelImpl(
       large: null == large
           ? _value.large
           : large // ignore: cast_nullable_to_non_nullable
@@ -672,11 +672,11 @@ class __$$HotelImageImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$HotelImageImpl implements _HotelImage {
-  const _$HotelImageImpl({required this.large, required this.small});
+class _$HotelImageModelImpl implements _HotelImageModel {
+  const _$HotelImageModelImpl({required this.large, required this.small});
 
-  factory _$HotelImageImpl.fromJson(Map<String, dynamic> json) =>
-      _$$HotelImageImplFromJson(json);
+  factory _$HotelImageModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$HotelImageModelImplFromJson(json);
 
   @override
   final String large;
@@ -685,14 +685,14 @@ class _$HotelImageImpl implements _HotelImage {
 
   @override
   String toString() {
-    return 'HotelImage(large: $large, small: $small)';
+    return 'HotelImageModel(large: $large, small: $small)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HotelImageImpl &&
+            other is _$HotelImageModelImpl &&
             (identical(other.large, large) || other.large == large) &&
             (identical(other.small, small) || other.small == small));
   }
@@ -704,24 +704,25 @@ class _$HotelImageImpl implements _HotelImage {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$HotelImageImplCopyWith<_$HotelImageImpl> get copyWith =>
-      __$$HotelImageImplCopyWithImpl<_$HotelImageImpl>(this, _$identity);
+  _$$HotelImageModelImplCopyWith<_$HotelImageModelImpl> get copyWith =>
+      __$$HotelImageModelImplCopyWithImpl<_$HotelImageModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$HotelImageImplToJson(
+    return _$$HotelImageModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _HotelImage implements HotelImage {
-  const factory _HotelImage(
+abstract class _HotelImageModel implements HotelImageModel {
+  const factory _HotelImageModel(
       {required final String large,
-      required final String small}) = _$HotelImageImpl;
+      required final String small}) = _$HotelImageModelImpl;
 
-  factory _HotelImage.fromJson(Map<String, dynamic> json) =
-      _$HotelImageImpl.fromJson;
+  factory _HotelImageModel.fromJson(Map<String, dynamic> json) =
+      _$HotelImageModelImpl.fromJson;
 
   @override
   String get large;
@@ -729,39 +730,39 @@ abstract class _HotelImage implements HotelImage {
   String get small;
   @override
   @JsonKey(ignore: true)
-  _$$HotelImageImplCopyWith<_$HotelImageImpl> get copyWith =>
+  _$$HotelImageModelImplCopyWith<_$HotelImageModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-RatingInfo _$RatingInfoFromJson(Map<String, dynamic> json) {
-  return _RatingInfo.fromJson(json);
+RatingInfoModel _$RatingInfoModelFromJson(Map<String, dynamic> json) {
+  return _RatingInfoModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$RatingInfo {
+mixin _$RatingInfoModel {
   double get score => throw _privateConstructorUsedError;
   int get reviewsCount => throw _privateConstructorUsedError;
   String get scoreDescription => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RatingInfoCopyWith<RatingInfo> get copyWith =>
+  $RatingInfoModelCopyWith<RatingInfoModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RatingInfoCopyWith<$Res> {
-  factory $RatingInfoCopyWith(
-          RatingInfo value, $Res Function(RatingInfo) then) =
-      _$RatingInfoCopyWithImpl<$Res, RatingInfo>;
+abstract class $RatingInfoModelCopyWith<$Res> {
+  factory $RatingInfoModelCopyWith(
+          RatingInfoModel value, $Res Function(RatingInfoModel) then) =
+      _$RatingInfoModelCopyWithImpl<$Res, RatingInfoModel>;
   @useResult
   $Res call({double score, int reviewsCount, String scoreDescription});
 }
 
 /// @nodoc
-class _$RatingInfoCopyWithImpl<$Res, $Val extends RatingInfo>
-    implements $RatingInfoCopyWith<$Res> {
-  _$RatingInfoCopyWithImpl(this._value, this._then);
+class _$RatingInfoModelCopyWithImpl<$Res, $Val extends RatingInfoModel>
+    implements $RatingInfoModelCopyWith<$Res> {
+  _$RatingInfoModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -793,22 +794,22 @@ class _$RatingInfoCopyWithImpl<$Res, $Val extends RatingInfo>
 }
 
 /// @nodoc
-abstract class _$$RatingInfoImplCopyWith<$Res>
-    implements $RatingInfoCopyWith<$Res> {
-  factory _$$RatingInfoImplCopyWith(
-          _$RatingInfoImpl value, $Res Function(_$RatingInfoImpl) then) =
-      __$$RatingInfoImplCopyWithImpl<$Res>;
+abstract class _$$RatingInfoModelImplCopyWith<$Res>
+    implements $RatingInfoModelCopyWith<$Res> {
+  factory _$$RatingInfoModelImplCopyWith(_$RatingInfoModelImpl value,
+          $Res Function(_$RatingInfoModelImpl) then) =
+      __$$RatingInfoModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({double score, int reviewsCount, String scoreDescription});
 }
 
 /// @nodoc
-class __$$RatingInfoImplCopyWithImpl<$Res>
-    extends _$RatingInfoCopyWithImpl<$Res, _$RatingInfoImpl>
-    implements _$$RatingInfoImplCopyWith<$Res> {
-  __$$RatingInfoImplCopyWithImpl(
-      _$RatingInfoImpl _value, $Res Function(_$RatingInfoImpl) _then)
+class __$$RatingInfoModelImplCopyWithImpl<$Res>
+    extends _$RatingInfoModelCopyWithImpl<$Res, _$RatingInfoModelImpl>
+    implements _$$RatingInfoModelImplCopyWith<$Res> {
+  __$$RatingInfoModelImplCopyWithImpl(
+      _$RatingInfoModelImpl _value, $Res Function(_$RatingInfoModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -818,7 +819,7 @@ class __$$RatingInfoImplCopyWithImpl<$Res>
     Object? reviewsCount = null,
     Object? scoreDescription = null,
   }) {
-    return _then(_$RatingInfoImpl(
+    return _then(_$RatingInfoModelImpl(
       score: null == score
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
@@ -837,14 +838,14 @@ class __$$RatingInfoImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$RatingInfoImpl implements _RatingInfo {
-  const _$RatingInfoImpl(
+class _$RatingInfoModelImpl implements _RatingInfoModel {
+  const _$RatingInfoModelImpl(
       {required this.score,
       required this.reviewsCount,
       required this.scoreDescription});
 
-  factory _$RatingInfoImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RatingInfoImplFromJson(json);
+  factory _$RatingInfoModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RatingInfoModelImplFromJson(json);
 
   @override
   final double score;
@@ -855,14 +856,14 @@ class _$RatingInfoImpl implements _RatingInfo {
 
   @override
   String toString() {
-    return 'RatingInfo(score: $score, reviewsCount: $reviewsCount, scoreDescription: $scoreDescription)';
+    return 'RatingInfoModel(score: $score, reviewsCount: $reviewsCount, scoreDescription: $scoreDescription)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RatingInfoImpl &&
+            other is _$RatingInfoModelImpl &&
             (identical(other.score, score) || other.score == score) &&
             (identical(other.reviewsCount, reviewsCount) ||
                 other.reviewsCount == reviewsCount) &&
@@ -878,25 +879,26 @@ class _$RatingInfoImpl implements _RatingInfo {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RatingInfoImplCopyWith<_$RatingInfoImpl> get copyWith =>
-      __$$RatingInfoImplCopyWithImpl<_$RatingInfoImpl>(this, _$identity);
+  _$$RatingInfoModelImplCopyWith<_$RatingInfoModelImpl> get copyWith =>
+      __$$RatingInfoModelImplCopyWithImpl<_$RatingInfoModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RatingInfoImplToJson(
+    return _$$RatingInfoModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _RatingInfo implements RatingInfo {
-  const factory _RatingInfo(
+abstract class _RatingInfoModel implements RatingInfoModel {
+  const factory _RatingInfoModel(
       {required final double score,
       required final int reviewsCount,
-      required final String scoreDescription}) = _$RatingInfoImpl;
+      required final String scoreDescription}) = _$RatingInfoModelImpl;
 
-  factory _RatingInfo.fromJson(Map<String, dynamic> json) =
-      _$RatingInfoImpl.fromJson;
+  factory _RatingInfoModel.fromJson(Map<String, dynamic> json) =
+      _$RatingInfoModelImpl.fromJson;
 
   @override
   double get score;
@@ -906,50 +908,51 @@ abstract class _RatingInfo implements RatingInfo {
   String get scoreDescription;
   @override
   @JsonKey(ignore: true)
-  _$$RatingInfoImplCopyWith<_$RatingInfoImpl> get copyWith =>
+  _$$RatingInfoModelImplCopyWith<_$RatingInfoModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-BestOffer _$BestOfferFromJson(Map<String, dynamic> json) {
-  return _BestOffer.fromJson(json);
+BestOfferModel _$BestOfferModelFromJson(Map<String, dynamic> json) {
+  return _BestOfferModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$BestOffer {
+mixin _$BestOfferModel {
   int get total => throw _privateConstructorUsedError;
   int get originalTravelPrice => throw _privateConstructorUsedError;
   int get simplePricePerPerson => throw _privateConstructorUsedError;
   bool get flightIncluded => throw _privateConstructorUsedError;
-  TravelDate get travelDate => throw _privateConstructorUsedError;
-  Rooms get rooms => throw _privateConstructorUsedError;
+  TravelDateModel get travelDate => throw _privateConstructorUsedError;
+  RoomsModel get rooms => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $BestOfferCopyWith<BestOffer> get copyWith =>
+  $BestOfferModelCopyWith<BestOfferModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BestOfferCopyWith<$Res> {
-  factory $BestOfferCopyWith(BestOffer value, $Res Function(BestOffer) then) =
-      _$BestOfferCopyWithImpl<$Res, BestOffer>;
+abstract class $BestOfferModelCopyWith<$Res> {
+  factory $BestOfferModelCopyWith(
+          BestOfferModel value, $Res Function(BestOfferModel) then) =
+      _$BestOfferModelCopyWithImpl<$Res, BestOfferModel>;
   @useResult
   $Res call(
       {int total,
       int originalTravelPrice,
       int simplePricePerPerson,
       bool flightIncluded,
-      TravelDate travelDate,
-      Rooms rooms});
+      TravelDateModel travelDate,
+      RoomsModel rooms});
 
-  $TravelDateCopyWith<$Res> get travelDate;
-  $RoomsCopyWith<$Res> get rooms;
+  $TravelDateModelCopyWith<$Res> get travelDate;
+  $RoomsModelCopyWith<$Res> get rooms;
 }
 
 /// @nodoc
-class _$BestOfferCopyWithImpl<$Res, $Val extends BestOffer>
-    implements $BestOfferCopyWith<$Res> {
-  _$BestOfferCopyWithImpl(this._value, this._then);
+class _$BestOfferModelCopyWithImpl<$Res, $Val extends BestOfferModel>
+    implements $BestOfferModelCopyWith<$Res> {
+  _$BestOfferModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -986,37 +989,37 @@ class _$BestOfferCopyWithImpl<$Res, $Val extends BestOffer>
       travelDate: null == travelDate
           ? _value.travelDate
           : travelDate // ignore: cast_nullable_to_non_nullable
-              as TravelDate,
+              as TravelDateModel,
       rooms: null == rooms
           ? _value.rooms
           : rooms // ignore: cast_nullable_to_non_nullable
-              as Rooms,
+              as RoomsModel,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $TravelDateCopyWith<$Res> get travelDate {
-    return $TravelDateCopyWith<$Res>(_value.travelDate, (value) {
+  $TravelDateModelCopyWith<$Res> get travelDate {
+    return $TravelDateModelCopyWith<$Res>(_value.travelDate, (value) {
       return _then(_value.copyWith(travelDate: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $RoomsCopyWith<$Res> get rooms {
-    return $RoomsCopyWith<$Res>(_value.rooms, (value) {
+  $RoomsModelCopyWith<$Res> get rooms {
+    return $RoomsModelCopyWith<$Res>(_value.rooms, (value) {
       return _then(_value.copyWith(rooms: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$BestOfferImplCopyWith<$Res>
-    implements $BestOfferCopyWith<$Res> {
-  factory _$$BestOfferImplCopyWith(
-          _$BestOfferImpl value, $Res Function(_$BestOfferImpl) then) =
-      __$$BestOfferImplCopyWithImpl<$Res>;
+abstract class _$$BestOfferModelImplCopyWith<$Res>
+    implements $BestOfferModelCopyWith<$Res> {
+  factory _$$BestOfferModelImplCopyWith(_$BestOfferModelImpl value,
+          $Res Function(_$BestOfferModelImpl) then) =
+      __$$BestOfferModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1024,21 +1027,21 @@ abstract class _$$BestOfferImplCopyWith<$Res>
       int originalTravelPrice,
       int simplePricePerPerson,
       bool flightIncluded,
-      TravelDate travelDate,
-      Rooms rooms});
+      TravelDateModel travelDate,
+      RoomsModel rooms});
 
   @override
-  $TravelDateCopyWith<$Res> get travelDate;
+  $TravelDateModelCopyWith<$Res> get travelDate;
   @override
-  $RoomsCopyWith<$Res> get rooms;
+  $RoomsModelCopyWith<$Res> get rooms;
 }
 
 /// @nodoc
-class __$$BestOfferImplCopyWithImpl<$Res>
-    extends _$BestOfferCopyWithImpl<$Res, _$BestOfferImpl>
-    implements _$$BestOfferImplCopyWith<$Res> {
-  __$$BestOfferImplCopyWithImpl(
-      _$BestOfferImpl _value, $Res Function(_$BestOfferImpl) _then)
+class __$$BestOfferModelImplCopyWithImpl<$Res>
+    extends _$BestOfferModelCopyWithImpl<$Res, _$BestOfferModelImpl>
+    implements _$$BestOfferModelImplCopyWith<$Res> {
+  __$$BestOfferModelImplCopyWithImpl(
+      _$BestOfferModelImpl _value, $Res Function(_$BestOfferModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1051,7 +1054,7 @@ class __$$BestOfferImplCopyWithImpl<$Res>
     Object? travelDate = null,
     Object? rooms = null,
   }) {
-    return _then(_$BestOfferImpl(
+    return _then(_$BestOfferModelImpl(
       total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
@@ -1071,19 +1074,19 @@ class __$$BestOfferImplCopyWithImpl<$Res>
       travelDate: null == travelDate
           ? _value.travelDate
           : travelDate // ignore: cast_nullable_to_non_nullable
-              as TravelDate,
+              as TravelDateModel,
       rooms: null == rooms
           ? _value.rooms
           : rooms // ignore: cast_nullable_to_non_nullable
-              as Rooms,
+              as RoomsModel,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$BestOfferImpl implements _BestOffer {
-  const _$BestOfferImpl(
+class _$BestOfferModelImpl implements _BestOfferModel {
+  const _$BestOfferModelImpl(
       {required this.total,
       required this.originalTravelPrice,
       required this.simplePricePerPerson,
@@ -1091,8 +1094,8 @@ class _$BestOfferImpl implements _BestOffer {
       required this.travelDate,
       required this.rooms});
 
-  factory _$BestOfferImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BestOfferImplFromJson(json);
+  factory _$BestOfferModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BestOfferModelImplFromJson(json);
 
   @override
   final int total;
@@ -1103,20 +1106,20 @@ class _$BestOfferImpl implements _BestOffer {
   @override
   final bool flightIncluded;
   @override
-  final TravelDate travelDate;
+  final TravelDateModel travelDate;
   @override
-  final Rooms rooms;
+  final RoomsModel rooms;
 
   @override
   String toString() {
-    return 'BestOffer(total: $total, originalTravelPrice: $originalTravelPrice, simplePricePerPerson: $simplePricePerPerson, flightIncluded: $flightIncluded, travelDate: $travelDate, rooms: $rooms)';
+    return 'BestOfferModel(total: $total, originalTravelPrice: $originalTravelPrice, simplePricePerPerson: $simplePricePerPerson, flightIncluded: $flightIncluded, travelDate: $travelDate, rooms: $rooms)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BestOfferImpl &&
+            other is _$BestOfferModelImpl &&
             (identical(other.total, total) || other.total == total) &&
             (identical(other.originalTravelPrice, originalTravelPrice) ||
                 other.originalTravelPrice == originalTravelPrice) &&
@@ -1137,28 +1140,29 @@ class _$BestOfferImpl implements _BestOffer {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$BestOfferImplCopyWith<_$BestOfferImpl> get copyWith =>
-      __$$BestOfferImplCopyWithImpl<_$BestOfferImpl>(this, _$identity);
+  _$$BestOfferModelImplCopyWith<_$BestOfferModelImpl> get copyWith =>
+      __$$BestOfferModelImplCopyWithImpl<_$BestOfferModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$BestOfferImplToJson(
+    return _$$BestOfferModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _BestOffer implements BestOffer {
-  const factory _BestOffer(
+abstract class _BestOfferModel implements BestOfferModel {
+  const factory _BestOfferModel(
       {required final int total,
       required final int originalTravelPrice,
       required final int simplePricePerPerson,
       required final bool flightIncluded,
-      required final TravelDate travelDate,
-      required final Rooms rooms}) = _$BestOfferImpl;
+      required final TravelDateModel travelDate,
+      required final RoomsModel rooms}) = _$BestOfferModelImpl;
 
-  factory _BestOffer.fromJson(Map<String, dynamic> json) =
-      _$BestOfferImpl.fromJson;
+  factory _BestOfferModel.fromJson(Map<String, dynamic> json) =
+      _$BestOfferModelImpl.fromJson;
 
   @override
   int get total;
@@ -1169,21 +1173,21 @@ abstract class _BestOffer implements BestOffer {
   @override
   bool get flightIncluded;
   @override
-  TravelDate get travelDate;
+  TravelDateModel get travelDate;
   @override
-  Rooms get rooms;
+  RoomsModel get rooms;
   @override
   @JsonKey(ignore: true)
-  _$$BestOfferImplCopyWith<_$BestOfferImpl> get copyWith =>
+  _$$BestOfferModelImplCopyWith<_$BestOfferModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-TravelDate _$TravelDateFromJson(Map<String, dynamic> json) {
-  return _TravelDate.fromJson(json);
+TravelDateModel _$TravelDateModelFromJson(Map<String, dynamic> json) {
+  return _TravelDateModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$TravelDate {
+mixin _$TravelDateModel {
   String get departureDate => throw _privateConstructorUsedError;
   String get returnDate => throw _privateConstructorUsedError;
   int get days => throw _privateConstructorUsedError;
@@ -1191,23 +1195,23 @@ mixin _$TravelDate {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TravelDateCopyWith<TravelDate> get copyWith =>
+  $TravelDateModelCopyWith<TravelDateModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TravelDateCopyWith<$Res> {
-  factory $TravelDateCopyWith(
-          TravelDate value, $Res Function(TravelDate) then) =
-      _$TravelDateCopyWithImpl<$Res, TravelDate>;
+abstract class $TravelDateModelCopyWith<$Res> {
+  factory $TravelDateModelCopyWith(
+          TravelDateModel value, $Res Function(TravelDateModel) then) =
+      _$TravelDateModelCopyWithImpl<$Res, TravelDateModel>;
   @useResult
   $Res call({String departureDate, String returnDate, int days, int nights});
 }
 
 /// @nodoc
-class _$TravelDateCopyWithImpl<$Res, $Val extends TravelDate>
-    implements $TravelDateCopyWith<$Res> {
-  _$TravelDateCopyWithImpl(this._value, this._then);
+class _$TravelDateModelCopyWithImpl<$Res, $Val extends TravelDateModel>
+    implements $TravelDateModelCopyWith<$Res> {
+  _$TravelDateModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -1244,22 +1248,22 @@ class _$TravelDateCopyWithImpl<$Res, $Val extends TravelDate>
 }
 
 /// @nodoc
-abstract class _$$TravelDateImplCopyWith<$Res>
-    implements $TravelDateCopyWith<$Res> {
-  factory _$$TravelDateImplCopyWith(
-          _$TravelDateImpl value, $Res Function(_$TravelDateImpl) then) =
-      __$$TravelDateImplCopyWithImpl<$Res>;
+abstract class _$$TravelDateModelImplCopyWith<$Res>
+    implements $TravelDateModelCopyWith<$Res> {
+  factory _$$TravelDateModelImplCopyWith(_$TravelDateModelImpl value,
+          $Res Function(_$TravelDateModelImpl) then) =
+      __$$TravelDateModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String departureDate, String returnDate, int days, int nights});
 }
 
 /// @nodoc
-class __$$TravelDateImplCopyWithImpl<$Res>
-    extends _$TravelDateCopyWithImpl<$Res, _$TravelDateImpl>
-    implements _$$TravelDateImplCopyWith<$Res> {
-  __$$TravelDateImplCopyWithImpl(
-      _$TravelDateImpl _value, $Res Function(_$TravelDateImpl) _then)
+class __$$TravelDateModelImplCopyWithImpl<$Res>
+    extends _$TravelDateModelCopyWithImpl<$Res, _$TravelDateModelImpl>
+    implements _$$TravelDateModelImplCopyWith<$Res> {
+  __$$TravelDateModelImplCopyWithImpl(
+      _$TravelDateModelImpl _value, $Res Function(_$TravelDateModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1270,7 +1274,7 @@ class __$$TravelDateImplCopyWithImpl<$Res>
     Object? days = null,
     Object? nights = null,
   }) {
-    return _then(_$TravelDateImpl(
+    return _then(_$TravelDateModelImpl(
       departureDate: null == departureDate
           ? _value.departureDate
           : departureDate // ignore: cast_nullable_to_non_nullable
@@ -1293,15 +1297,15 @@ class __$$TravelDateImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TravelDateImpl implements _TravelDate {
-  const _$TravelDateImpl(
+class _$TravelDateModelImpl implements _TravelDateModel {
+  const _$TravelDateModelImpl(
       {required this.departureDate,
       required this.returnDate,
       required this.days,
       required this.nights});
 
-  factory _$TravelDateImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TravelDateImplFromJson(json);
+  factory _$TravelDateModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TravelDateModelImplFromJson(json);
 
   @override
   final String departureDate;
@@ -1314,14 +1318,14 @@ class _$TravelDateImpl implements _TravelDate {
 
   @override
   String toString() {
-    return 'TravelDate(departureDate: $departureDate, returnDate: $returnDate, days: $days, nights: $nights)';
+    return 'TravelDateModel(departureDate: $departureDate, returnDate: $returnDate, days: $days, nights: $nights)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TravelDateImpl &&
+            other is _$TravelDateModelImpl &&
             (identical(other.departureDate, departureDate) ||
                 other.departureDate == departureDate) &&
             (identical(other.returnDate, returnDate) ||
@@ -1338,26 +1342,27 @@ class _$TravelDateImpl implements _TravelDate {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TravelDateImplCopyWith<_$TravelDateImpl> get copyWith =>
-      __$$TravelDateImplCopyWithImpl<_$TravelDateImpl>(this, _$identity);
+  _$$TravelDateModelImplCopyWith<_$TravelDateModelImpl> get copyWith =>
+      __$$TravelDateModelImplCopyWithImpl<_$TravelDateModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$TravelDateImplToJson(
+    return _$$TravelDateModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _TravelDate implements TravelDate {
-  const factory _TravelDate(
+abstract class _TravelDateModel implements TravelDateModel {
+  const factory _TravelDateModel(
       {required final String departureDate,
       required final String returnDate,
       required final int days,
-      required final int nights}) = _$TravelDateImpl;
+      required final int nights}) = _$TravelDateModelImpl;
 
-  factory _TravelDate.fromJson(Map<String, dynamic> json) =
-      _$TravelDateImpl.fromJson;
+  factory _TravelDateModel.fromJson(Map<String, dynamic> json) =
+      _$TravelDateModelImpl.fromJson;
 
   @override
   String get departureDate;
@@ -1369,38 +1374,40 @@ abstract class _TravelDate implements TravelDate {
   int get nights;
   @override
   @JsonKey(ignore: true)
-  _$$TravelDateImplCopyWith<_$TravelDateImpl> get copyWith =>
+  _$$TravelDateModelImplCopyWith<_$TravelDateModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-Rooms _$RoomsFromJson(Map<String, dynamic> json) {
-  return _Rooms.fromJson(json);
+RoomsModel _$RoomsModelFromJson(Map<String, dynamic> json) {
+  return _RoomsModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Rooms {
-  OverallRoom get overall => throw _privateConstructorUsedError;
-  List<RoomGroup> get roomGroups => throw _privateConstructorUsedError;
+mixin _$RoomsModel {
+  OverallRoomModel get overall => throw _privateConstructorUsedError;
+  List<RoomGroupModel> get roomGroups => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RoomsCopyWith<Rooms> get copyWith => throw _privateConstructorUsedError;
+  $RoomsModelCopyWith<RoomsModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RoomsCopyWith<$Res> {
-  factory $RoomsCopyWith(Rooms value, $Res Function(Rooms) then) =
-      _$RoomsCopyWithImpl<$Res, Rooms>;
+abstract class $RoomsModelCopyWith<$Res> {
+  factory $RoomsModelCopyWith(
+          RoomsModel value, $Res Function(RoomsModel) then) =
+      _$RoomsModelCopyWithImpl<$Res, RoomsModel>;
   @useResult
-  $Res call({OverallRoom overall, List<RoomGroup> roomGroups});
+  $Res call({OverallRoomModel overall, List<RoomGroupModel> roomGroups});
 
-  $OverallRoomCopyWith<$Res> get overall;
+  $OverallRoomModelCopyWith<$Res> get overall;
 }
 
 /// @nodoc
-class _$RoomsCopyWithImpl<$Res, $Val extends Rooms>
-    implements $RoomsCopyWith<$Res> {
-  _$RoomsCopyWithImpl(this._value, this._then);
+class _$RoomsModelCopyWithImpl<$Res, $Val extends RoomsModel>
+    implements $RoomsModelCopyWith<$Res> {
+  _$RoomsModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -1417,42 +1424,43 @@ class _$RoomsCopyWithImpl<$Res, $Val extends Rooms>
       overall: null == overall
           ? _value.overall
           : overall // ignore: cast_nullable_to_non_nullable
-              as OverallRoom,
+              as OverallRoomModel,
       roomGroups: null == roomGroups
           ? _value.roomGroups
           : roomGroups // ignore: cast_nullable_to_non_nullable
-              as List<RoomGroup>,
+              as List<RoomGroupModel>,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $OverallRoomCopyWith<$Res> get overall {
-    return $OverallRoomCopyWith<$Res>(_value.overall, (value) {
+  $OverallRoomModelCopyWith<$Res> get overall {
+    return $OverallRoomModelCopyWith<$Res>(_value.overall, (value) {
       return _then(_value.copyWith(overall: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$RoomsImplCopyWith<$Res> implements $RoomsCopyWith<$Res> {
-  factory _$$RoomsImplCopyWith(
-          _$RoomsImpl value, $Res Function(_$RoomsImpl) then) =
-      __$$RoomsImplCopyWithImpl<$Res>;
+abstract class _$$RoomsModelImplCopyWith<$Res>
+    implements $RoomsModelCopyWith<$Res> {
+  factory _$$RoomsModelImplCopyWith(
+          _$RoomsModelImpl value, $Res Function(_$RoomsModelImpl) then) =
+      __$$RoomsModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({OverallRoom overall, List<RoomGroup> roomGroups});
+  $Res call({OverallRoomModel overall, List<RoomGroupModel> roomGroups});
 
   @override
-  $OverallRoomCopyWith<$Res> get overall;
+  $OverallRoomModelCopyWith<$Res> get overall;
 }
 
 /// @nodoc
-class __$$RoomsImplCopyWithImpl<$Res>
-    extends _$RoomsCopyWithImpl<$Res, _$RoomsImpl>
-    implements _$$RoomsImplCopyWith<$Res> {
-  __$$RoomsImplCopyWithImpl(
-      _$RoomsImpl _value, $Res Function(_$RoomsImpl) _then)
+class __$$RoomsModelImplCopyWithImpl<$Res>
+    extends _$RoomsModelCopyWithImpl<$Res, _$RoomsModelImpl>
+    implements _$$RoomsModelImplCopyWith<$Res> {
+  __$$RoomsModelImplCopyWithImpl(
+      _$RoomsModelImpl _value, $Res Function(_$RoomsModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1461,34 +1469,34 @@ class __$$RoomsImplCopyWithImpl<$Res>
     Object? overall = null,
     Object? roomGroups = null,
   }) {
-    return _then(_$RoomsImpl(
+    return _then(_$RoomsModelImpl(
       overall: null == overall
           ? _value.overall
           : overall // ignore: cast_nullable_to_non_nullable
-              as OverallRoom,
+              as OverallRoomModel,
       roomGroups: null == roomGroups
           ? _value._roomGroups
           : roomGroups // ignore: cast_nullable_to_non_nullable
-              as List<RoomGroup>,
+              as List<RoomGroupModel>,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$RoomsImpl implements _Rooms {
-  const _$RoomsImpl(
-      {required this.overall, required final List<RoomGroup> roomGroups})
+class _$RoomsModelImpl implements _RoomsModel {
+  const _$RoomsModelImpl(
+      {required this.overall, required final List<RoomGroupModel> roomGroups})
       : _roomGroups = roomGroups;
 
-  factory _$RoomsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RoomsImplFromJson(json);
+  factory _$RoomsModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RoomsModelImplFromJson(json);
 
   @override
-  final OverallRoom overall;
-  final List<RoomGroup> _roomGroups;
+  final OverallRoomModel overall;
+  final List<RoomGroupModel> _roomGroups;
   @override
-  List<RoomGroup> get roomGroups {
+  List<RoomGroupModel> get roomGroups {
     if (_roomGroups is EqualUnmodifiableListView) return _roomGroups;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_roomGroups);
@@ -1496,14 +1504,14 @@ class _$RoomsImpl implements _Rooms {
 
   @override
   String toString() {
-    return 'Rooms(overall: $overall, roomGroups: $roomGroups)';
+    return 'RoomsModel(overall: $overall, roomGroups: $roomGroups)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RoomsImpl &&
+            other is _$RoomsModelImpl &&
             (identical(other.overall, overall) || other.overall == overall) &&
             const DeepCollectionEquality()
                 .equals(other._roomGroups, _roomGroups));
@@ -1517,40 +1525,41 @@ class _$RoomsImpl implements _Rooms {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RoomsImplCopyWith<_$RoomsImpl> get copyWith =>
-      __$$RoomsImplCopyWithImpl<_$RoomsImpl>(this, _$identity);
+  _$$RoomsModelImplCopyWith<_$RoomsModelImpl> get copyWith =>
+      __$$RoomsModelImplCopyWithImpl<_$RoomsModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RoomsImplToJson(
+    return _$$RoomsModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _Rooms implements Rooms {
-  const factory _Rooms(
-      {required final OverallRoom overall,
-      required final List<RoomGroup> roomGroups}) = _$RoomsImpl;
+abstract class _RoomsModel implements RoomsModel {
+  const factory _RoomsModel(
+      {required final OverallRoomModel overall,
+      required final List<RoomGroupModel> roomGroups}) = _$RoomsModelImpl;
 
-  factory _Rooms.fromJson(Map<String, dynamic> json) = _$RoomsImpl.fromJson;
+  factory _RoomsModel.fromJson(Map<String, dynamic> json) =
+      _$RoomsModelImpl.fromJson;
 
   @override
-  OverallRoom get overall;
+  OverallRoomModel get overall;
   @override
-  List<RoomGroup> get roomGroups;
+  List<RoomGroupModel> get roomGroups;
   @override
   @JsonKey(ignore: true)
-  _$$RoomsImplCopyWith<_$RoomsImpl> get copyWith =>
+  _$$RoomsModelImplCopyWith<_$RoomsModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-OverallRoom _$OverallRoomFromJson(Map<String, dynamic> json) {
-  return _OverallRoom.fromJson(json);
+OverallRoomModel _$OverallRoomModelFromJson(Map<String, dynamic> json) {
+  return _OverallRoomModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$OverallRoom {
+mixin _$OverallRoomModel {
   String get boarding => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   int get adultCount => throw _privateConstructorUsedError;
@@ -1559,15 +1568,15 @@ mixin _$OverallRoom {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $OverallRoomCopyWith<OverallRoom> get copyWith =>
+  $OverallRoomModelCopyWith<OverallRoomModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $OverallRoomCopyWith<$Res> {
-  factory $OverallRoomCopyWith(
-          OverallRoom value, $Res Function(OverallRoom) then) =
-      _$OverallRoomCopyWithImpl<$Res, OverallRoom>;
+abstract class $OverallRoomModelCopyWith<$Res> {
+  factory $OverallRoomModelCopyWith(
+          OverallRoomModel value, $Res Function(OverallRoomModel) then) =
+      _$OverallRoomModelCopyWithImpl<$Res, OverallRoomModel>;
   @useResult
   $Res call(
       {String boarding,
@@ -1578,9 +1587,9 @@ abstract class $OverallRoomCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$OverallRoomCopyWithImpl<$Res, $Val extends OverallRoom>
-    implements $OverallRoomCopyWith<$Res> {
-  _$OverallRoomCopyWithImpl(this._value, this._then);
+class _$OverallRoomModelCopyWithImpl<$Res, $Val extends OverallRoomModel>
+    implements $OverallRoomModelCopyWith<$Res> {
+  _$OverallRoomModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -1622,11 +1631,11 @@ class _$OverallRoomCopyWithImpl<$Res, $Val extends OverallRoom>
 }
 
 /// @nodoc
-abstract class _$$OverallRoomImplCopyWith<$Res>
-    implements $OverallRoomCopyWith<$Res> {
-  factory _$$OverallRoomImplCopyWith(
-          _$OverallRoomImpl value, $Res Function(_$OverallRoomImpl) then) =
-      __$$OverallRoomImplCopyWithImpl<$Res>;
+abstract class _$$OverallRoomModelImplCopyWith<$Res>
+    implements $OverallRoomModelCopyWith<$Res> {
+  factory _$$OverallRoomModelImplCopyWith(_$OverallRoomModelImpl value,
+          $Res Function(_$OverallRoomModelImpl) then) =
+      __$$OverallRoomModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1638,11 +1647,11 @@ abstract class _$$OverallRoomImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$OverallRoomImplCopyWithImpl<$Res>
-    extends _$OverallRoomCopyWithImpl<$Res, _$OverallRoomImpl>
-    implements _$$OverallRoomImplCopyWith<$Res> {
-  __$$OverallRoomImplCopyWithImpl(
-      _$OverallRoomImpl _value, $Res Function(_$OverallRoomImpl) _then)
+class __$$OverallRoomModelImplCopyWithImpl<$Res>
+    extends _$OverallRoomModelCopyWithImpl<$Res, _$OverallRoomModelImpl>
+    implements _$$OverallRoomModelImplCopyWith<$Res> {
+  __$$OverallRoomModelImplCopyWithImpl(_$OverallRoomModelImpl _value,
+      $Res Function(_$OverallRoomModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1654,7 +1663,7 @@ class __$$OverallRoomImplCopyWithImpl<$Res>
     Object? childrenCount = null,
     Object? sameBoarding = null,
   }) {
-    return _then(_$OverallRoomImpl(
+    return _then(_$OverallRoomModelImpl(
       boarding: null == boarding
           ? _value.boarding
           : boarding // ignore: cast_nullable_to_non_nullable
@@ -1681,16 +1690,16 @@ class __$$OverallRoomImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OverallRoomImpl implements _OverallRoom {
-  const _$OverallRoomImpl(
+class _$OverallRoomModelImpl implements _OverallRoomModel {
+  const _$OverallRoomModelImpl(
       {required this.boarding,
       required this.name,
       required this.adultCount,
       required this.childrenCount,
       required this.sameBoarding});
 
-  factory _$OverallRoomImpl.fromJson(Map<String, dynamic> json) =>
-      _$$OverallRoomImplFromJson(json);
+  factory _$OverallRoomModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OverallRoomModelImplFromJson(json);
 
   @override
   final String boarding;
@@ -1705,14 +1714,14 @@ class _$OverallRoomImpl implements _OverallRoom {
 
   @override
   String toString() {
-    return 'OverallRoom(boarding: $boarding, name: $name, adultCount: $adultCount, childrenCount: $childrenCount, sameBoarding: $sameBoarding)';
+    return 'OverallRoomModel(boarding: $boarding, name: $name, adultCount: $adultCount, childrenCount: $childrenCount, sameBoarding: $sameBoarding)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OverallRoomImpl &&
+            other is _$OverallRoomModelImpl &&
             (identical(other.boarding, boarding) ||
                 other.boarding == boarding) &&
             (identical(other.name, name) || other.name == name) &&
@@ -1732,27 +1741,28 @@ class _$OverallRoomImpl implements _OverallRoom {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$OverallRoomImplCopyWith<_$OverallRoomImpl> get copyWith =>
-      __$$OverallRoomImplCopyWithImpl<_$OverallRoomImpl>(this, _$identity);
+  _$$OverallRoomModelImplCopyWith<_$OverallRoomModelImpl> get copyWith =>
+      __$$OverallRoomModelImplCopyWithImpl<_$OverallRoomModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$OverallRoomImplToJson(
+    return _$$OverallRoomModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _OverallRoom implements OverallRoom {
-  const factory _OverallRoom(
+abstract class _OverallRoomModel implements OverallRoomModel {
+  const factory _OverallRoomModel(
       {required final String boarding,
       required final String name,
       required final int adultCount,
       required final int childrenCount,
-      required final bool sameBoarding}) = _$OverallRoomImpl;
+      required final bool sameBoarding}) = _$OverallRoomModelImpl;
 
-  factory _OverallRoom.fromJson(Map<String, dynamic> json) =
-      _$OverallRoomImpl.fromJson;
+  factory _OverallRoomModel.fromJson(Map<String, dynamic> json) =
+      _$OverallRoomModelImpl.fromJson;
 
   @override
   String get boarding;
@@ -1766,38 +1776,39 @@ abstract class _OverallRoom implements OverallRoom {
   bool get sameBoarding;
   @override
   @JsonKey(ignore: true)
-  _$$OverallRoomImplCopyWith<_$OverallRoomImpl> get copyWith =>
+  _$$OverallRoomModelImplCopyWith<_$OverallRoomModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-RoomGroup _$RoomGroupFromJson(Map<String, dynamic> json) {
-  return _RoomGroup.fromJson(json);
+RoomGroupModel _$RoomGroupModelFromJson(Map<String, dynamic> json) {
+  return _RoomGroupModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$RoomGroup {
+mixin _$RoomGroupModel {
   String get boarding => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   int get quantity => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RoomGroupCopyWith<RoomGroup> get copyWith =>
+  $RoomGroupModelCopyWith<RoomGroupModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RoomGroupCopyWith<$Res> {
-  factory $RoomGroupCopyWith(RoomGroup value, $Res Function(RoomGroup) then) =
-      _$RoomGroupCopyWithImpl<$Res, RoomGroup>;
+abstract class $RoomGroupModelCopyWith<$Res> {
+  factory $RoomGroupModelCopyWith(
+          RoomGroupModel value, $Res Function(RoomGroupModel) then) =
+      _$RoomGroupModelCopyWithImpl<$Res, RoomGroupModel>;
   @useResult
   $Res call({String boarding, String name, int quantity});
 }
 
 /// @nodoc
-class _$RoomGroupCopyWithImpl<$Res, $Val extends RoomGroup>
-    implements $RoomGroupCopyWith<$Res> {
-  _$RoomGroupCopyWithImpl(this._value, this._then);
+class _$RoomGroupModelCopyWithImpl<$Res, $Val extends RoomGroupModel>
+    implements $RoomGroupModelCopyWith<$Res> {
+  _$RoomGroupModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -1829,22 +1840,22 @@ class _$RoomGroupCopyWithImpl<$Res, $Val extends RoomGroup>
 }
 
 /// @nodoc
-abstract class _$$RoomGroupImplCopyWith<$Res>
-    implements $RoomGroupCopyWith<$Res> {
-  factory _$$RoomGroupImplCopyWith(
-          _$RoomGroupImpl value, $Res Function(_$RoomGroupImpl) then) =
-      __$$RoomGroupImplCopyWithImpl<$Res>;
+abstract class _$$RoomGroupModelImplCopyWith<$Res>
+    implements $RoomGroupModelCopyWith<$Res> {
+  factory _$$RoomGroupModelImplCopyWith(_$RoomGroupModelImpl value,
+          $Res Function(_$RoomGroupModelImpl) then) =
+      __$$RoomGroupModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String boarding, String name, int quantity});
 }
 
 /// @nodoc
-class __$$RoomGroupImplCopyWithImpl<$Res>
-    extends _$RoomGroupCopyWithImpl<$Res, _$RoomGroupImpl>
-    implements _$$RoomGroupImplCopyWith<$Res> {
-  __$$RoomGroupImplCopyWithImpl(
-      _$RoomGroupImpl _value, $Res Function(_$RoomGroupImpl) _then)
+class __$$RoomGroupModelImplCopyWithImpl<$Res>
+    extends _$RoomGroupModelCopyWithImpl<$Res, _$RoomGroupModelImpl>
+    implements _$$RoomGroupModelImplCopyWith<$Res> {
+  __$$RoomGroupModelImplCopyWithImpl(
+      _$RoomGroupModelImpl _value, $Res Function(_$RoomGroupModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1854,7 +1865,7 @@ class __$$RoomGroupImplCopyWithImpl<$Res>
     Object? name = null,
     Object? quantity = null,
   }) {
-    return _then(_$RoomGroupImpl(
+    return _then(_$RoomGroupModelImpl(
       boarding: null == boarding
           ? _value.boarding
           : boarding // ignore: cast_nullable_to_non_nullable
@@ -1873,12 +1884,12 @@ class __$$RoomGroupImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$RoomGroupImpl implements _RoomGroup {
-  const _$RoomGroupImpl(
+class _$RoomGroupModelImpl implements _RoomGroupModel {
+  const _$RoomGroupModelImpl(
       {required this.boarding, required this.name, required this.quantity});
 
-  factory _$RoomGroupImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RoomGroupImplFromJson(json);
+  factory _$RoomGroupModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RoomGroupModelImplFromJson(json);
 
   @override
   final String boarding;
@@ -1889,14 +1900,14 @@ class _$RoomGroupImpl implements _RoomGroup {
 
   @override
   String toString() {
-    return 'RoomGroup(boarding: $boarding, name: $name, quantity: $quantity)';
+    return 'RoomGroupModel(boarding: $boarding, name: $name, quantity: $quantity)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RoomGroupImpl &&
+            other is _$RoomGroupModelImpl &&
             (identical(other.boarding, boarding) ||
                 other.boarding == boarding) &&
             (identical(other.name, name) || other.name == name) &&
@@ -1911,25 +1922,26 @@ class _$RoomGroupImpl implements _RoomGroup {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RoomGroupImplCopyWith<_$RoomGroupImpl> get copyWith =>
-      __$$RoomGroupImplCopyWithImpl<_$RoomGroupImpl>(this, _$identity);
+  _$$RoomGroupModelImplCopyWith<_$RoomGroupModelImpl> get copyWith =>
+      __$$RoomGroupModelImplCopyWithImpl<_$RoomGroupModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RoomGroupImplToJson(
+    return _$$RoomGroupModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _RoomGroup implements RoomGroup {
-  const factory _RoomGroup(
+abstract class _RoomGroupModel implements RoomGroupModel {
+  const factory _RoomGroupModel(
       {required final String boarding,
       required final String name,
-      required final int quantity}) = _$RoomGroupImpl;
+      required final int quantity}) = _$RoomGroupModelImpl;
 
-  factory _RoomGroup.fromJson(Map<String, dynamic> json) =
-      _$RoomGroupImpl.fromJson;
+  factory _RoomGroupModel.fromJson(Map<String, dynamic> json) =
+      _$RoomGroupModelImpl.fromJson;
 
   @override
   String get boarding;
@@ -1939,39 +1951,41 @@ abstract class _RoomGroup implements RoomGroup {
   int get quantity;
   @override
   @JsonKey(ignore: true)
-  _$$RoomGroupImplCopyWith<_$RoomGroupImpl> get copyWith =>
+  _$$RoomGroupModelImplCopyWith<_$RoomGroupModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-Analytics _$AnalyticsFromJson(Map<String, dynamic> json) {
-  return _Analytics.fromJson(json);
+AnalyticsModel _$AnalyticsModelFromJson(Map<String, dynamic> json) {
+  return _AnalyticsModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Analytics {
+mixin _$AnalyticsModel {
   @JsonKey(name: 'select_item.item.0')
-  AnalyticsItem? get selectItem => throw _privateConstructorUsedError;
+  AnalyticsItemModel? get selectItem => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AnalyticsCopyWith<Analytics> get copyWith =>
+  $AnalyticsModelCopyWith<AnalyticsModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AnalyticsCopyWith<$Res> {
-  factory $AnalyticsCopyWith(Analytics value, $Res Function(Analytics) then) =
-      _$AnalyticsCopyWithImpl<$Res, Analytics>;
+abstract class $AnalyticsModelCopyWith<$Res> {
+  factory $AnalyticsModelCopyWith(
+          AnalyticsModel value, $Res Function(AnalyticsModel) then) =
+      _$AnalyticsModelCopyWithImpl<$Res, AnalyticsModel>;
   @useResult
-  $Res call({@JsonKey(name: 'select_item.item.0') AnalyticsItem? selectItem});
+  $Res call(
+      {@JsonKey(name: 'select_item.item.0') AnalyticsItemModel? selectItem});
 
-  $AnalyticsItemCopyWith<$Res>? get selectItem;
+  $AnalyticsItemModelCopyWith<$Res>? get selectItem;
 }
 
 /// @nodoc
-class _$AnalyticsCopyWithImpl<$Res, $Val extends Analytics>
-    implements $AnalyticsCopyWith<$Res> {
-  _$AnalyticsCopyWithImpl(this._value, this._then);
+class _$AnalyticsModelCopyWithImpl<$Res, $Val extends AnalyticsModel>
+    implements $AnalyticsModelCopyWith<$Res> {
+  _$AnalyticsModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -1987,43 +2001,44 @@ class _$AnalyticsCopyWithImpl<$Res, $Val extends Analytics>
       selectItem: freezed == selectItem
           ? _value.selectItem
           : selectItem // ignore: cast_nullable_to_non_nullable
-              as AnalyticsItem?,
+              as AnalyticsItemModel?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $AnalyticsItemCopyWith<$Res>? get selectItem {
+  $AnalyticsItemModelCopyWith<$Res>? get selectItem {
     if (_value.selectItem == null) {
       return null;
     }
 
-    return $AnalyticsItemCopyWith<$Res>(_value.selectItem!, (value) {
+    return $AnalyticsItemModelCopyWith<$Res>(_value.selectItem!, (value) {
       return _then(_value.copyWith(selectItem: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$AnalyticsImplCopyWith<$Res>
-    implements $AnalyticsCopyWith<$Res> {
-  factory _$$AnalyticsImplCopyWith(
-          _$AnalyticsImpl value, $Res Function(_$AnalyticsImpl) then) =
-      __$$AnalyticsImplCopyWithImpl<$Res>;
+abstract class _$$AnalyticsModelImplCopyWith<$Res>
+    implements $AnalyticsModelCopyWith<$Res> {
+  factory _$$AnalyticsModelImplCopyWith(_$AnalyticsModelImpl value,
+          $Res Function(_$AnalyticsModelImpl) then) =
+      __$$AnalyticsModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'select_item.item.0') AnalyticsItem? selectItem});
+  $Res call(
+      {@JsonKey(name: 'select_item.item.0') AnalyticsItemModel? selectItem});
 
   @override
-  $AnalyticsItemCopyWith<$Res>? get selectItem;
+  $AnalyticsItemModelCopyWith<$Res>? get selectItem;
 }
 
 /// @nodoc
-class __$$AnalyticsImplCopyWithImpl<$Res>
-    extends _$AnalyticsCopyWithImpl<$Res, _$AnalyticsImpl>
-    implements _$$AnalyticsImplCopyWith<$Res> {
-  __$$AnalyticsImplCopyWithImpl(
-      _$AnalyticsImpl _value, $Res Function(_$AnalyticsImpl) _then)
+class __$$AnalyticsModelImplCopyWithImpl<$Res>
+    extends _$AnalyticsModelCopyWithImpl<$Res, _$AnalyticsModelImpl>
+    implements _$$AnalyticsModelImplCopyWith<$Res> {
+  __$$AnalyticsModelImplCopyWithImpl(
+      _$AnalyticsModelImpl _value, $Res Function(_$AnalyticsModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2031,37 +2046,38 @@ class __$$AnalyticsImplCopyWithImpl<$Res>
   $Res call({
     Object? selectItem = freezed,
   }) {
-    return _then(_$AnalyticsImpl(
+    return _then(_$AnalyticsModelImpl(
       selectItem: freezed == selectItem
           ? _value.selectItem
           : selectItem // ignore: cast_nullable_to_non_nullable
-              as AnalyticsItem?,
+              as AnalyticsItemModel?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$AnalyticsImpl implements _Analytics {
-  const _$AnalyticsImpl({@JsonKey(name: 'select_item.item.0') this.selectItem});
+class _$AnalyticsModelImpl implements _AnalyticsModel {
+  const _$AnalyticsModelImpl(
+      {@JsonKey(name: 'select_item.item.0') this.selectItem});
 
-  factory _$AnalyticsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AnalyticsImplFromJson(json);
+  factory _$AnalyticsModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AnalyticsModelImplFromJson(json);
 
   @override
   @JsonKey(name: 'select_item.item.0')
-  final AnalyticsItem? selectItem;
+  final AnalyticsItemModel? selectItem;
 
   @override
   String toString() {
-    return 'Analytics(selectItem: $selectItem)';
+    return 'AnalyticsModel(selectItem: $selectItem)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AnalyticsImpl &&
+            other is _$AnalyticsModelImpl &&
             (identical(other.selectItem, selectItem) ||
                 other.selectItem == selectItem));
   }
@@ -2073,40 +2089,41 @@ class _$AnalyticsImpl implements _Analytics {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AnalyticsImplCopyWith<_$AnalyticsImpl> get copyWith =>
-      __$$AnalyticsImplCopyWithImpl<_$AnalyticsImpl>(this, _$identity);
+  _$$AnalyticsModelImplCopyWith<_$AnalyticsModelImpl> get copyWith =>
+      __$$AnalyticsModelImplCopyWithImpl<_$AnalyticsModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AnalyticsImplToJson(
+    return _$$AnalyticsModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _Analytics implements Analytics {
-  const factory _Analytics(
+abstract class _AnalyticsModel implements AnalyticsModel {
+  const factory _AnalyticsModel(
       {@JsonKey(name: 'select_item.item.0')
-      final AnalyticsItem? selectItem}) = _$AnalyticsImpl;
+      final AnalyticsItemModel? selectItem}) = _$AnalyticsModelImpl;
 
-  factory _Analytics.fromJson(Map<String, dynamic> json) =
-      _$AnalyticsImpl.fromJson;
+  factory _AnalyticsModel.fromJson(Map<String, dynamic> json) =
+      _$AnalyticsModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'select_item.item.0')
-  AnalyticsItem? get selectItem;
+  AnalyticsItemModel? get selectItem;
   @override
   @JsonKey(ignore: true)
-  _$$AnalyticsImplCopyWith<_$AnalyticsImpl> get copyWith =>
+  _$$AnalyticsModelImplCopyWith<_$AnalyticsModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-AnalyticsItem _$AnalyticsItemFromJson(Map<String, dynamic> json) {
-  return _AnalyticsItem.fromJson(json);
+AnalyticsItemModel _$AnalyticsItemModelFromJson(Map<String, dynamic> json) {
+  return _AnalyticsItemModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$AnalyticsItem {
+mixin _$AnalyticsItemModel {
   String get currency => throw _privateConstructorUsedError;
   String get itemCategory => throw _privateConstructorUsedError;
   String get itemCategory2 => throw _privateConstructorUsedError;
@@ -2118,15 +2135,15 @@ mixin _$AnalyticsItem {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AnalyticsItemCopyWith<AnalyticsItem> get copyWith =>
+  $AnalyticsItemModelCopyWith<AnalyticsItemModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AnalyticsItemCopyWith<$Res> {
-  factory $AnalyticsItemCopyWith(
-          AnalyticsItem value, $Res Function(AnalyticsItem) then) =
-      _$AnalyticsItemCopyWithImpl<$Res, AnalyticsItem>;
+abstract class $AnalyticsItemModelCopyWith<$Res> {
+  factory $AnalyticsItemModelCopyWith(
+          AnalyticsItemModel value, $Res Function(AnalyticsItemModel) then) =
+      _$AnalyticsItemModelCopyWithImpl<$Res, AnalyticsItemModel>;
   @useResult
   $Res call(
       {String currency,
@@ -2140,9 +2157,9 @@ abstract class $AnalyticsItemCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AnalyticsItemCopyWithImpl<$Res, $Val extends AnalyticsItem>
-    implements $AnalyticsItemCopyWith<$Res> {
-  _$AnalyticsItemCopyWithImpl(this._value, this._then);
+class _$AnalyticsItemModelCopyWithImpl<$Res, $Val extends AnalyticsItemModel>
+    implements $AnalyticsItemModelCopyWith<$Res> {
+  _$AnalyticsItemModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -2199,11 +2216,11 @@ class _$AnalyticsItemCopyWithImpl<$Res, $Val extends AnalyticsItem>
 }
 
 /// @nodoc
-abstract class _$$AnalyticsItemImplCopyWith<$Res>
-    implements $AnalyticsItemCopyWith<$Res> {
-  factory _$$AnalyticsItemImplCopyWith(
-          _$AnalyticsItemImpl value, $Res Function(_$AnalyticsItemImpl) then) =
-      __$$AnalyticsItemImplCopyWithImpl<$Res>;
+abstract class _$$AnalyticsItemModelImplCopyWith<$Res>
+    implements $AnalyticsItemModelCopyWith<$Res> {
+  factory _$$AnalyticsItemModelImplCopyWith(_$AnalyticsItemModelImpl value,
+          $Res Function(_$AnalyticsItemModelImpl) then) =
+      __$$AnalyticsItemModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -2218,11 +2235,11 @@ abstract class _$$AnalyticsItemImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AnalyticsItemImplCopyWithImpl<$Res>
-    extends _$AnalyticsItemCopyWithImpl<$Res, _$AnalyticsItemImpl>
-    implements _$$AnalyticsItemImplCopyWith<$Res> {
-  __$$AnalyticsItemImplCopyWithImpl(
-      _$AnalyticsItemImpl _value, $Res Function(_$AnalyticsItemImpl) _then)
+class __$$AnalyticsItemModelImplCopyWithImpl<$Res>
+    extends _$AnalyticsItemModelCopyWithImpl<$Res, _$AnalyticsItemModelImpl>
+    implements _$$AnalyticsItemModelImplCopyWith<$Res> {
+  __$$AnalyticsItemModelImplCopyWithImpl(_$AnalyticsItemModelImpl _value,
+      $Res Function(_$AnalyticsItemModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2237,7 +2254,7 @@ class __$$AnalyticsItemImplCopyWithImpl<$Res>
     Object? price = null,
     Object? quantity = null,
   }) {
-    return _then(_$AnalyticsItemImpl(
+    return _then(_$AnalyticsItemModelImpl(
       currency: null == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
@@ -2276,8 +2293,8 @@ class __$$AnalyticsItemImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AnalyticsItemImpl implements _AnalyticsItem {
-  const _$AnalyticsItemImpl(
+class _$AnalyticsItemModelImpl implements _AnalyticsItemModel {
+  const _$AnalyticsItemModelImpl(
       {required this.currency,
       required this.itemCategory,
       required this.itemCategory2,
@@ -2287,8 +2304,8 @@ class _$AnalyticsItemImpl implements _AnalyticsItem {
       required this.price,
       required this.quantity});
 
-  factory _$AnalyticsItemImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AnalyticsItemImplFromJson(json);
+  factory _$AnalyticsItemModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AnalyticsItemModelImplFromJson(json);
 
   @override
   final String currency;
@@ -2309,14 +2326,14 @@ class _$AnalyticsItemImpl implements _AnalyticsItem {
 
   @override
   String toString() {
-    return 'AnalyticsItem(currency: $currency, itemCategory: $itemCategory, itemCategory2: $itemCategory2, itemId: $itemId, itemName: $itemName, itemRooms: $itemRooms, price: $price, quantity: $quantity)';
+    return 'AnalyticsItemModel(currency: $currency, itemCategory: $itemCategory, itemCategory2: $itemCategory2, itemId: $itemId, itemName: $itemName, itemRooms: $itemRooms, price: $price, quantity: $quantity)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AnalyticsItemImpl &&
+            other is _$AnalyticsItemModelImpl &&
             (identical(other.currency, currency) ||
                 other.currency == currency) &&
             (identical(other.itemCategory, itemCategory) ||
@@ -2341,19 +2358,20 @@ class _$AnalyticsItemImpl implements _AnalyticsItem {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AnalyticsItemImplCopyWith<_$AnalyticsItemImpl> get copyWith =>
-      __$$AnalyticsItemImplCopyWithImpl<_$AnalyticsItemImpl>(this, _$identity);
+  _$$AnalyticsItemModelImplCopyWith<_$AnalyticsItemModelImpl> get copyWith =>
+      __$$AnalyticsItemModelImplCopyWithImpl<_$AnalyticsItemModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AnalyticsItemImplToJson(
+    return _$$AnalyticsItemModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _AnalyticsItem implements AnalyticsItem {
-  const factory _AnalyticsItem(
+abstract class _AnalyticsItemModel implements AnalyticsItemModel {
+  const factory _AnalyticsItemModel(
       {required final String currency,
       required final String itemCategory,
       required final String itemCategory2,
@@ -2361,10 +2379,10 @@ abstract class _AnalyticsItem implements AnalyticsItem {
       required final String itemName,
       required final String itemRooms,
       required final String price,
-      required final String quantity}) = _$AnalyticsItemImpl;
+      required final String quantity}) = _$AnalyticsItemModelImpl;
 
-  factory _AnalyticsItem.fromJson(Map<String, dynamic> json) =
-      _$AnalyticsItemImpl.fromJson;
+  factory _AnalyticsItemModel.fromJson(Map<String, dynamic> json) =
+      _$AnalyticsItemModelImpl.fromJson;
 
   @override
   String get currency;
@@ -2384,6 +2402,6 @@ abstract class _AnalyticsItem implements AnalyticsItem {
   String get quantity;
   @override
   @JsonKey(ignore: true)
-  _$$AnalyticsItemImplCopyWith<_$AnalyticsItemImpl> get copyWith =>
+  _$$AnalyticsItemModelImplCopyWith<_$AnalyticsItemModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -20,12 +20,12 @@ class HotelModel with _$HotelModel {
     required String hotelId,
     required String name,
     required String destination,
-    required List<HotelImage> images,
-    RatingInfo? ratingInfo,
-    BestOffer? bestOffer,
+    required List<HotelImageModel> images,
+    RatingInfoModel? ratingInfo,
+    BestOfferModel? bestOffer,
     required double latitude,
     required double longitude,
-    Analytics? analytics,
+    AnalyticsModel? analytics,
     required int category,
     @JsonKey(name: 'category-type')
      String? categoryType,
@@ -35,99 +35,99 @@ class HotelModel with _$HotelModel {
 }
 
 @freezed
-class HotelImage with _$HotelImage {
-  const factory HotelImage({
+class HotelImageModel with _$HotelImageModel {
+  const factory HotelImageModel({
     required String large,
     required String small,
-  }) = _HotelImage;
+  }) = _HotelImageModel;
 
-  factory HotelImage.fromJson(Map<String, dynamic> json) => _$HotelImageFromJson(json);
+  factory HotelImageModel.fromJson(Map<String, dynamic> json) => _$HotelImageModelFromJson(json);
 }
 
 @freezed
-class RatingInfo with _$RatingInfo {
-  const factory RatingInfo({
+class RatingInfoModel with _$RatingInfoModel {
+  const factory RatingInfoModel({
     required double score,
     required int reviewsCount,
     required String scoreDescription,
-  }) = _RatingInfo;
+  }) = _RatingInfoModel;
 
-  factory RatingInfo.fromJson(Map<String, dynamic> json) => _$RatingInfoFromJson(json);
+  factory RatingInfoModel.fromJson(Map<String, dynamic> json) => _$RatingInfoModelFromJson(json);
 }
 
 @freezed
-class BestOffer with _$BestOffer {
-  const factory BestOffer({
+class BestOfferModel with _$BestOfferModel {
+  const factory BestOfferModel({
     required int total,
     required int originalTravelPrice,
     required int simplePricePerPerson,
     required bool flightIncluded,
-    required TravelDate travelDate,
-    required Rooms rooms,
-  }) = _BestOffer;
+    required TravelDateModel travelDate,
+    required RoomsModel rooms,
+  }) = _BestOfferModel;
 
-  factory BestOffer.fromJson(Map<String, dynamic> json) => _$BestOfferFromJson(json);
+  factory BestOfferModel.fromJson(Map<String, dynamic> json) => _$BestOfferModelFromJson(json);
 }
 
 @freezed
-class TravelDate with _$TravelDate {
-  const factory TravelDate({
+class TravelDateModel with _$TravelDateModel {
+  const factory TravelDateModel({
     required String departureDate,
     required String returnDate,
     required int days,
     required int nights,
-  }) = _TravelDate;
+  }) = _TravelDateModel;
 
-  factory TravelDate.fromJson(Map<String, dynamic> json) => _$TravelDateFromJson(json);
+  factory TravelDateModel.fromJson(Map<String, dynamic> json) => _$TravelDateModelFromJson(json);
 }
 
 @freezed
-class Rooms with _$Rooms {
-  const factory Rooms({
-    required OverallRoom overall,
-    required List<RoomGroup> roomGroups,
-  }) = _Rooms;
+class RoomsModel with _$RoomsModel {
+  const factory RoomsModel({
+    required OverallRoomModel overall,
+    required List<RoomGroupModel> roomGroups,
+  }) = _RoomsModel;
 
-  factory Rooms.fromJson(Map<String, dynamic> json) => _$RoomsFromJson(json);
+  factory RoomsModel.fromJson(Map<String, dynamic> json) => _$RoomsModelFromJson(json);
 }
 
 @freezed
-class OverallRoom with _$OverallRoom {
-  const factory OverallRoom({
+class OverallRoomModel with _$OverallRoomModel {
+  const factory OverallRoomModel({
     required String boarding,
     required String name,
     required int adultCount,
     required int childrenCount,
     required bool sameBoarding,
-  }) = _OverallRoom;
+  }) = _OverallRoomModel;
 
-  factory OverallRoom.fromJson(Map<String, dynamic> json) => _$OverallRoomFromJson(json);
+  factory OverallRoomModel.fromJson(Map<String, dynamic> json) => _$OverallRoomModelFromJson(json);
 }
 
 @freezed
-class RoomGroup with _$RoomGroup {
-  const factory RoomGroup({
+class RoomGroupModel with _$RoomGroupModel {
+  const factory RoomGroupModel({
     required String boarding,
     required String name,
     required int quantity,
-  }) = _RoomGroup;
+  }) = _RoomGroupModel;
 
-  factory RoomGroup.fromJson(Map<String, dynamic> json) => _$RoomGroupFromJson(json);
+  factory RoomGroupModel.fromJson(Map<String, dynamic> json) => _$RoomGroupModelFromJson(json);
 }
 
 @freezed
-class Analytics with _$Analytics {
-  const factory Analytics({
+class AnalyticsModel with _$AnalyticsModel {
+  const factory AnalyticsModel({
     @JsonKey(name: 'select_item.item.0')
-     AnalyticsItem? selectItem,
-  }) = _Analytics;
+    AnalyticsItemModel? selectItem,
+  }) = _AnalyticsModel;
 
-  factory Analytics.fromJson(Map<String, dynamic> json) => _$AnalyticsFromJson(json);
+  factory AnalyticsModel.fromJson(Map<String, dynamic> json) => _$AnalyticsModelFromJson(json);
 }
 
 @freezed
-class AnalyticsItem with _$AnalyticsItem {
-  const factory AnalyticsItem({
+class AnalyticsItemModel with _$AnalyticsItemModel {
+  const factory AnalyticsItemModel({
     required String currency,
     required String itemCategory,
     required String itemCategory2,
@@ -136,7 +136,7 @@ class AnalyticsItem with _$AnalyticsItem {
     required String itemRooms,
     required String price,
     required String quantity,
-  }) = _AnalyticsItem;
+  }) = _AnalyticsItemModel;
 
-  factory AnalyticsItem.fromJson(Map<String, dynamic> json) => _$AnalyticsItemFromJson(json);
+  factory AnalyticsItemModel.fromJson(Map<String, dynamic> json) => _$AnalyticsItemModelFromJson(json);
 }

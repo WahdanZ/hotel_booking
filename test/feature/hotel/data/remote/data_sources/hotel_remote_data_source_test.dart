@@ -1,10 +1,13 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:hotel_booking/features/hotel/data/repositories/data_source.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:hotel_booking/features/hotel/data/remote/data_sources/hotel_remote_data_source.dart';
 import 'package:hotel_booking/features/hotel/data/remote/models/hotel_response.dart';
 import 'package:dio/dio.dart';
 
-class MockDio extends Mock implements Dio {}
+import '../../../../../mocks.dart';
+import '../../../../../test_injection.dart';
+
 
 void main() {
   group('HotelRemoteDataSource', ()
@@ -16,8 +19,9 @@ void main() {
       registerFallbackValue(Uri());
     });
 setUpAll(() {
-  mockDio = MockDio();
-  dataSource = HotelRemoteDataSource(mockDio);
+  configureTestDependencies();
+  mockDio = injectMock();
+  dataSource = HotelRemoteDataSourceImpl(mockDio);
   registerFallbackValue(RequestOptions(path: ''));
   when(() => mockDio.options).thenReturn(BaseOptions());
 

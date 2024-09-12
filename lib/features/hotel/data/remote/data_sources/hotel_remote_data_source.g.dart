@@ -8,8 +8,8 @@ part of 'hotel_remote_data_source.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
-class _HotelRemoteDataSource implements HotelRemoteDataSource {
-  _HotelRemoteDataSource(
+class _HotelRemoteDataSourceImpl implements HotelRemoteDataSourceImpl {
+  _HotelRemoteDataSourceImpl(
     this._dio, {
     this.baseUrl,
   }) {
