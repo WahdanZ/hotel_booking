@@ -26,6 +26,7 @@ mixin _$HotelEntity {
   double get longitude => throw _privateConstructorUsedError;
   int get category => throw _privateConstructorUsedError;
   String get categoryType => throw _privateConstructorUsedError;
+  bool get isFavorite => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HotelEntityCopyWith<HotelEntity> get copyWith =>
@@ -48,7 +49,8 @@ abstract class $HotelEntityCopyWith<$Res> {
       double latitude,
       double longitude,
       int category,
-      String categoryType});
+      String categoryType,
+      bool isFavorite});
 
   $RatingInfoEntityCopyWith<$Res> get ratingInfo;
   $BestOfferEntityCopyWith<$Res> get bestOffer;
@@ -77,6 +79,7 @@ class _$HotelEntityCopyWithImpl<$Res, $Val extends HotelEntity>
     Object? longitude = null,
     Object? category = null,
     Object? categoryType = null,
+    Object? isFavorite = null,
   }) {
     return _then(_value.copyWith(
       hotelId: null == hotelId
@@ -119,6 +122,10 @@ class _$HotelEntityCopyWithImpl<$Res, $Val extends HotelEntity>
           ? _value.categoryType
           : categoryType // ignore: cast_nullable_to_non_nullable
               as String,
+      isFavorite: null == isFavorite
+          ? _value.isFavorite
+          : isFavorite // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -157,7 +164,8 @@ abstract class _$$HotelEntityImplCopyWith<$Res>
       double latitude,
       double longitude,
       int category,
-      String categoryType});
+      String categoryType,
+      bool isFavorite});
 
   @override
   $RatingInfoEntityCopyWith<$Res> get ratingInfo;
@@ -186,6 +194,7 @@ class __$$HotelEntityImplCopyWithImpl<$Res>
     Object? longitude = null,
     Object? category = null,
     Object? categoryType = null,
+    Object? isFavorite = null,
   }) {
     return _then(_$HotelEntityImpl(
       hotelId: null == hotelId
@@ -228,6 +237,10 @@ class __$$HotelEntityImplCopyWithImpl<$Res>
           ? _value.categoryType
           : categoryType // ignore: cast_nullable_to_non_nullable
               as String,
+      isFavorite: null == isFavorite
+          ? _value.isFavorite
+          : isFavorite // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -245,7 +258,8 @@ class _$HotelEntityImpl implements _HotelEntity {
       required this.latitude,
       required this.longitude,
       required this.category,
-      required this.categoryType})
+      required this.categoryType,
+      this.isFavorite = false})
       : _images = images;
 
   @override
@@ -274,10 +288,13 @@ class _$HotelEntityImpl implements _HotelEntity {
   final int category;
   @override
   final String categoryType;
+  @override
+  @JsonKey()
+  final bool isFavorite;
 
   @override
   String toString() {
-    return 'HotelEntity(hotelId: $hotelId, name: $name, destination: $destination, images: $images, ratingInfo: $ratingInfo, bestOffer: $bestOffer, latitude: $latitude, longitude: $longitude, category: $category, categoryType: $categoryType)';
+    return 'HotelEntity(hotelId: $hotelId, name: $name, destination: $destination, images: $images, ratingInfo: $ratingInfo, bestOffer: $bestOffer, latitude: $latitude, longitude: $longitude, category: $category, categoryType: $categoryType, isFavorite: $isFavorite)';
   }
 
   @override
@@ -301,7 +318,9 @@ class _$HotelEntityImpl implements _HotelEntity {
             (identical(other.category, category) ||
                 other.category == category) &&
             (identical(other.categoryType, categoryType) ||
-                other.categoryType == categoryType));
+                other.categoryType == categoryType) &&
+            (identical(other.isFavorite, isFavorite) ||
+                other.isFavorite == isFavorite));
   }
 
   @override
@@ -316,7 +335,8 @@ class _$HotelEntityImpl implements _HotelEntity {
       latitude,
       longitude,
       category,
-      categoryType);
+      categoryType,
+      isFavorite);
 
   @JsonKey(ignore: true)
   @override
@@ -336,7 +356,8 @@ abstract class _HotelEntity implements HotelEntity {
       required final double latitude,
       required final double longitude,
       required final int category,
-      required final String categoryType}) = _$HotelEntityImpl;
+      required final String categoryType,
+      final bool isFavorite}) = _$HotelEntityImpl;
 
   @override
   String get hotelId;
@@ -358,6 +379,8 @@ abstract class _HotelEntity implements HotelEntity {
   int get category;
   @override
   String get categoryType;
+  @override
+  bool get isFavorite;
   @override
   @JsonKey(ignore: true)
   _$$HotelEntityImplCopyWith<_$HotelEntityImpl> get copyWith =>

@@ -14,14 +14,11 @@ void main() {
   late MockNetworkTaskManager mockNetworkTaskManager;
   late MockHotelMapper mockHotelMapper;
   setUpAll(() {
-    //registerFallbackValue was not previously called to register a fallback value for `NetworkTask<HotelResponse>`.
     registerFallbackValue(const HotelResponse(hotels: []));
 
     registerFallbackValue(
         DioNetworkTask(() => Future.value(const HotelResponse(hotels: []))));
-    // HotelModel
     registerFallbackValue(hotelResponse.hotels.first);
-    // HotelEntity
     registerFallbackValue(hotelEntity);
   });
   setUp(() {

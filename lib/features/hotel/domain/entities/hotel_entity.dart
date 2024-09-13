@@ -15,6 +15,7 @@ class HotelEntity with _$HotelEntity {
     required double longitude,
     required int category,
     required String categoryType,
+    @Default(false) bool isFavorite,
   }) = _HotelEntity;
 }
 

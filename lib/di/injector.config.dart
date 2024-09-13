@@ -41,8 +41,8 @@ _i174.GetIt $initGetIt(
   );
   final appModule = _$AppModule();
   gh.factory<_i375.HotelMapper>(() => _i375.HotelMapper());
-  gh.lazySingleton<_i148.NetworkTaskManager>(() => _i148.NetworkTaskManager());
   gh.lazySingleton<_i1007.AppRouter>(() => _i1007.AppRouter());
+  gh.lazySingleton<_i148.NetworkTaskManager>(() => _i148.NetworkTaskManager());
   gh.lazySingleton<_i361.Dio>(
     () => appModule.dio,
     instanceName: 'dio_client',

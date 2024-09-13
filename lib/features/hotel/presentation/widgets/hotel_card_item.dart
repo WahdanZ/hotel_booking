@@ -7,9 +7,15 @@ import 'package:hotel_booking/generated/l10n.dart';
 class HotelCard extends StatelessWidget {
   final HotelEntity hotel;
 
+  final Function? onFavoriteClick;
+
+  final Function? onViewOffersClick;
+
   const HotelCard({
     super.key,
     required this.hotel,
+    this.onFavoriteClick,
+    this.onViewOffersClick,
   });
 
   @override
@@ -23,17 +29,34 @@ class HotelCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ClipRRect(
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(8),
-              topRight: Radius.circular(8),
-            ),
-            child: Image.network(
-              hotel.images.first.large,
-              width: double.infinity,
-              height: 180,
-              fit: BoxFit.cover,
-            ),
+          Stack(
+            children: [
+              ClipRRect(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(8),
+                  topRight: Radius.circular(8),
+                ),
+                child: Image.network(
+                  hotel.images.first.large,
+                  width: double.infinity,
+                  height: 180,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Positioned(
+                top: 0,
+                right: 0,
+                child: IconButton(
+                  icon: Icon(
+                    hotel.isFavorite ? Icons.favorite : Icons.favorite_border,
+                    color: Colors.red,
+                  ),
+                  onPressed: () {
+                    onFavoriteClick?.call(hotel.hotelId);
+                  },
+                ),
+              ),
+            ],
           ),
           Padding(
             padding: const EdgeInsets.all(12.0),
@@ -60,7 +83,7 @@ class HotelCard extends StatelessWidget {
                   style: AppStyles.bodyStyle,
                 ),
                 const SizedBox(height: 8),
-                Divider(
+                const Divider(
                   height: 2,
                 ),
                 const SizedBox(height: 8),
@@ -110,11 +133,6 @@ class HotelCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          S.of(context).fromPrice,
-                          style:
-                              TextStyle(fontSize: 14, color: Colors.grey[600]),
-                        ),
-                        Text(
                           '€ ${(hotel.bestOffer.total / 100).toStringAsFixed(2)}',
                           style: const TextStyle(
                             fontSize: 18,
@@ -145,7 +163,9 @@ class HotelCard extends StatelessWidget {
                       backgroundColor: Colors.orange,
                       padding: const EdgeInsets.symmetric(vertical: 16),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      onViewOffersClick?.call(hotel.hotelId);
+                    },
                     child: Text(
                       S.of(context).viewOffers,
                       style: const TextStyle(
