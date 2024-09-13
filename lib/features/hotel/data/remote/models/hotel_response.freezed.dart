@@ -169,10 +169,8 @@ mixin _$HotelModel {
   String get name => throw _privateConstructorUsedError;
   String get destination => throw _privateConstructorUsedError;
   List<HotelImageModel> get images => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'rating-info')
   RatingInfoModel? get ratingInfo => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'best-offer')
   BestOfferModel? get bestOffer => throw _privateConstructorUsedError;
   double get latitude => throw _privateConstructorUsedError;
@@ -749,10 +747,8 @@ RatingInfoModel _$RatingInfoModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$RatingInfoModel {
   double get score => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'reviews-count')
   int get reviewsCount => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'score-description')
   String get scoreDescription => throw _privateConstructorUsedError;
 
@@ -942,16 +938,12 @@ BestOfferModel _$BestOfferModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$BestOfferModel {
   int get total => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'original-travel-price')
   int get originalTravelPrice => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'simple-price-per-person')
   int get simplePricePerPerson => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'flight-included')
   bool get flightIncluded => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'travel-date')
   TravelDateModel get travelDate => throw _privateConstructorUsedError;
   RoomsModel get rooms => throw _privateConstructorUsedError;
@@ -1232,7 +1224,6 @@ TravelDateModel _$TravelDateModelFromJson(Map<String, dynamic> json) {
 mixin _$TravelDateModel {
   @JsonKey(name: 'departure-date')
   String get departureDate => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'return-date')
   String get returnDate => throw _privateConstructorUsedError;
   int get days => throw _privateConstructorUsedError;
@@ -1443,7 +1434,6 @@ RoomsModel _$RoomsModelFromJson(Map<String, dynamic> json) {
 mixin _$RoomsModel {
   @JsonKey(name: 'overall')
   OverallRoomModel get overall => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'room-groups')
   List<RoomGroupModel> get roomGroups => throw _privateConstructorUsedError;
 
@@ -1549,9 +1539,10 @@ class __$$RoomsModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$RoomsModelImpl implements _RoomsModel {
-  const _$RoomsModelImpl({@JsonKey(name: 'overall') required this.overall,
-    @JsonKey(name: 'room-groups') required final List<
-        RoomGroupModel> roomGroups})
+  const _$RoomsModelImpl(
+      {@JsonKey(name: 'overall') required this.overall,
+      @JsonKey(name: 'room-groups')
+      required final List<RoomGroupModel> roomGroups})
       : _roomGroups = roomGroups;
 
   factory _$RoomsModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -1632,13 +1623,10 @@ OverallRoomModel _$OverallRoomModelFromJson(Map<String, dynamic> json) {
 mixin _$OverallRoomModel {
   String get boarding => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'adult-count')
   int get adultCount => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'children-count')
   int get childrenCount => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'same-boarding')
   bool get sameBoarding => throw _privateConstructorUsedError;
 
@@ -1833,12 +1821,13 @@ class _$OverallRoomModelImpl implements _OverallRoomModel {
 }
 
 abstract class _OverallRoomModel implements OverallRoomModel {
-  const factory _OverallRoomModel({required final String boarding,
-    required final String name,
-    @JsonKey(name: 'adult-count') required final int adultCount,
-    @JsonKey(name: 'children-count') required final int childrenCount,
-    @JsonKey(name: 'same-boarding') required final bool sameBoarding}) =
-  _$OverallRoomModelImpl;
+  const factory _OverallRoomModel(
+          {required final String boarding,
+          required final String name,
+          @JsonKey(name: 'adult-count') required final int adultCount,
+          @JsonKey(name: 'children-count') required final int childrenCount,
+          @JsonKey(name: 'same-boarding') required final bool sameBoarding}) =
+      _$OverallRoomModelImpl;
 
   factory _OverallRoomModel.fromJson(Map<String, dynamic> json) =
       _$OverallRoomModelImpl.fromJson;

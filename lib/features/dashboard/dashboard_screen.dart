@@ -1,8 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hotel_booking/di/injector.dart';
-import 'package:hotel_booking/features/hotel/presentation/manager/hotel_bloc.dart';
 import 'package:hotel_booking/generated/l10n.dart';
 import 'package:hotel_booking/route/app_router.gr.dart';
 
@@ -24,6 +21,7 @@ class MainShellPage extends StatelessWidget {
         return Scaffold(
           body: child,
           bottomNavigationBar: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
             currentIndex: tabsRouter.activeIndex,
             onTap: tabsRouter.setActiveIndex,
             items: [
@@ -47,46 +45,7 @@ class MainShellPage extends StatelessWidget {
   }
 }
 
-@RoutePage()
-class HotelsScreen extends StatelessWidget {
-  const HotelsScreen({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(S.of(context).hotels_page_title)),
-      body: BlocBuilder<HotelBloc, HotelState>(
-        bloc: inject<HotelBloc>()..add(const FetchHotel()),
-        builder: (context, state) {
-          return state.when(
-            initial: () => const Center(child: CircularProgressIndicator()),
-            loading: () => const Center(child: CircularProgressIndicator()),
-            loaded: (hotels) {
-              return ListView.builder(
-                itemCount: hotels.length,
-                itemBuilder: (context, index) {
-                  return HotelCard(
-                    imageUrl: hotels[index].images.first.large,
-                    title: hotels[index].name,
-                    location: hotels[index].destination,
-                    price:
-                        hotels[index].bestOffer.simplePricePerPerson.toString(),
-                    rating: hotels[index].ratingInfo.score,
-                    isFavorite: false,
-                    onFavoriteToggle: () {
-                      // Handle favorite logic
-                    },
-                  );
-                },
-              );
-            },
-            error: (message) => Center(child: Text(message)),
-          );
-        },
-      ),
-    );
-  }
-}
 
 @RoutePage()
 class FavoritesScreen extends StatelessWidget {
@@ -111,17 +70,7 @@ class FavoritesScreen extends StatelessWidget {
       body: ListView.builder(
         itemCount: favorites.length,
         itemBuilder: (context, index) {
-          return HotelCard(
-            imageUrl: favorites[index]["imageUrl"],
-            title: favorites[index]["title"],
-            location: favorites[index]["location"],
-            price: favorites[index]["price"],
-            rating: favorites[index]["rating"],
-            isFavorite: favorites[index]["isFavorite"],
-            onFavoriteToggle: () {
-              // Handle unfavorite logic
-            },
-          );
+          return const Text('Favorite Hotel Card');
         },
       ),
     );
@@ -153,96 +102,6 @@ class AccountScreen extends StatelessWidget {
       appBar: AppBar(title: Text(S.of(context).account_page_title)),
       body: const Center(
         child: Text('Account Details'),
-      ),
-    );
-  }
-}
-
-class HotelCard extends StatelessWidget {
-  final String imageUrl;
-  final String title;
-  final String location;
-  final String price;
-  final double rating;
-  final bool isFavorite;
-  final VoidCallback onFavoriteToggle;
-
-  const HotelCard({
-    super.key,
-    required this.imageUrl,
-    required this.title,
-    required this.location,
-    required this.price,
-    required this.rating,
-    required this.isFavorite,
-    required this.onFavoriteToggle,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.all(10),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ClipRRect(
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(10),
-              topRight: Radius.circular(10),
-            ),
-            child: Image.network(
-              imageUrl,
-              height: 200,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              title,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Text(location),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('ab $price €', style: const TextStyle(fontSize: 16)),
-                Row(
-                  children: [
-                    const Icon(Icons.star, color: Colors.orange, size: 20),
-                    Text('$rating / 5.0'),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
-              child: const Text('Book Now'),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: IconButton(
-              onPressed: onFavoriteToggle,
-              icon: Icon(
-                isFavorite ? Icons.favorite : Icons.favorite_border,
-                color: isFavorite ? Colors.red : Colors.grey,
-              ),
-            ),
-          ),
-        ],
       ),
     );
   }
