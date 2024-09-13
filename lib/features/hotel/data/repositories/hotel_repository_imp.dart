@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:hotel_booking/base/index.dart';
 import 'package:hotel_booking/features/hotel/data/mapper/hotel_mapper.dart';
 import 'package:hotel_booking/features/hotel/data/repositories/data_source.dart';
@@ -18,7 +19,7 @@ class HotelRepositoryImp extends HotelRepository {
   Future<CustomResult<List<HotelEntity>>> getHotels() {
     final task = DioNetworkTask(() => remoteDataSource.getHotels());
     return networkTaskManager
-        .executeTask(task, useIsolate: true)
+        .executeTask(task, useIsolate: !kIsWeb)
         .map((response) {
       logger.i('Number of hotel ${response.hotels.length}');
       return response.hotels.map(hotelMapper.mapFromModel).toList();
