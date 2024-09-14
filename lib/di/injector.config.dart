@@ -14,6 +14,9 @@ import 'package:injectable/injectable.dart' as _i526;
 
 import '../base/index.dart' as _i852;
 import '../base/remote/network_task_manager.dart' as _i148;
+import '../features/hotel/data/local/data_sources/hotel_local_data_source_impl.dart'
+    as _i1;
+import '../features/hotel/data/mapper/favorite_hotel_mapper.dart' as _i476;
 import '../features/hotel/data/mapper/hotel_mapper.dart' as _i375;
 import '../features/hotel/data/remote/data_sources/hotel_remote_data_source.dart'
     as _i604;
@@ -41,12 +44,14 @@ _i174.GetIt $initGetIt(
   );
   final appModule = _$AppModule();
   gh.factory<_i375.HotelMapper>(() => _i375.HotelMapper());
+  gh.factory<_i476.FavoriteHotelMapper>(() => _i476.FavoriteHotelMapper());
   gh.lazySingleton<_i1007.AppRouter>(() => _i1007.AppRouter());
   gh.lazySingleton<_i148.NetworkTaskManager>(() => _i148.NetworkTaskManager());
   gh.lazySingleton<_i361.Dio>(
     () => appModule.dio,
     instanceName: 'dio_client',
   );
+  gh.factory<_i849.HotelLocalDataSource>(() => _i1.HotelLocalDataSourceImpl());
   gh.lazySingleton<String>(
     () => appModule.baseUrl,
     instanceName: 'base_url',
@@ -60,9 +65,11 @@ _i174.GetIt $initGetIt(
         baseUrl: gh<String>(instanceName: 'base_url'),
       ));
   gh.factory<_i2.HotelRepository>(() => _i502.HotelRepositoryImp(
-        gh<_i849.HotelRemoteDataSource>(),
-        gh<_i852.NetworkTaskManager>(),
-        gh<_i375.HotelMapper>(),
+        remoteDataSource: gh<_i849.HotelRemoteDataSource>(),
+        networkTaskManager: gh<_i852.NetworkTaskManager>(),
+        hotelMapper: gh<_i375.HotelMapper>(),
+        localDataSource: gh<_i849.HotelLocalDataSource>(),
+        favoriteHotelMapper: gh<_i476.FavoriteHotelMapper>(),
       ));
   gh.factory<_i952.GetHotelsUseCase>(
       () => _i952.GetHotelsUseCase(gh<_i2.HotelRepository>()));
