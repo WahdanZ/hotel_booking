@@ -6,10 +6,8 @@ import 'package:hotel_booking/generated/l10n.dart';
 
 class HotelCard extends StatelessWidget {
   final HotelEntity hotel;
-
-  final Function? onFavoriteClick;
-
-  final Function? onViewOffersClick;
+  final Function(String hotelId)? onFavoriteClick;
+  final Function(String hotelId)? onViewOffersClick;
 
   const HotelCard({
     super.key,
@@ -21,23 +19,21 @@ class HotelCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
-      ),
-      elevation: 4,
-      margin: const EdgeInsets.all(16),
+      // ... (Card styling)
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // Image and Favorite Button
           Stack(
             children: [
+              // Hotel Image
               ClipRRect(
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(8),
                   topRight: Radius.circular(8),
                 ),
                 child: Image.network(
-                  hotel.images.first.large,
+                  hotel.imageUrl,
                   width: double.infinity,
                   height: 180,
                   fit: BoxFit.cover,
@@ -74,7 +70,7 @@ class HotelCard extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 8),
-                    RatingWidget(rate: hotel.ratingInfo.score.toInt()),
+                    RatingWidget(rate: hotel.ratingScore.toInt()),
                   ],
                 ),
                 const SizedBox(height: 4),
@@ -83,9 +79,7 @@ class HotelCard extends StatelessWidget {
                   style: AppStyles.bodyStyle,
                 ),
                 const SizedBox(height: 8),
-                const Divider(
-                  height: 2,
-                ),
+                const Divider(height: 2),
                 const SizedBox(height: 8),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,36 +89,39 @@ class HotelCard extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          // Travel Dates
                           Text(
                             S.of(context).hotelDaysNights(
-                                  hotel.bestOffer.travelDate.days,
-                                  hotel.bestOffer.travelDate.nights,
+                                  hotel.days,
+                                  hotel.nights,
                                 ),
                             style: AppStyles.subTextStyle,
                           ),
                           const SizedBox(height: 4),
                           Text(
                             S.of(context).roomInfo(
-                                  hotel.bestOffer.rooms.overall.name,
-                                  hotel.bestOffer.rooms.overall.boarding,
+                                  hotel.roomName,
+                                  hotel.boarding,
                                 ),
                             maxLines: 2,
                             style: TextStyle(
-                                fontSize: 14, color: Colors.grey[600]),
+                              fontSize: 14,
+                              color: Colors.grey[600],
+                            ),
                           ),
                           const SizedBox(height: 4),
                           Text(
                             S.of(context).guestsAndFlightInfo(
-                                  hotel.bestOffer.rooms.overall.adultCount
-                                      .toString(),
-                                  hotel.bestOffer.rooms.overall.childrenCount
-                                      .toString(),
-                                  hotel.bestOffer.flightIncluded
+                                  hotel.adultCount.toString(),
+                                  hotel.childrenCount.toString(),
+                                  hotel.flightIncluded
                                       ? S.of(context).includedFlight
                                       : S.of(context).noFlight,
                                 ),
                             style: TextStyle(
-                                fontSize: 14, color: Colors.grey[600]),
+                              fontSize: 14,
+                              color: Colors.grey[600],
+                            ),
                           ),
                         ],
                       ),
@@ -133,7 +130,7 @@ class HotelCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          '€ ${(hotel.bestOffer.total / 100).toStringAsFixed(2)}',
+                          '€ ${(hotel.totalPrice / 100).toStringAsFixed(2)}',
                           style: const TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -142,11 +139,12 @@ class HotelCard extends StatelessWidget {
                         ),
                         Text(
                           S.of(context).pricePerPerson(
-                                (hotel.bestOffer.simplePricePerPerson / 100)
-                                    .toStringAsFixed(2),
+                                (hotel.pricePerPerson / 100).toStringAsFixed(2),
                               ),
-                          style:
-                              TextStyle(fontSize: 14, color: Colors.grey[600]),
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey[600],
+                          ),
                         ),
                       ],
                     ),
