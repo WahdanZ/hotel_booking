@@ -4,16 +4,18 @@ import 'package:hotel_booking/features/hotel/domain/entities/hotel_entity.dart';
 import 'package:hotel_booking/features/hotel/presentation/widgets/rating_widget.dart';
 import 'package:hotel_booking/generated/l10n.dart';
 
-class HotelCard extends StatelessWidget {
+class HotelCardItem extends StatelessWidget {
   final HotelEntity hotel;
+  final bool showDetails;
   final Function(String hotelId)? onFavoriteClick;
   final Function(String hotelId)? onViewOffersClick;
 
-  const HotelCard({
+  const HotelCardItem({
     super.key,
     required this.hotel,
     this.onFavoriteClick,
     this.onViewOffersClick,
+    this.showDetails = true,
   });
 
   @override
@@ -40,8 +42,10 @@ class HotelCard extends StatelessWidget {
                 const SizedBox(height: 8),
                 const Divider(height: 2),
                 const SizedBox(height: 8),
-                HotelDetails(hotel: hotel),
-                const SizedBox(height: 16),
+                if (showDetails) ...[
+                  HotelDetails(hotel: hotel),
+                  const SizedBox(height: 16),
+                ],
                 HotelViewOffersButton(
                   hotelId: hotel.hotelId,
                   onViewOffersClick: onViewOffersClick,

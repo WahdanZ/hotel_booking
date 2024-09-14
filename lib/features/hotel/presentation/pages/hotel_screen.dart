@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hotel_booking/di/injector.dart';
 import 'package:hotel_booking/features/hotel/domain/entities/hotel_entity.dart';
-import 'package:hotel_booking/features/hotel/presentation/manager/hotel_bloc.dart';
+import 'package:hotel_booking/features/hotel/presentation/bloc/hotel/hotel_bloc.dart';
 import 'package:hotel_booking/features/hotel/presentation/widgets/hotel_card_item.dart';
 import 'package:hotel_booking/generated/l10n.dart';
 
 @RoutePage()
 class HotelsScreen extends StatelessWidget {
+  static const String routeName = 'hotels-screen';
   const HotelsScreen({super.key});
 
   @override
@@ -34,7 +35,6 @@ class _HotelsScreenContentState extends State<HotelsScreenContent> {
   void initState() {
     super.initState();
     _hotelBloc = context.read();
-    _hotelBloc.add(const FetchHotel());
   }
 
   @override
@@ -57,6 +57,7 @@ class _HotelsScreenContentState extends State<HotelsScreenContent> {
       body: RefreshIndicator(
         onRefresh: _onRefresh,
         child: BlocBuilder<HotelBloc, HotelState>(
+          bloc: _hotelBloc..add(const FetchHotel()),
           builder: (context, state) {
             return state.when(
               initial: () => const _HotelsLoading(),
@@ -101,7 +102,7 @@ class _HotelsList extends StatelessWidget {
         itemCount: hotels.length,
         itemBuilder: (context, index) {
           final hotel = hotels[index];
-          return HotelCard(
+          return HotelCardItem(
             hotel: hotel,
             onFavoriteClick: (hotelId) {
               if (hotel.isFavorite) {

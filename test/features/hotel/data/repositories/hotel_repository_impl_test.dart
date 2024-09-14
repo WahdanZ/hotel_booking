@@ -164,8 +164,8 @@ void main() {
 
       // Assert
       expect(result, isA<List<HotelEntity>>());
-      expect(result.length, 1);
-      expect(result.first, hotelEntity);
+      expect(result.valueOrNull?.length, 1);
+      expect(result.valueOrNull?.first, hotelEntity);
 
       verify(() => mockLocalDataSource.getFavoriteHotels()).called(1);
       verify(() => mockFavoriteHotelMapper.mapFromModel(favoriteHotelModel))

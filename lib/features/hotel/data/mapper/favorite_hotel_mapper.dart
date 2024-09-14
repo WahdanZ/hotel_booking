@@ -11,7 +11,7 @@ class FavoriteHotelMapper extends Mapper<FavoriteHotelModel, HotelEntity> {
       destination: type.destination,
       imageUrl: type.imageUrl,
       ratingScore: type.ratingScore,
-      isFavorite: type.isFavorite,
+      isFavorite: true,
       days: type.days,
       nights: type.nights,
       roomName: type.roomName,

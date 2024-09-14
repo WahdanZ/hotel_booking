@@ -25,10 +25,14 @@ import '../features/hotel/data/repositories/hotel_repository_imp.dart' as _i502;
 import '../features/hotel/domain/repositories/hotel_repository.dart' as _i2;
 import '../features/hotel/domain/use_cases/add_favorite_hotel_use_case.dart'
     as _i181;
+import '../features/hotel/domain/use_cases/get_favorite_hotels_use_case.dart'
+    as _i111;
 import '../features/hotel/domain/use_cases/get_hotels_use_case.dart' as _i952;
 import '../features/hotel/domain/use_cases/remove_favorite_hotel_use_case.dart'
     as _i315;
-import '../features/hotel/presentation/manager/hotel_bloc.dart' as _i361;
+import '../features/hotel/presentation/bloc/favorite/favorite_hotel_bloc.dart'
+    as _i577;
+import '../features/hotel/presentation/bloc/hotel/hotel_bloc.dart' as _i18;
 import '../route/app_router.dart' as _i1007;
 import 'app_module.dart' as _i460;
 
@@ -81,8 +85,16 @@ _i174.GetIt $initGetIt(
       () => _i181.AddFavoriteHotelUseCase(gh<_i2.HotelRepository>()));
   gh.factory<_i315.RemoveFavoriteHotelUseCase>(
       () => _i315.RemoveFavoriteHotelUseCase(gh<_i2.HotelRepository>()));
-  gh.factory<_i361.HotelBloc>(() => _i361.HotelBloc(
+  gh.factory<_i111.GetFavoriteHotelsUseCase>(() =>
+      _i111.GetFavoriteHotelsUseCase(
+          hotelRepository: gh<_i2.HotelRepository>()));
+  gh.factory<_i18.HotelBloc>(() => _i18.HotelBloc(
         getHotelsUseCase: gh<_i952.GetHotelsUseCase>(),
+        addFavoriteHotelUseCase: gh<_i181.AddFavoriteHotelUseCase>(),
+        removeFavoriteHotelUseCase: gh<_i315.RemoveFavoriteHotelUseCase>(),
+      ));
+  gh.factory<_i577.FavoriteHotelBloc>(() => _i577.FavoriteHotelBloc(
+        getFavoriteHotelsUseCase: gh<_i111.GetFavoriteHotelsUseCase>(),
         addFavoriteHotelUseCase: gh<_i181.AddFavoriteHotelUseCase>(),
         removeFavoriteHotelUseCase: gh<_i315.RemoveFavoriteHotelUseCase>(),
       ));

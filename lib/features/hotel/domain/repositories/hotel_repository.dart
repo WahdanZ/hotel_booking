@@ -8,7 +8,7 @@ abstract class HotelRepository {
 
   Future<CustomResult<bool>> removeFavoriteHotel(String hotelId);
 
-  Future<List<HotelEntity>> getFavoriteHotels();
+  Future<CustomResult<List<HotelEntity>>> getFavoriteHotels();
 
   Future<bool> isFavorite(String hotelId);
 }

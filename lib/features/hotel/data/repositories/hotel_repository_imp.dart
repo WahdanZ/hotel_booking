@@ -26,9 +26,7 @@ class HotelRepositoryImp extends HotelRepository {
   Future<CustomResult<List<HotelEntity>>> getHotels() async {
     try {
       final task = DioNetworkTask(() => remoteDataSource.getHotels());
-      final hotels = await networkTaskManager
-          .executeTask(task, useIsolate: true)
-          .thenMap((response) async {
+      final hotels = await networkTaskManager.executeTask(task).thenMap((response) async {
         List<String> favoriteHotelIds = await getFavoriteHotelIds();
         return response.hotels
             .map((hotel) => hotelMapper.mapFromModel(hotel))
@@ -68,9 +66,10 @@ class HotelRepositoryImp extends HotelRepository {
   }
 
   @override
-  Future<List<HotelEntity>> getFavoriteHotels() async {
+  Future<CustomResult<List<HotelEntity>>> getFavoriteHotels() async {
     final favoriteModels = await localDataSource.getFavoriteHotels();
-    return favoriteModels.map(favoriteHotelMapper.mapFromModel).toList();
+    return CustomResult.success(
+        favoriteModels.map(favoriteHotelMapper.mapFromModel).toList());
   }
 
   @override

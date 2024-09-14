@@ -13,7 +13,7 @@ class MainShellPage extends StatelessWidget {
       routes: const [
         OverviewRoute(),
         HotelsRoute(),
-        FavoritesRoute(),
+        FavoriteHotelRoute(),
         AccountRoute(),
       ],
       builder: (context, child) {
@@ -47,35 +47,7 @@ class MainShellPage extends StatelessWidget {
 
 
 
-@RoutePage()
-class FavoritesScreen extends StatelessWidget {
-  const FavoritesScreen({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    List<Map<String, dynamic>> favorites = [
-      {
-        "imageUrl": "https://via.placeholder.com/400x200",
-        "title": "Hotel AluaVillage Blue Beach",
-        "location": "Playa de Esquinzo, Fuerteventura, Spanien",
-        "price": "1.279,00",
-        "rating": 4.5,
-        "isFavorite": true,
-      },
-      // Add more favorited hotels here
-    ];
-
-    return Scaffold(
-      appBar: AppBar(title: Text(S.of(context).favorite_page_title)),
-      body: ListView.builder(
-        itemCount: favorites.length,
-        itemBuilder: (context, index) {
-          return const Text('Favorite Hotel Card');
-        },
-      ),
-    );
-  }
-}
 
 @RoutePage()
 class OverviewScreen extends StatelessWidget {
