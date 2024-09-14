@@ -19,32 +19,44 @@ mixin _$HotelEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetchHotel,
+    required TResult Function(HotelEntity hotel) addFavoriteHotel,
+    required TResult Function(String hotelId) removeFavoriteHotel,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetchHotel,
+    TResult? Function(HotelEntity hotel)? addFavoriteHotel,
+    TResult? Function(String hotelId)? removeFavoriteHotel,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchHotel,
+    TResult Function(HotelEntity hotel)? addFavoriteHotel,
+    TResult Function(String hotelId)? removeFavoriteHotel,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FetchHotel value) fetchHotel,
+    required TResult Function(AddFavoriteHotel value) addFavoriteHotel,
+    required TResult Function(RemoveFavoriteHotel value) removeFavoriteHotel,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FetchHotel value)? fetchHotel,
+    TResult? Function(AddFavoriteHotel value)? addFavoriteHotel,
+    TResult? Function(RemoveFavoriteHotel value)? removeFavoriteHotel,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchHotel value)? fetchHotel,
+    TResult Function(AddFavoriteHotel value)? addFavoriteHotel,
+    TResult Function(RemoveFavoriteHotel value)? removeFavoriteHotel,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -107,6 +119,8 @@ class _$FetchHotelImpl implements FetchHotel {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetchHotel,
+    required TResult Function(HotelEntity hotel) addFavoriteHotel,
+    required TResult Function(String hotelId) removeFavoriteHotel,
   }) {
     return fetchHotel();
   }
@@ -115,6 +129,8 @@ class _$FetchHotelImpl implements FetchHotel {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetchHotel,
+    TResult? Function(HotelEntity hotel)? addFavoriteHotel,
+    TResult? Function(String hotelId)? removeFavoriteHotel,
   }) {
     return fetchHotel?.call();
   }
@@ -123,6 +139,8 @@ class _$FetchHotelImpl implements FetchHotel {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchHotel,
+    TResult Function(HotelEntity hotel)? addFavoriteHotel,
+    TResult Function(String hotelId)? removeFavoriteHotel,
     required TResult orElse(),
   }) {
     if (fetchHotel != null) {
@@ -135,6 +153,8 @@ class _$FetchHotelImpl implements FetchHotel {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FetchHotel value) fetchHotel,
+    required TResult Function(AddFavoriteHotel value) addFavoriteHotel,
+    required TResult Function(RemoveFavoriteHotel value) removeFavoriteHotel,
   }) {
     return fetchHotel(this);
   }
@@ -143,6 +163,8 @@ class _$FetchHotelImpl implements FetchHotel {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FetchHotel value)? fetchHotel,
+    TResult? Function(AddFavoriteHotel value)? addFavoriteHotel,
+    TResult? Function(RemoveFavoriteHotel value)? removeFavoriteHotel,
   }) {
     return fetchHotel?.call(this);
   }
@@ -151,6 +173,8 @@ class _$FetchHotelImpl implements FetchHotel {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchHotel value)? fetchHotel,
+    TResult Function(AddFavoriteHotel value)? addFavoriteHotel,
+    TResult Function(RemoveFavoriteHotel value)? removeFavoriteHotel,
     required TResult orElse(),
   }) {
     if (fetchHotel != null) {
@@ -162,6 +186,298 @@ class _$FetchHotelImpl implements FetchHotel {
 
 abstract class FetchHotel implements HotelEvent {
   const factory FetchHotel() = _$FetchHotelImpl;
+}
+
+/// @nodoc
+abstract class _$$AddFavoriteHotelImplCopyWith<$Res> {
+  factory _$$AddFavoriteHotelImplCopyWith(_$AddFavoriteHotelImpl value,
+          $Res Function(_$AddFavoriteHotelImpl) then) =
+      __$$AddFavoriteHotelImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({HotelEntity hotel});
+
+  $HotelEntityCopyWith<$Res> get hotel;
+}
+
+/// @nodoc
+class __$$AddFavoriteHotelImplCopyWithImpl<$Res>
+    extends _$HotelEventCopyWithImpl<$Res, _$AddFavoriteHotelImpl>
+    implements _$$AddFavoriteHotelImplCopyWith<$Res> {
+  __$$AddFavoriteHotelImplCopyWithImpl(_$AddFavoriteHotelImpl _value,
+      $Res Function(_$AddFavoriteHotelImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? hotel = null,
+  }) {
+    return _then(_$AddFavoriteHotelImpl(
+      hotel: null == hotel
+          ? _value.hotel
+          : hotel // ignore: cast_nullable_to_non_nullable
+              as HotelEntity,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $HotelEntityCopyWith<$Res> get hotel {
+    return $HotelEntityCopyWith<$Res>(_value.hotel, (value) {
+      return _then(_value.copyWith(hotel: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$AddFavoriteHotelImpl implements AddFavoriteHotel {
+  const _$AddFavoriteHotelImpl({required this.hotel});
+
+  @override
+  final HotelEntity hotel;
+
+  @override
+  String toString() {
+    return 'HotelEvent.addFavoriteHotel(hotel: $hotel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddFavoriteHotelImpl &&
+            (identical(other.hotel, hotel) || other.hotel == hotel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, hotel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddFavoriteHotelImplCopyWith<_$AddFavoriteHotelImpl> get copyWith =>
+      __$$AddFavoriteHotelImplCopyWithImpl<_$AddFavoriteHotelImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fetchHotel,
+    required TResult Function(HotelEntity hotel) addFavoriteHotel,
+    required TResult Function(String hotelId) removeFavoriteHotel,
+  }) {
+    return addFavoriteHotel(hotel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fetchHotel,
+    TResult? Function(HotelEntity hotel)? addFavoriteHotel,
+    TResult? Function(String hotelId)? removeFavoriteHotel,
+  }) {
+    return addFavoriteHotel?.call(hotel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fetchHotel,
+    TResult Function(HotelEntity hotel)? addFavoriteHotel,
+    TResult Function(String hotelId)? removeFavoriteHotel,
+    required TResult orElse(),
+  }) {
+    if (addFavoriteHotel != null) {
+      return addFavoriteHotel(hotel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FetchHotel value) fetchHotel,
+    required TResult Function(AddFavoriteHotel value) addFavoriteHotel,
+    required TResult Function(RemoveFavoriteHotel value) removeFavoriteHotel,
+  }) {
+    return addFavoriteHotel(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FetchHotel value)? fetchHotel,
+    TResult? Function(AddFavoriteHotel value)? addFavoriteHotel,
+    TResult? Function(RemoveFavoriteHotel value)? removeFavoriteHotel,
+  }) {
+    return addFavoriteHotel?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FetchHotel value)? fetchHotel,
+    TResult Function(AddFavoriteHotel value)? addFavoriteHotel,
+    TResult Function(RemoveFavoriteHotel value)? removeFavoriteHotel,
+    required TResult orElse(),
+  }) {
+    if (addFavoriteHotel != null) {
+      return addFavoriteHotel(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddFavoriteHotel implements HotelEvent {
+  const factory AddFavoriteHotel({required final HotelEntity hotel}) =
+      _$AddFavoriteHotelImpl;
+
+  HotelEntity get hotel;
+  @JsonKey(ignore: true)
+  _$$AddFavoriteHotelImplCopyWith<_$AddFavoriteHotelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RemoveFavoriteHotelImplCopyWith<$Res> {
+  factory _$$RemoveFavoriteHotelImplCopyWith(_$RemoveFavoriteHotelImpl value,
+          $Res Function(_$RemoveFavoriteHotelImpl) then) =
+      __$$RemoveFavoriteHotelImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String hotelId});
+}
+
+/// @nodoc
+class __$$RemoveFavoriteHotelImplCopyWithImpl<$Res>
+    extends _$HotelEventCopyWithImpl<$Res, _$RemoveFavoriteHotelImpl>
+    implements _$$RemoveFavoriteHotelImplCopyWith<$Res> {
+  __$$RemoveFavoriteHotelImplCopyWithImpl(_$RemoveFavoriteHotelImpl _value,
+      $Res Function(_$RemoveFavoriteHotelImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? hotelId = null,
+  }) {
+    return _then(_$RemoveFavoriteHotelImpl(
+      hotelId: null == hotelId
+          ? _value.hotelId
+          : hotelId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RemoveFavoriteHotelImpl implements RemoveFavoriteHotel {
+  const _$RemoveFavoriteHotelImpl({required this.hotelId});
+
+  @override
+  final String hotelId;
+
+  @override
+  String toString() {
+    return 'HotelEvent.removeFavoriteHotel(hotelId: $hotelId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveFavoriteHotelImpl &&
+            (identical(other.hotelId, hotelId) || other.hotelId == hotelId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, hotelId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RemoveFavoriteHotelImplCopyWith<_$RemoveFavoriteHotelImpl> get copyWith =>
+      __$$RemoveFavoriteHotelImplCopyWithImpl<_$RemoveFavoriteHotelImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fetchHotel,
+    required TResult Function(HotelEntity hotel) addFavoriteHotel,
+    required TResult Function(String hotelId) removeFavoriteHotel,
+  }) {
+    return removeFavoriteHotel(hotelId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fetchHotel,
+    TResult? Function(HotelEntity hotel)? addFavoriteHotel,
+    TResult? Function(String hotelId)? removeFavoriteHotel,
+  }) {
+    return removeFavoriteHotel?.call(hotelId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fetchHotel,
+    TResult Function(HotelEntity hotel)? addFavoriteHotel,
+    TResult Function(String hotelId)? removeFavoriteHotel,
+    required TResult orElse(),
+  }) {
+    if (removeFavoriteHotel != null) {
+      return removeFavoriteHotel(hotelId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FetchHotel value) fetchHotel,
+    required TResult Function(AddFavoriteHotel value) addFavoriteHotel,
+    required TResult Function(RemoveFavoriteHotel value) removeFavoriteHotel,
+  }) {
+    return removeFavoriteHotel(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FetchHotel value)? fetchHotel,
+    TResult? Function(AddFavoriteHotel value)? addFavoriteHotel,
+    TResult? Function(RemoveFavoriteHotel value)? removeFavoriteHotel,
+  }) {
+    return removeFavoriteHotel?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FetchHotel value)? fetchHotel,
+    TResult Function(AddFavoriteHotel value)? addFavoriteHotel,
+    TResult Function(RemoveFavoriteHotel value)? removeFavoriteHotel,
+    required TResult orElse(),
+  }) {
+    if (removeFavoriteHotel != null) {
+      return removeFavoriteHotel(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveFavoriteHotel implements HotelEvent {
+  const factory RemoveFavoriteHotel({required final String hotelId}) =
+      _$RemoveFavoriteHotelImpl;
+
+  String get hotelId;
+  @JsonKey(ignore: true)
+  _$$RemoveFavoriteHotelImplCopyWith<_$RemoveFavoriteHotelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

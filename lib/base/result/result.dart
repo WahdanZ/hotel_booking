@@ -100,7 +100,7 @@ extension FutureCustomResultX<T extends Object> on Future<CustomResult<T>> {
   /// - [f]: The asynchronous function to transform the result of type [T] to type [B].
   ///
   /// Returns a [Future] containing the transformed [CustomResult].
-  Future<CustomResult<B>> flatMap<B extends Object>(
+  Future<CustomResult<B>> thenMap<B extends Object>(
       Future<B> Function(T) f) async {
     final value = await this;
     return value.when(
@@ -114,7 +114,7 @@ extension FutureCustomResultX<T extends Object> on Future<CustomResult<T>> {
   /// - [f]: The function to transform the [NetworkFailure] to another [NetworkFailure].
   ///
   /// Returns a [Future] containing the transformed [CustomResult].
-  Future<CustomResult<T>> mapFailure(
+  Future<CustomResult<T>> thenMapFailure(
       NetworkFailure Function(NetworkFailure) f) async {
     final value = await this;
     return value.when(

@@ -7,7 +7,7 @@ import '../../result/result.dart';
 
 /// Abstract class representing a use case that returns a [Future] of type [T].
 /// [Params] is required by the [UseCase] to retrieve the appropriate data from the repository.
-abstract class UseCase<T extends Object, P extends Params> {
+abstract class UseCase<T extends dynamic, P extends Params> {
   /// Builds the [Future] with the given [params].
   Future<T> buildUseCase(P params);
 
