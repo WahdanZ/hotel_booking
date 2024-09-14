@@ -9,6 +9,13 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:get_it/get_it.dart' as _i174;
+import 'package:hotel_booking/base/index.dart' as _i60;
+import 'package:hotel_booking/features/hotel/data/mapper/favorite_hotel_mapper.dart'
+    as _i489;
+import 'package:hotel_booking/features/hotel/data/mapper/hotel_mapper.dart'
+    as _i748;
+import 'package:hotel_booking/features/hotel/data/repositories/data_source.dart'
+    as _i298;
 import 'package:injectable/injectable.dart' as _i526;
 
 import 'mocks.dart' as _i786;
@@ -25,11 +32,14 @@ extension GetItInjectableX on _i174.GetIt {
       environmentFilter,
     );
     gh.factory<_i786.MockDio>(() => _i786.MockDio());
-    gh.factory<_i786.MockHotelRemoteDataSource>(
+    gh.factory<_i489.FavoriteHotelMapper>(
+        () => _i786.MockFavoriteHotelMapper());
+    gh.factory<_i748.HotelMapper>(() => _i786.MockHotelMapper());
+    gh.factory<_i60.NetworkTaskManager>(() => _i786.MockNetworkTaskManager());
+    gh.factory<_i298.HotelLocalDataSource>(
+        () => _i786.MockHotelLocalDataSource());
+    gh.factory<_i298.HotelRemoteDataSource>(
         () => _i786.MockHotelRemoteDataSource());
-    gh.factory<_i786.MockNetworkTaskManager>(
-        () => _i786.MockNetworkTaskManager());
-    gh.factory<_i786.MockHotelMapper>(() => _i786.MockHotelMapper());
     return this;
   }
 }
