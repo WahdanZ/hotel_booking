@@ -41,7 +41,12 @@ class MyApp extends StatelessWidget {
       supportedLocales: S.delegate.supportedLocales,
       title: 'Hotel Booking',
       theme: AppTheme.themeData,
-      routerDelegate: appRouter.delegate(),
+      routerDelegate: appRouter.delegate(
+        deepLinkBuilder: (deepLink) {
+          logger.i('DeepLink: $deepLink');
+          return deepLink;
+        },
+      ),
       routeInformationParser: appRouter.defaultRouteParser(),
     );
   }

@@ -89,7 +89,4 @@ class _FavoriteHotelScreenContentState
       ),
     );
   }
-
-  @override
-  bool get wantKeepAlive => false;
 }
