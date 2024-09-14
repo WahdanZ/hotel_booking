@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hotel_booking/base/index.dart';
 import 'package:hotel_booking/di/injector.dart';
 import 'package:hotel_booking/features/hotel/presentation/bloc/favorite/favorite_hotel_bloc.dart';
 import 'package:hotel_booking/features/hotel/presentation/widgets/hotel_card_item.dart';
@@ -41,15 +40,6 @@ class _FavoriteHotelScreenContentState
     _favoriteHotelBloc.add(const FetchFavoriteHotel());
   }
 
-  @override
-  void didInitTabRoute(TabPageRoute? previousRoute) async {
-    logger.i('didInitTabRoute: $previousRoute');
-  }
-
-  @override
-  void didChangeTabRoute(TabPageRoute previousRoute) async {
-    logger.i('didChangeTabRoute: $previousRoute');
-  }
 
   @override
   void dispose() {
