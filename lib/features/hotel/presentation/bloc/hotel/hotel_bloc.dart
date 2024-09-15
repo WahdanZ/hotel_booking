@@ -26,7 +26,9 @@ class HotelBloc extends Bloc<HotelEvent, HotelState> {
   }
 
   Future<void> _onFetchHotel(FetchHotel event, Emitter<HotelState> emit) async {
-    emit(const HotelState.loading());
+    if (event.showLoading) {
+      emit(const HotelState.loading());
+    }
     final result = await getHotelsUseCase.execute(params: Any());
     _handleResult(result, emit, (data) {
       emit(HotelState.loaded(data));

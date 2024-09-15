@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hotel_booking/base/common/widget/tab_observer_mixin.dart';
 import 'package:hotel_booking/di/injector.dart';
 import 'package:hotel_booking/features/hotel/presentation/bloc/favorite/favorite_hotel_bloc.dart';
 import 'package:hotel_booking/features/hotel/presentation/widgets/hotel_card_item.dart';
@@ -29,8 +30,8 @@ class FavoriteHotelScreenContent extends StatefulWidget {
       _FavoriteHotelScreenContentState();
 }
 
-class _FavoriteHotelScreenContentState
-    extends State<FavoriteHotelScreenContent> {
+class _FavoriteHotelScreenContentState extends State<FavoriteHotelScreenContent>
+    with AutoRouteAware, TabObserverMixin {
   late final FavoriteHotelBloc _favoriteHotelBloc;
 
   @override
@@ -40,11 +41,15 @@ class _FavoriteHotelScreenContentState
     _favoriteHotelBloc.add(const FetchFavoriteHotel());
   }
 
+  @override
+  void onTabActive() {
+    super.onTabActive();
+    _favoriteHotelBloc.add(const FetchFavoriteHotel());
+  }
 
   @override
   void dispose() {
     _favoriteHotelBloc.close();
-
     super.dispose();
   }
 

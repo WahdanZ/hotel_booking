@@ -20,11 +20,11 @@ class AppRouter extends RootStackRouter {
             AutoRoute(
                 path: HotelsScreen.routeName,
                 page: HotelsRoute.page,
-                maintainState: false),
+            ),
             AutoRoute(
                 path: FavoriteHotelScreen.routeName,
                 page: FavoriteHotelRoute.page,
-                maintainState: false),
+            ),
             AutoRoute(path: 'account', page: AccountRoute.page),
           ],
         ),

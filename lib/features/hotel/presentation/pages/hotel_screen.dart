@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hotel_booking/base/common/widget/tab_observer_mixin.dart';
 import 'package:hotel_booking/di/injector.dart';
 import 'package:hotel_booking/features/hotel/domain/entities/hotel_entity.dart';
 import 'package:hotel_booking/features/hotel/presentation/bloc/hotel/hotel_bloc.dart';
@@ -28,7 +29,8 @@ class HotelsScreenContent extends StatefulWidget {
   State<HotelsScreenContent> createState() => _HotelsScreenContentState();
 }
 
-class _HotelsScreenContentState extends State<HotelsScreenContent> {
+class _HotelsScreenContentState extends State<HotelsScreenContent>
+    with AutoRouteAware, TabObserverMixin {
   late final HotelBloc _hotelBloc;
 
   @override
@@ -41,6 +43,12 @@ class _HotelsScreenContentState extends State<HotelsScreenContent> {
   void dispose() {
     _hotelBloc.close();
     super.dispose();
+  }
+
+  @override
+  onTabActive() {
+    super.onTabActive();
+    _hotelBloc.add(const FetchHotel(showLoading: false));
   }
 
   Future<void> _onRefresh() async {
