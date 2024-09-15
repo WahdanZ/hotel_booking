@@ -1,4 +1,6 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:hotel_booking/features/hotel/presentation/pages/favorite_hotel_screen.dart';
+import 'package:hotel_booking/features/hotel/presentation/pages/hotel_screen.dart';
 import 'package:injectable/injectable.dart';
 
 import 'app_router.gr.dart';
@@ -15,9 +17,14 @@ class AppRouter extends RootStackRouter {
           children: [
             AutoRoute(
                 path: 'overview', page: OverviewRoute.page, initial: true),
-            AutoRoute(path: 'hotels', page: HotelsRoute.page),
-            AutoRoute(path: 'favorites', page: FavoritesRoute.page),
-
+            AutoRoute(
+                path: HotelsScreen.routeName,
+                page: HotelsRoute.page,
+            ),
+            AutoRoute(
+                path: FavoriteHotelScreen.routeName,
+                page: FavoriteHotelRoute.page,
+            ),
             AutoRoute(path: 'account', page: AccountRoute.page),
           ],
         ),

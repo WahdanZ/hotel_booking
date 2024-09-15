@@ -8,7 +8,7 @@ abstract class AppModule {
   @prod
   @dev
   String get baseUrl =>
-      const String.fromEnvironment('base_url', defaultValue: "");
+      const String.fromEnvironment('base_url', defaultValue: "https://dkndmolrswy7b.cloudfront.net/");
   @LazySingleton()
   @Named('dio_client')
   Dio get dio =>

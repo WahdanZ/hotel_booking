@@ -74,7 +74,7 @@ void main() {
     test('flatMap extension transforms success result', () async {
       final result = await CustomResultTest()
           .fetchDataSuccess()
-          .flatMap((data) => Future.value("Mapped $data"));
+          .thenMap((data) => Future.value("Mapped $data"));
 
       final response = result.when(
         success: (data) => "Success: $data",
@@ -86,7 +86,7 @@ void main() {
     test('flatMap extension retains failure result', () async {
       final result = await CustomResultTest()
           .fetchDataFailure()
-          .flatMap((data) => Future.value("Mapped $data"));
+          .thenMap((data) => Future.value("Mapped $data"));
 
       final response = result.when(
         success: (data) => "Success: $data",
@@ -96,7 +96,7 @@ void main() {
     });
 
     test('mapFailure extension transforms failure', () async {
-      final result = await CustomResultTest().fetchDataFailure().mapFailure(
+      final result = await CustomResultTest().fetchDataFailure().thenMapFailure(
           (error) =>
               NetworkFailure.api(message: "Transformed ${error.message}"));
 
@@ -108,7 +108,7 @@ void main() {
     });
 
     test('mapFailure extension retains success', () async {
-      final result = await CustomResultTest().fetchDataSuccess().mapFailure(
+      final result = await CustomResultTest().fetchDataSuccess().thenMapFailure(
           (error) =>
               NetworkFailure.api(message: "Transformed ${error.message}"));
 

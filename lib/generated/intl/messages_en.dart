@@ -20,17 +20,35 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(adults, children, flightIncluded) =>
+      "${adults} Adults, ${children} Children | ${flightIncluded}";
+
+  static String m1(days, nights) => "${days} Days | ${nights} Nights";
+
+  static String m2(price) => "${price} € p.P.";
+
+  static String m3(roomName, boardingType) => "${roomName} | ${boardingType}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "account_page_title": MessageLookupByLibrary.simpleMessage("Account"),
         "appTitle": MessageLookupByLibrary.simpleMessage("Hotel Booking"),
         "favorite_page_title": MessageLookupByLibrary.simpleMessage("Favorite"),
+        "fromPrice": MessageLookupByLibrary.simpleMessage("from"),
+        "guestsAndFlightInfo": m0,
         "hello": MessageLookupByLibrary.simpleMessage("hello"),
+        "hotelDaysNights": m1,
         "hotels_page_title": MessageLookupByLibrary.simpleMessage("Hotels"),
+        "includedFlight": MessageLookupByLibrary.simpleMessage("incl. Flight"),
+        "noFlight": MessageLookupByLibrary.simpleMessage(""),
         "overview_page_title": MessageLookupByLibrary.simpleMessage("Overview"),
+        "pricePerPerson": m2,
+        "roomInfo": m3,
         "tab_account": MessageLookupByLibrary.simpleMessage("Account"),
         "tab_favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
         "tab_hotels": MessageLookupByLibrary.simpleMessage("Hotels"),
-        "tab_overview": MessageLookupByLibrary.simpleMessage("Overview")
+        "tab_overview": MessageLookupByLibrary.simpleMessage("Overview"),
+        "viewHotel": MessageLookupByLibrary.simpleMessage("View Hotel"),
+        "viewOffers": MessageLookupByLibrary.simpleMessage("View Offers")
       };
 }

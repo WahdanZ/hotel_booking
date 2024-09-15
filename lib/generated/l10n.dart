@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -145,6 +146,97 @@ class S {
     return Intl.message(
       'Account',
       name: 'account_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{days} Days | {nights} Nights`
+  String hotelDaysNights(Object days, Object nights) {
+    return Intl.message(
+      '$days Days | $nights Nights',
+      name: 'hotelDaysNights',
+      desc: '',
+      args: [days, nights],
+    );
+  }
+
+  /// `{roomName} | {boardingType}`
+  String roomInfo(Object roomName, Object boardingType) {
+    return Intl.message(
+      '$roomName | $boardingType',
+      name: 'roomInfo',
+      desc: '',
+      args: [roomName, boardingType],
+    );
+  }
+
+  /// `{adults} Adults, {children} Children | {flightIncluded}`
+  String guestsAndFlightInfo(
+      Object adults, Object children, Object flightIncluded) {
+    return Intl.message(
+      '$adults Adults, $children Children | $flightIncluded',
+      name: 'guestsAndFlightInfo',
+      desc: '',
+      args: [adults, children, flightIncluded],
+    );
+  }
+
+  /// `from`
+  String get fromPrice {
+    return Intl.message(
+      'from',
+      name: 'fromPrice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{price} € p.P.`
+  String pricePerPerson(Object price) {
+    return Intl.message(
+      '$price € p.P.',
+      name: 'pricePerPerson',
+      desc: '',
+      args: [price],
+    );
+  }
+
+  /// `View Offers`
+  String get viewOffers {
+    return Intl.message(
+      'View Offers',
+      name: 'viewOffers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `incl. Flight`
+  String get includedFlight {
+    return Intl.message(
+      'incl. Flight',
+      name: 'includedFlight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ``
+  String get noFlight {
+    return Intl.message(
+      '',
+      name: 'noFlight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View Hotel`
+  String get viewHotel {
+    return Intl.message(
+      'View Hotel',
+      name: 'viewHotel',
       desc: '',
       args: [],
     );

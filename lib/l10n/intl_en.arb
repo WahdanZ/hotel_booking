@@ -8,5 +8,14 @@
   "hotels_page_title": "Hotels",
   "favorite_page_title": "Favorite",
   "overview_page_title": "Overview",
-  "account_page_title": "Account"
+  "account_page_title": "Account",
+  "hotelDaysNights": "{days} Days | {nights} Nights",
+  "roomInfo": "{roomName} | {boardingType}",
+  "guestsAndFlightInfo": "{adults} Adults, {children} Children | {flightIncluded}",
+  "fromPrice": "from",
+  "pricePerPerson": "{price} € p.P.",
+  "viewOffers": "View Offers",
+  "includedFlight": "incl. Flight",
+  "noFlight": "",
+  "viewHotel": "View Hotel"
 }
