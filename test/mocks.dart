@@ -4,6 +4,7 @@ import 'package:hotel_booking/features/hotel/data/mapper/favorite_hotel_mapper.d
 import 'package:hotel_booking/features/hotel/data/mapper/hotel_mapper.dart';
 import 'package:hotel_booking/features/hotel/data/repositories/data_source.dart';
 import 'package:hotel_booking/features/hotel/domain/use_cases/add_favorite_hotel_use_case.dart';
+import 'package:hotel_booking/features/hotel/domain/use_cases/get_favorite_hotels_use_case.dart';
 import 'package:hotel_booking/features/hotel/domain/use_cases/get_hotels_use_case.dart';
 import 'package:hotel_booking/features/hotel/domain/use_cases/remove_favorite_hotel_use_case.dart';
 import 'package:injectable/injectable.dart';
@@ -37,3 +38,7 @@ class MockAddFavoriteHotelUseCase extends Mock
 @Injectable(as: RemoveFavoriteHotelUseCase)
 class MockRemoveFavoriteHotelUseCase extends Mock
     implements RemoveFavoriteHotelUseCase {}
+
+@Injectable(as: GetFavoriteHotelsUseCase)
+class MockGetFavoriteHotelsUseCase extends Mock
+    implements GetFavoriteHotelsUseCase {}

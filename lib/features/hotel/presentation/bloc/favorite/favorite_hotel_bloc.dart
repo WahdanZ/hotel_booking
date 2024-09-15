@@ -3,7 +3,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hotel_booking/base/domain/interactors/use_case.dart';
 import 'package:hotel_booking/base/result/result.dart';
 import 'package:hotel_booking/features/hotel/domain/entities/hotel_entity.dart';
-import 'package:hotel_booking/features/hotel/domain/use_cases/add_favorite_hotel_use_case.dart';
 import 'package:hotel_booking/features/hotel/domain/use_cases/get_favorite_hotels_use_case.dart';
 import 'package:hotel_booking/features/hotel/domain/use_cases/remove_favorite_hotel_use_case.dart';
 
@@ -13,12 +12,10 @@ part 'favorite_hotel_state.dart';
 
 class FavoriteHotelBloc extends Bloc<FavoriteHotelEvent, FavoriteHotelState> {
   final GetFavoriteHotelsUseCase getFavoriteHotelsUseCase;
-  final AddFavoriteHotelUseCase addFavoriteHotelUseCase;
   final RemoveFavoriteHotelUseCase removeFavoriteHotelUseCase;
 
   FavoriteHotelBloc({
     required this.getFavoriteHotelsUseCase,
-    required this.addFavoriteHotelUseCase,
     required this.removeFavoriteHotelUseCase,
   }) : super(const FavoriteHotelState.initial()) {
     on<FetchFavoriteHotel>(_onFetchFavoriteHotel);

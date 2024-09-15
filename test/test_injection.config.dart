@@ -18,6 +18,8 @@ import 'package:hotel_booking/features/hotel/data/repositories/data_source.dart'
     as _i298;
 import 'package:hotel_booking/features/hotel/domain/use_cases/add_favorite_hotel_use_case.dart'
     as _i882;
+import 'package:hotel_booking/features/hotel/domain/use_cases/get_favorite_hotels_use_case.dart'
+    as _i343;
 import 'package:hotel_booking/features/hotel/domain/use_cases/get_hotels_use_case.dart'
     as _i681;
 import 'package:hotel_booking/features/hotel/domain/use_cases/remove_favorite_hotel_use_case.dart'
@@ -40,6 +42,8 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i786.MockDio>(() => _i786.MockDio());
     gh.factory<_i489.FavoriteHotelMapper>(
         () => _i786.MockFavoriteHotelMapper());
+    gh.factory<_i343.GetFavoriteHotelsUseCase>(
+        () => _i786.MockGetFavoriteHotelsUseCase());
     gh.factory<_i748.HotelMapper>(() => _i786.MockHotelMapper());
     gh.factory<_i143.RemoveFavoriteHotelUseCase>(
         () => _i786.MockRemoveFavoriteHotelUseCase());

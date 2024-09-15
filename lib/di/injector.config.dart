@@ -88,13 +88,12 @@ _i174.GetIt $initGetIt(
   gh.factory<_i111.GetFavoriteHotelsUseCase>(() =>
       _i111.GetFavoriteHotelsUseCase(
           hotelRepository: gh<_i2.HotelRepository>()));
-  gh.factory<_i18.HotelBloc>(() => _i18.HotelBloc(
-        getHotelsUseCase: gh<_i952.GetHotelsUseCase>(),
-        addFavoriteHotelUseCase: gh<_i181.AddFavoriteHotelUseCase>(),
-        removeFavoriteHotelUseCase: gh<_i315.RemoveFavoriteHotelUseCase>(),
-      ));
   gh.factory<_i577.FavoriteHotelBloc>(() => _i577.FavoriteHotelBloc(
         getFavoriteHotelsUseCase: gh<_i111.GetFavoriteHotelsUseCase>(),
+        removeFavoriteHotelUseCase: gh<_i315.RemoveFavoriteHotelUseCase>(),
+      ));
+  gh.factory<_i18.HotelBloc>(() => _i18.HotelBloc(
+        getHotelsUseCase: gh<_i952.GetHotelsUseCase>(),
         addFavoriteHotelUseCase: gh<_i181.AddFavoriteHotelUseCase>(),
         removeFavoriteHotelUseCase: gh<_i315.RemoveFavoriteHotelUseCase>(),
       ));
