@@ -1,3 +1,6 @@
+// ignore_for_file: unused_element
+
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:hotel_booking/base/theme/app_styles.dart';
 import 'package:hotel_booking/features/hotel/domain/entities/hotel_entity.dart';
@@ -27,7 +30,7 @@ class HotelCardItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          HotelImageSection(
+          _HotelImageSection(
             hotel: hotel,
             onFavoriteClick: onFavoriteClick,
           ),
@@ -36,17 +39,17 @@ class HotelCardItem extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                HotelTitleAndRating(hotel: hotel),
+                _HotelTitleAndRating(hotel: hotel),
                 const SizedBox(height: 4),
-                HotelDestination(hotel: hotel),
+                _HotelDestination(hotel: hotel),
                 const SizedBox(height: 8),
                 const Divider(height: 2),
                 const SizedBox(height: 8),
                 if (showDetails) ...[
-                  HotelDetails(hotel: hotel),
+                  _HotelDetails(hotel: hotel),
                   const SizedBox(height: 16),
                 ],
-                HotelViewOffersButton(
+                _HotelViewOffersButton(
                   hotelId: hotel.hotelId,
                   onViewOffersClick: onViewOffersClick,
                 ),
@@ -59,11 +62,11 @@ class HotelCardItem extends StatelessWidget {
   }
 }
 
-class HotelImageSection extends StatelessWidget {
+class _HotelImageSection extends StatelessWidget {
   final HotelEntity hotel;
   final Function(String hotelId)? onFavoriteClick;
 
-  const HotelImageSection({
+  const _HotelImageSection({
     super.key,
     required this.hotel,
     this.onFavoriteClick,
@@ -78,8 +81,13 @@ class HotelImageSection extends StatelessWidget {
             topLeft: Radius.circular(8),
             topRight: Radius.circular(8),
           ),
-          child: Image.network(
-            hotel.imageUrl,
+          child: CachedNetworkImage(
+            imageUrl: hotel.imageUrl,
+            placeholder: (context, url) => const SizedBox(
+                height: 30,
+                width: 30,
+                child: Center(child: CircularProgressIndicator())),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
             width: double.infinity,
             height: 180,
             fit: BoxFit.cover,
@@ -103,10 +111,10 @@ class HotelImageSection extends StatelessWidget {
   }
 }
 
-class HotelTitleAndRating extends StatelessWidget {
+class _HotelTitleAndRating extends StatelessWidget {
   final HotelEntity hotel;
 
-  const HotelTitleAndRating({super.key, required this.hotel});
+  const _HotelTitleAndRating({super.key, required this.hotel});
 
   @override
   Widget build(BuildContext context) {
@@ -127,10 +135,10 @@ class HotelTitleAndRating extends StatelessWidget {
   }
 }
 
-class HotelDestination extends StatelessWidget {
+class _HotelDestination extends StatelessWidget {
   final HotelEntity hotel;
 
-  const HotelDestination({super.key, required this.hotel});
+  const _HotelDestination({super.key, required this.hotel});
 
   @override
   Widget build(BuildContext context) {
@@ -141,10 +149,10 @@ class HotelDestination extends StatelessWidget {
   }
 }
 
-class HotelDetails extends StatelessWidget {
+class _HotelDetails extends StatelessWidget {
   final HotelEntity hotel;
 
-  const HotelDetails({super.key, required this.hotel});
+  const _HotelDetails({super.key, required this.hotel});
 
   @override
   Widget build(BuildContext context) {
@@ -213,11 +221,11 @@ class HotelDetails extends StatelessWidget {
   }
 }
 
-class HotelViewOffersButton extends StatelessWidget {
+class _HotelViewOffersButton extends StatelessWidget {
   final String hotelId;
   final Function(String hotelId)? onViewOffersClick;
 
-  const HotelViewOffersButton({
+  const _HotelViewOffersButton({
     super.key,
     required this.hotelId,
     this.onViewOffersClick,
