@@ -6,6 +6,9 @@ clean architecture principles and is built with Bloc for state management.
 
 ## Screenshots
 
+![Hotel Screen](screenshots/hotel.png)
+![Favorites Screen](screenshots/favorites.png)
+
 ## Task Description
 
 The task was to build a hotel booking app using Flutter that allows users to:
@@ -125,5 +128,3 @@ fvm flutter run
     fvm flutter test
     ```
 
-This `README.md` provides a clear and comprehensive guide to your hotel booking app, detailing its key features, API
-integration, project structure, and setup instructions. Let me know if you need any further modifications!
