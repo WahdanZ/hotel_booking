@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hotel_booking/base/common/widget/tab_observer_mixin.dart';
+import 'package:hotel_booking/common/widget/tab_observer_mixin.dart';
 import 'package:hotel_booking/di/injector.dart';
 import 'package:hotel_booking/features/hotel/domain/entities/hotel_entity.dart';
 import 'package:hotel_booking/features/hotel/presentation/bloc/hotel/hotel_bloc.dart';

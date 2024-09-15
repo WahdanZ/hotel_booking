@@ -1,6 +1,9 @@
 import 'package:hotel_booking/features/hotel/data/local/models/favorite_hotel_model.dart';
 import 'package:hotel_booking/features/hotel/data/remote/models/hotel_response.dart';
 import 'package:hotel_booking/features/hotel/domain/entities/hotel_entity.dart';
+import 'package:hotel_booking/features/hotel/domain/use_cases/add_favorite_hotel_use_case.dart';
+import 'package:hotel_booking/features/hotel/domain/use_cases/remove_favorite_hotel_use_case.dart';
+import 'package:mocktail/mocktail.dart';
 
 HotelModel createHotelModel({String hotelId = '1'}) {
   return HotelModel(
@@ -81,3 +84,9 @@ FavoriteHotelModel createFavoriteHotelModel({String hotelId = '1'}) {
     pricePerPerson: 5000,
   );
 }
+
+class FakeAddFavoriteHotelParams extends Fake
+    implements AddFavoriteHotelParams {}
+
+class FakeRemoveFavoriteHotelParams extends Fake
+    implements RemoveFavoriteHotelParams {}

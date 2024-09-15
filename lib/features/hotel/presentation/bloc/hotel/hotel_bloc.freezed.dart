@@ -18,21 +18,21 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$HotelEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetchHotel,
+    required TResult Function(bool showLoading) fetchHotel,
     required TResult Function(HotelEntity hotel) addFavoriteHotel,
     required TResult Function(String hotelId) removeFavoriteHotel,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fetchHotel,
+    TResult? Function(bool showLoading)? fetchHotel,
     TResult? Function(HotelEntity hotel)? addFavoriteHotel,
     TResult? Function(String hotelId)? removeFavoriteHotel,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetchHotel,
+    TResult Function(bool showLoading)? fetchHotel,
     TResult Function(HotelEntity hotel)? addFavoriteHotel,
     TResult Function(String hotelId)? removeFavoriteHotel,
     required TResult orElse(),
@@ -85,6 +85,8 @@ abstract class _$$FetchHotelImplCopyWith<$Res> {
   factory _$$FetchHotelImplCopyWith(
           _$FetchHotelImpl value, $Res Function(_$FetchHotelImpl) then) =
       __$$FetchHotelImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool showLoading});
 }
 
 /// @nodoc
@@ -94,57 +96,83 @@ class __$$FetchHotelImplCopyWithImpl<$Res>
   __$$FetchHotelImplCopyWithImpl(
       _$FetchHotelImpl _value, $Res Function(_$FetchHotelImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? showLoading = null,
+  }) {
+    return _then(_$FetchHotelImpl(
+      showLoading: null == showLoading
+          ? _value.showLoading
+          : showLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$FetchHotelImpl implements FetchHotel {
-  const _$FetchHotelImpl();
+  const _$FetchHotelImpl({this.showLoading = false});
+
+  @override
+  @JsonKey()
+  final bool showLoading;
 
   @override
   String toString() {
-    return 'HotelEvent.fetchHotel()';
+    return 'HotelEvent.fetchHotel(showLoading: $showLoading)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FetchHotelImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$FetchHotelImpl &&
+            (identical(other.showLoading, showLoading) ||
+                other.showLoading == showLoading));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, showLoading);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FetchHotelImplCopyWith<_$FetchHotelImpl> get copyWith =>
+      __$$FetchHotelImplCopyWithImpl<_$FetchHotelImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetchHotel,
+    required TResult Function(bool showLoading) fetchHotel,
     required TResult Function(HotelEntity hotel) addFavoriteHotel,
     required TResult Function(String hotelId) removeFavoriteHotel,
   }) {
-    return fetchHotel();
+    return fetchHotel(showLoading);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fetchHotel,
+TResult? Function(bool showLoading)? fetchHotel,
     TResult? Function(HotelEntity hotel)? addFavoriteHotel,
     TResult? Function(String hotelId)? removeFavoriteHotel,
   }) {
-    return fetchHotel?.call();
+return fetchHotel?.call(showLoading);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetchHotel,
+TResult Function(bool showLoading)? fetchHotel,
     TResult Function(HotelEntity hotel)? addFavoriteHotel,
     TResult Function(String hotelId)? removeFavoriteHotel,
     required TResult orElse(),
   }) {
     if (fetchHotel != null) {
-      return fetchHotel();
+return fetchHotel(showLoading);
     }
     return orElse();
   }
@@ -185,7 +213,12 @@ class _$FetchHotelImpl implements FetchHotel {
 }
 
 abstract class FetchHotel implements HotelEvent {
-  const factory FetchHotel() = _$FetchHotelImpl;
+const factory FetchHotel({final bool showLoading}) = _$FetchHotelImpl;
+
+bool get showLoading;
+@JsonKey(ignore: true)
+_$$FetchHotelImplCopyWith<_$FetchHotelImpl> get copyWith =>
+throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -263,7 +296,7 @@ class _$AddFavoriteHotelImpl implements AddFavoriteHotel {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetchHotel,
+required TResult Function(bool showLoading) fetchHotel,
     required TResult Function(HotelEntity hotel) addFavoriteHotel,
     required TResult Function(String hotelId) removeFavoriteHotel,
   }) {
@@ -273,7 +306,7 @@ class _$AddFavoriteHotelImpl implements AddFavoriteHotel {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fetchHotel,
+TResult? Function(bool showLoading)? fetchHotel,
     TResult? Function(HotelEntity hotel)? addFavoriteHotel,
     TResult? Function(String hotelId)? removeFavoriteHotel,
   }) {
@@ -283,7 +316,7 @@ class _$AddFavoriteHotelImpl implements AddFavoriteHotel {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetchHotel,
+TResult Function(bool showLoading)? fetchHotel,
     TResult Function(HotelEntity hotel)? addFavoriteHotel,
     TResult Function(String hotelId)? removeFavoriteHotel,
     required TResult orElse(),
@@ -404,7 +437,7 @@ class _$RemoveFavoriteHotelImpl implements RemoveFavoriteHotel {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetchHotel,
+required TResult Function(bool showLoading) fetchHotel,
     required TResult Function(HotelEntity hotel) addFavoriteHotel,
     required TResult Function(String hotelId) removeFavoriteHotel,
   }) {
@@ -414,7 +447,7 @@ class _$RemoveFavoriteHotelImpl implements RemoveFavoriteHotel {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fetchHotel,
+TResult? Function(bool showLoading)? fetchHotel,
     TResult? Function(HotelEntity hotel)? addFavoriteHotel,
     TResult? Function(String hotelId)? removeFavoriteHotel,
   }) {
@@ -424,7 +457,7 @@ class _$RemoveFavoriteHotelImpl implements RemoveFavoriteHotel {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetchHotel,
+TResult Function(bool showLoading)? fetchHotel,
     TResult Function(HotelEntity hotel)? addFavoriteHotel,
     TResult Function(String hotelId)? removeFavoriteHotel,
     required TResult orElse(),
