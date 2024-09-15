@@ -4,21 +4,27 @@ class RatingWidget extends StatelessWidget {
   final int rate;
   final int maxRate;
   final Color color;
+  final double size;
 
-  const RatingWidget(
-      {super.key,
-      required this.rate,
-      this.maxRate = 5,
-      this.color = Colors.orange});
+  const RatingWidget({
+    super.key,
+    required this.rate,
+    this.maxRate = 5,
+    this.color = Colors.orange,
+    this.size = 18.0,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        for (var i = 0; i < rate; i++) Icon(Icons.star, color: color, size: 18),
+        ...List.generate(rate, (index) {
+          return Icon(Icons.star, color: color, size: size);
+        }),
         if (rate < maxRate)
-          for (var i = 0; i < maxRate - rate; i++)
-            Icon(Icons.star_border, color: color, size: 18),
+          ...List.generate(maxRate - rate, (index) {
+            return Icon(Icons.star_border, color: color, size: size);
+          }),
       ],
     );
   }
