@@ -16,5 +16,6 @@
   "pricePerPerson": "{price} € p.P.",
   "viewOffers": "View Offers",
   "includedFlight": "incl. Flight",
-  "noFlight": ""
+  "noFlight": "",
+  "viewHotel": "View Hotel"
 }

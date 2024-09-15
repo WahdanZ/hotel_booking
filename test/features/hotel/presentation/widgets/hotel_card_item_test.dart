@@ -36,7 +36,7 @@ class __TestWidgetState extends State<_TestWidget> {
         HotelCardItem(
           hotel: createHotelEntity(),
           onFavoriteClick: (_) {},
-          onViewOffersClick: (_) {},
+          onActionButtonClick: (_) {},
           showDetails: showDetails,
         ),
         ElevatedButton(
@@ -70,7 +70,7 @@ void main() {
             body: HotelCardItem(
               hotel: hotel,
               onFavoriteClick: mockFavoriteCallback.call,
-              onViewOffersClick: mockViewOffersCallback.call,
+              onActionButtonClick: mockViewOffersCallback.call,
               showDetails: true,
             ),
           ),
@@ -100,7 +100,7 @@ void main() {
             body: HotelCardItem(
               hotel: hotel,
               onFavoriteClick: mockFavoriteCallback.call,
-              onViewOffersClick: mockViewOffersCallback.call,
+              onActionButtonClick: mockViewOffersCallback.call,
               showDetails: false,
             ),
           ),
@@ -114,7 +114,7 @@ void main() {
       expect(find.text('2 Adults, 1 Children | incl. Flight'), findsNothing);
       expect(find.text('€ 300.00'), findsNothing);
       expect(find.text('150.00 € p.P.'), findsNothing);
-      expect(find.text('View Offers'), findsOneWidget);
+      expect(find.text('View Hotel'), findsOneWidget);
     });
 
     testWidgets('calls onFavoriteClick when favorite icon is tapped',
@@ -129,7 +129,7 @@ void main() {
             body: HotelCardItem(
               hotel: hotel,
               onFavoriteClick: mockFavoriteCallback.call,
-              onViewOffersClick: mockViewOffersCallback.call,
+              onActionButtonClick: mockViewOffersCallback.call,
               showDetails: true,
             ),
           ),
@@ -154,7 +154,7 @@ void main() {
             body: HotelCardItem(
               hotel: hotel,
               onFavoriteClick: mockFavoriteCallback.call,
-              onViewOffersClick: mockViewOffersCallback.call,
+              onActionButtonClick: mockViewOffersCallback.call,
               showDetails: true,
             ),
           ),
@@ -178,7 +178,7 @@ void main() {
             body: HotelCardItem(
               hotel: favoriteHotel,
               onFavoriteClick: mockFavoriteCallback.call,
-              onViewOffersClick: mockViewOffersCallback.call,
+              onActionButtonClick: mockViewOffersCallback.call,
               showDetails: true,
             ),
           ),

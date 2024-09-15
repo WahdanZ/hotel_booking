@@ -11,13 +11,13 @@ class HotelCardItem extends StatelessWidget {
   final HotelEntity hotel;
   final bool showDetails;
   final Function(String hotelId)? onFavoriteClick;
-  final Function(String hotelId)? onViewOffersClick;
+  final Function(String hotelId)? onActionButtonClick;
 
   const HotelCardItem({
     super.key,
     required this.hotel,
     this.onFavoriteClick,
-    this.onViewOffersClick,
+    this.onActionButtonClick,
     this.showDetails = true,
   });
 
@@ -51,7 +51,10 @@ class HotelCardItem extends StatelessWidget {
                 ],
                 _HotelViewOffersButton(
                   hotelId: hotel.hotelId,
-                  onViewOffersClick: onViewOffersClick,
+                  actionButtonText: showDetails
+                      ? S.of(context).viewOffers
+                      : S.of(context).viewHotel,
+                  onActionButtonClick: onActionButtonClick,
                 ),
               ],
             ),
@@ -223,12 +226,14 @@ class _HotelDetails extends StatelessWidget {
 
 class _HotelViewOffersButton extends StatelessWidget {
   final String hotelId;
-  final Function(String hotelId)? onViewOffersClick;
+  final String actionButtonText;
+  final Function(String hotelId)? onActionButtonClick;
 
   const _HotelViewOffersButton({
     super.key,
     required this.hotelId,
-    this.onViewOffersClick,
+    required this.actionButtonText,
+    this.onActionButtonClick,
   });
 
   @override
@@ -244,10 +249,10 @@ class _HotelViewOffersButton extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 16),
         ),
         onPressed: () {
-          onViewOffersClick?.call(hotelId);
+          onActionButtonClick?.call(hotelId);
         },
         child: Text(
-          S.of(context).viewOffers,
+          actionButtonText,
           style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,

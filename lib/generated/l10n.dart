@@ -231,6 +231,16 @@ class S {
       args: [],
     );
   }
+
+  /// `View Hotel`
+  String get viewHotel {
+    return Intl.message(
+      'View Hotel',
+      name: 'viewHotel',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

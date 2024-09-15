@@ -48,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "tab_favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
         "tab_hotels": MessageLookupByLibrary.simpleMessage("Hotels"),
         "tab_overview": MessageLookupByLibrary.simpleMessage("Overview"),
+        "viewHotel": MessageLookupByLibrary.simpleMessage("View Hotel"),
         "viewOffers": MessageLookupByLibrary.simpleMessage("View Offers")
       };
 }
