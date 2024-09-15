@@ -5,6 +5,7 @@ import 'package:injectable/injectable.dart';
 
 @Injectable(as: HotelLocalDataSource)
 class HotelLocalDataSourceImpl implements HotelLocalDataSource {
+  // ignore: constant_identifier_names
   static const String FAVORITES_BOX = 'favorites_box';
   Box<FavoriteHotelModel>? _favoritesBox;
 
