@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 
 import 'app_router.gr.dart';
 
-@LazySingleton()
+@Singleton()
 @AutoRouterConfig(replaceInRouteName: 'Screen|Page,Route')
 class AppRouter extends RootStackRouter {
   @override

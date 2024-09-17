@@ -10,12 +10,14 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:dio/dio.dart' as _i361;
 import 'package:get_it/get_it.dart' as _i174;
+import 'package:hive/hive.dart' as _i979;
 import 'package:injectable/injectable.dart' as _i526;
 
 import '../base/index.dart' as _i852;
 import '../base/remote/network_task_manager.dart' as _i148;
 import '../features/hotel/data/local/data_sources/hotel_local_data_source_impl.dart'
     as _i1;
+import '../features/hotel/data/local/models/favorite_hotel_model.dart' as _i846;
 import '../features/hotel/data/mapper/favorite_hotel_mapper.dart' as _i476;
 import '../features/hotel/data/mapper/hotel_mapper.dart' as _i375;
 import '../features/hotel/data/remote/data_sources/hotel_remote_data_source.dart'
@@ -40,26 +42,31 @@ const String _prod = 'prod';
 const String _dev = 'dev';
 
 // initializes the registration of main-scope dependencies inside of GetIt
-_i174.GetIt $initGetIt(
+Future<_i174.GetIt> $initGetIt(
   _i174.GetIt getIt, {
   String? environment,
   _i526.EnvironmentFilter? environmentFilter,
-}) {
+    }) async {
   final gh = _i526.GetItHelper(
     getIt,
     environment,
     environmentFilter,
   );
   final appModule = _$AppModule();
-  gh.factory<_i375.HotelMapper>(() => _i375.HotelMapper());
   gh.factory<_i476.FavoriteHotelMapper>(() => _i476.FavoriteHotelMapper());
-  gh.lazySingleton<_i1007.AppRouter>(() => _i1007.AppRouter());
+  gh.factory<_i375.HotelMapper>(() => _i375.HotelMapper());
+  gh.singleton<_i1007.AppRouter>(() => _i1007.AppRouter());
+  await gh.lazySingletonAsync<_i979.Box<_i846.FavoriteHotelModel>>(
+    () => appModule.favoritesBox,
+    preResolve: true,
+  );
   gh.lazySingleton<_i148.NetworkTaskManager>(() => _i148.NetworkTaskManager());
   gh.lazySingleton<_i361.Dio>(
     () => appModule.dio,
     instanceName: 'dio_client',
   );
-  gh.factory<_i849.HotelLocalDataSource>(() => _i1.HotelLocalDataSourceImpl());
+  gh.factory<_i849.HotelLocalDataSource>(() =>
+      _i1.HotelLocalDataSourceImpl(gh<_i979.Box<_i846.FavoriteHotelModel>>()));
   gh.lazySingleton<String>(
     () => appModule.baseUrl,
     instanceName: 'base_url',
@@ -81,10 +88,10 @@ _i174.GetIt $initGetIt(
       ));
   gh.factory<_i952.GetHotelsUseCase>(
       () => _i952.GetHotelsUseCase(gh<_i2.HotelRepository>()));
-  gh.factory<_i181.AddFavoriteHotelUseCase>(
-      () => _i181.AddFavoriteHotelUseCase(gh<_i2.HotelRepository>()));
   gh.factory<_i315.RemoveFavoriteHotelUseCase>(
       () => _i315.RemoveFavoriteHotelUseCase(gh<_i2.HotelRepository>()));
+  gh.factory<_i181.AddFavoriteHotelUseCase>(
+      () => _i181.AddFavoriteHotelUseCase(gh<_i2.HotelRepository>()));
   gh.factory<_i111.GetFavoriteHotelsUseCase>(() =>
       _i111.GetFavoriteHotelsUseCase(
           hotelRepository: gh<_i2.HotelRepository>()));

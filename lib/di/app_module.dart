@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:hive/hive.dart';
+import 'package:hotel_booking/features/hotel/data/local/models/favorite_hotel_model.dart';
 import 'package:injectable/injectable.dart';
 
 @module
@@ -13,4 +15,10 @@ abstract class AppModule {
   @Named('dio_client')
   Dio get dio =>
       Dio()..interceptors.addAll([LogInterceptor(responseBody: true)]);
+
+  @preResolve
+  @LazySingleton()
+  Future<Box<FavoriteHotelModel>> get favoritesBox async {
+    return await Hive.openBox<FavoriteHotelModel>('favorites_box');
+  }
 }

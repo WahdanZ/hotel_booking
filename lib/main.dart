@@ -12,12 +12,11 @@ import 'features/hotel/data/local/models/favorite_hotel_model.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  Hive.registerAdapter(FavoriteHotelModelAdapter());
   await configureDependencies(
       environment: const String.fromEnvironment('environment',
           defaultValue: Environment.dev));
-  // Initialize Hive and register adapters
-  Hive.initFlutter();
-  Hive.registerAdapter(FavoriteHotelModelAdapter());
 
   FlutterError.onError = (details) {
     logger.e(details.exceptionAsString(), stackTrace: details.stack);
@@ -30,7 +29,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppRouter appRouter = inject();
+    final AppRouter appRouter = inject();
+
     return MaterialApp.router(
       localizationsDelegates: const [
         S.delegate,
