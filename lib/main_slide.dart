@@ -11,7 +11,6 @@ class FlutterDeckExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlutterDeckApp(
-      // You could use the default configuration or create your own.
       configuration: FlutterDeckConfiguration(
         // Define a global background for the light and dark themes separately.
         background: const FlutterDeckBackgroundConfiguration(
@@ -61,7 +60,6 @@ class FlutterDeckExample extends StatelessWidget {
         // Use a custom transition between slides.
         transition: const FlutterDeckTransition.fade(),
       ),
-      // You can also define your own light...
       lightTheme: FlutterDeckThemeData.fromTheme(
         ThemeData.from(
           colorScheme: ColorScheme.fromSeed(
@@ -70,7 +68,6 @@ class FlutterDeckExample extends StatelessWidget {
           useMaterial3: true,
         ),
       ),
-      // ...and dark themes.
       darkTheme: FlutterDeckThemeData.fromTheme(
         ThemeData.from(
           colorScheme: ColorScheme.fromSeed(
@@ -381,6 +378,16 @@ class TechStackSlide extends FlutterDeckSlideWidget {
                 color: Colors.black87, // Text color
               ),
             ),
+            // Localization with flutter_intl
+            SizedBox(height: 10),
+            Text(
+              '- flutter_intl: Internationalization and localization package for managing app translations.',
+              style: TextStyle(
+                fontSize: 22, // Increased font size for body text
+                fontWeight: FontWeight.bold, // Bold for emphasis
+                color: Colors.black87, // Text color
+              ),
+            ),
           ],
         ),
       ),
@@ -630,21 +637,29 @@ class DependencyInjectionSetupSlide extends FlutterDeckSlideWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 FlutterDeckCodeHighlight(
-                  fileName: 'app_module.dart',
-                  code: '@module\n'
-                      'abstract class AppModule {\n'
-                      '  @LazySingleton()\n'
-                      '  @Named(\'base_url\')\n'
-                      '  @prod\n'
-                      '  @dev\n'
-                      '  String get baseUrl =>\n'
-                      '      const String.fromEnvironment(\'base_url\', defaultValue: "https://dkndmolrswy7b.cloudfront.net/");\n\n'
-                      '  @LazySingleton()\n'
-                      '  @Named(\'dio_client\')\n'
-                      '  Dio get dio =>\n'
-                      '      Dio()..interceptors.addAll([LogInterceptor(responseBody: true)]);\n'
-                      '}',
-                ),
+                  fileName: 'app_module.dart', code: '''
+@module
+abstract class AppModule {
+  @LazySingleton()
+  @Named('base_url')
+  @prod
+  @dev
+  String get baseUrl =>
+      const String.fromEnvironment('base_url', defaultValue: "https://dkndmolrswy7b.cloudfront.net/");
+  @LazySingleton()
+  @Named('dio_client')
+  Dio get dio =>
+      Dio()..interceptors.addAll([LogInterceptor(responseBody: true)]);
+
+  @preResolve
+  @LazySingleton()
+  Future<Box<FavoriteHotelModel>> get favoritesBox async {
+    return await Hive.openBox<FavoriteHotelModel>('favorites_box');
+  }
+
+}
+
+                  '''),
                 SizedBox(height: 16),
                 FlutterDeckCodeHighlight(
                     fileName: 'build.yaml', language: 'yaml', code: '''
@@ -1278,50 +1293,40 @@ class FavoritesFeatureSlide extends FlutterDeckSlideWidget {
                   code: '''
 @Injectable(as: HotelLocalDataSource)
 class HotelLocalDataSourceImpl implements HotelLocalDataSource {
-  static const String FAVORITES_BOX = 'favorites_box';
-  Box<FavoriteHotelModel>? _favoritesBox;
+  final Box<FavoriteHotelModel> _favoritesBox;
 
-  Future<Box<FavoriteHotelModel>> get _box async {
-    if (_favoritesBox == null || !_favoritesBox!.isOpen) {
-      _favoritesBox = await Hive.openBox<FavoriteHotelModel>(FAVORITES_BOX);
-    }
-    return _favoritesBox!;
-  }
+  HotelLocalDataSourceImpl( this._favoritesBox);
 
   @override
   Future<void> addFavoriteHotel(FavoriteHotelModel hotel) async {
-    final box = await _box;
-    await box.put(hotel.hotelId, hotel);
+    await _favoritesBox.put(hotel.hotelId, hotel);
   }
 
   @override
   Future<void> removeFavoriteHotel(String hotelId) async {
-    final box = await _box;
-    await box.delete(hotelId);
+    await _favoritesBox.delete(hotelId);
   }
 
   @override
   Future<List<FavoriteHotelModel>> getFavoriteHotels() async {
-    final box = await _box;
-    return box.values.toList();
+    return _favoritesBox.values.toList();
   }
 
   @override
   Future<bool> isFavorite(String hotelId) async {
-    final box = await _box;
-    return box.containsKey(hotelId);
+    return _favoritesBox.containsKey(hotelId);
   }
 
   @override
-  Future<bool> close() {
-    if (isFavoritesBoxOpen()) {
-      _favoritesBox!.close();
-      return Future.value(true);
+  Future<bool> close() async {
+    if (_favoritesBox.isOpen) {
+      await _favoritesBox.close();
+      return true;
     }
-    return Future.value(false);
+    return false;
   }
 
-  bool isFavoritesBoxOpen() => _favoritesBox != null && _favoritesBox!.isOpen;
+  bool isFavoritesBoxOpen() => _favoritesBox.isOpen;
 }
                   ''',
                 ),
@@ -1416,7 +1421,7 @@ class ConclusionSlide extends FlutterDeckSlideWidget {
               SizedBox(height: 40),
               // Conclusion points
               Text(
-                'Conclusion & Key Takeaways:',
+                'Conclusion:',
                 style: TextStyle(
                   fontSize: 30, // Subheading size
                   fontWeight: FontWeight.bold,
@@ -1471,16 +1476,6 @@ class ConclusionSlide extends FlutterDeckSlideWidget {
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 40),
-              // Thanks Message
-              Text(
-                'Thank you for your time! If you have any questions, feel free to ask.',
-                style: TextStyle(
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF3A6073),
-                ),
-                textAlign: TextAlign.center,
-              ),
             ],
           ),
         ),
