@@ -39,4 +39,15 @@ class HotelLocalDataSourceImpl implements HotelLocalDataSource {
     final box = await _box;
     return box.containsKey(hotelId);
   }
+
+  @override
+  Future<bool> close() {
+    if (isFavoritesBoxOpen()) {
+      _favoritesBox!.close();
+      return Future.value(true);
+    }
+    return Future.value(false);
+  }
+
+  bool isFavoritesBoxOpen() => _favoritesBox != null && _favoritesBox!.isOpen;
 }

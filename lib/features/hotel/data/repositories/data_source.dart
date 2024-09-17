@@ -13,4 +13,6 @@ abstract class HotelLocalDataSource {
   Future<List<FavoriteHotelModel>> getFavoriteHotels();
 
   Future<bool> isFavorite(String hotelId);
+
+  Future<bool> close();
 }
