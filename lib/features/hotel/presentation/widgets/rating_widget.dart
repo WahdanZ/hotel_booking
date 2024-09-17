@@ -10,7 +10,7 @@ class RatingWidget extends StatelessWidget {
     super.key,
     required this.rate,
     this.maxRate = 5,
-    this.color = Colors.orange,
+    this.color = Colors.black,
     this.size = 18.0,
   });
 

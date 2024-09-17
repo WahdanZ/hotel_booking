@@ -928,28 +928,28 @@ class GetHotelsFeatureSlide extends FlutterDeckSlideWidget {
                 ),
               ),
               SizedBox(height: 20),
-              Text(
-                'Question: Is this logic better suited for the repository or Bloc?',
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF3A6073),
-                ),
-              ),
-              Text(
-                '- Logic such as mapping and combining data from different sources (API + local) generally belongs in the repository, as it is concerned with data fetching and preparation.',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.black87,
-                ),
-              ),
-              Text(
-                '- The Bloc should only handle user interaction, business rules, and state management, keeping data-fetching logic separate.',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.black87,
-                ),
-              ),
+              // Text(
+              //   'Question: Is this logic better suited for the repository or Bloc?',
+              //   style: TextStyle(
+              //     fontSize: 22,
+              //     fontWeight: FontWeight.bold,
+              //     color: Color(0xFF3A6073),
+              //   ),
+              // ),
+              // Text(
+              //   '- Logic such as mapping and combining data from different sources (API + local) generally belongs in the repository, as it is concerned with data fetching and preparation.',
+              //   style: TextStyle(
+              //     fontSize: 20,
+              //     color: Colors.black87,
+              //   ),
+              // ),
+              // Text(
+              //   '- The Bloc should only handle user interaction, business rules, and state management, keeping data-fetching logic separate.',
+              //   style: TextStyle(
+              //     fontSize: 20,
+              //     color: Colors.black87,
+              //   ),
+              // ),
             ],
           ),
         );

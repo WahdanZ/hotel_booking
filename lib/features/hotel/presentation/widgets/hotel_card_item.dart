@@ -121,18 +121,25 @@ class _HotelTitleAndRating extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Expanded(
-          child: Text(
-            hotel.name,
-            style: AppStyles.titleStyle,
-            overflow: TextOverflow.ellipsis,
-          ),
+        Row(
+          children: [
+            RatingWidget(rate: hotel.ratingScore.toInt()),
+            const SizedBox(width: 4),
+            const Icon(
+              Icons.help_outline,
+              size: 18,
+            ),
+          ],
         ),
         const SizedBox(width: 8),
-        RatingWidget(rate: hotel.ratingScore.toInt()),
+        Text(
+          hotel.name,
+          style: AppStyles.titleStyle,
+          overflow: TextOverflow.ellipsis,
+        ),
       ],
     );
   }
